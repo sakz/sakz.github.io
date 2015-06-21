@@ -192,6 +192,70 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Hello-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/21/Hello-Hexo/" class="article-date">
+  	<time datetime="2015-06-21T08:34:38.000Z" itemprop="datePublished">2015-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/21/Hello-Hexo/">Hello-Hexo</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以前我的方法是通过安装一个terminal的插件，利用自带的C＋＋编译系统编译好，按<code>ctrl(command)＋alt+t</code>, 调出终端，按./文件名  来运行，一个朋友下面的方法比我的方法更方便，来自<a href="http://erona.me/2015/01/30/Sublime-Text-3%E5%9C%A8Mac%E4%B8%8A%E7%9A%84C-%E9%85%8D%E7%BD%AE/#more" target="_blank" rel="external">Erona</a>.<br><img src="http://fazero.cc/wp-content/uploads/2015/03/CA85FD73-4CA0-4FF2-A995-3270B604D9BB.jpg" alt=""><br><img src="http://fazero.cc/wp-content/uploads/2015/03/C2FB0C6B-A404-452F-8376-7759228B621B.jpg" alt=""><br>配置好后，写好代码，直接按ctrl＋b就可以编译运行了。 如果作为程序员，你不知道sublime这个神器，请接受我深深的同情。。。</p>
+<pre><code>{
+"<span class="attribute">cmd</span>": <span class="value">[<span class="string">"bash"</span>, <span class="string">"-c"</span>, <span class="string">"g++ '${file}' -o '${file_path}/${file_base_name}' &amp;amp;&amp;amp; osascript -e 'tell application \"Terminal\" to activate do script \"clear&amp;amp;&amp;amp;${file_path}/${file_base_name} &amp;amp;&amp;amp; read -p \\\"Press Enter to exit.\\\"&amp;amp;&amp;amp;exit\"'"</span>]</span>,
+"<span class="attribute">file_regex</span>": <span class="value"><span class="string">"^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$"</span></span>,
+"<span class="attribute">working_dir</span>": <span class="value"><span class="string">"${file_path}"</span></span>,
+"<span class="attribute">selector</span>": <span class="value"><span class="string">"source.c, source.c++"</span></span>,
+"<span class="attribute">variants</span>":
+<span class="value">[
+{
+"<span class="attribute">name</span>": <span class="value"><span class="string">"Run"</span></span>,
+"<span class="attribute">cmd</span>": <span class="value">[<span class="string">"bash"</span>, <span class="string">"-c"</span>, <span class="string">"g++ '${file}' -o '${file_path}/${file_base_name}' &amp;amp;&amp;amp; '${file_path}/${file_base_name}'"</span>]
+</span>}
+]
+</span>}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
