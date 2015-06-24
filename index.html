@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a>
+						<a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/vim/" style="font-size: 20px;">vim</a>
 					</div>
 				</section>
 				
@@ -183,6 +183,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-vim注释插件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/24/vim注释插件/" class="article-date">
+  	<time datetime="2015-06-24T09:53:45.000Z" itemprop="datePublished">2015-06-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/24/vim注释插件/">vim代码注释插件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="NERD_Commenter是一款供Vim使用的经典代码注释插件，看名字可以知道，它和The_NERD_Tree同属一个作者。使用这款插件，你可以对多种文件类型的文件进行不同方式地、快速地注释。">NERD Commenter是一款供Vim使用的经典代码注释插件，看名字可以知道，它和The NERD Tree同属一个作者。使用这款插件，你可以对多种文件类型的文件进行不同方式地、快速地注释。</h5><h5 id="安装：">安装：</h5><p>在<code>.vimrc</code>添加<code>Bundle &#39;scroolose/nerdcommenter&#39;</code></p>
+<p>然后在vim执行<code>:BundleInstall</code></p>
+<h6 id="用法:">用法:</h6><p>1、 <code>\cc</code>注释当前行和选中行<br>2、 <code>\cn</code>没有发现和\cc有区别<br>3、 <code>\c&lt;空格&gt;</code> 如果被选区域有部分被注释，则对被选区域执行取消注释操作，其它情况执行反转注释操作<br>4、 <code>\cm</code>对被选区域用一对注释符进行注释，前面的注释对每一行都会添加注释<br>5、 <code>\ci</code>执行反转注释操作，选中区域注释部分取消注释，非注释部分添加注释<br>6、 <code>\cs</code> 添加性感的注释，代码开头介绍部分通常使用该注释<br>7、 <code>\cy</code> 添加注释，并复制被添加注释的部分<br>8、 <code>\c$</code>注释当前光标到改行结尾的内容<br>9、 <code>\cA</code>跳转到该行结尾添加注释，并进入编辑模式<br>10、<code>\ca</code> 转换注释的方式，比如： <code>/**/和//</code><br><br>11、<code>\cl \cb</code> 左对齐和左右对其，左右对其主要针对/**/<br>12、<code>\cu</code>取消注释  </p>
+<h6 id="其他:">其他:</h6><p>命令 <code>\cc</code>中的<code>\</code>为<code>&lt;Leader&gt;</code>符，<code>&lt;Leader&gt;</code>符默认为<code>\</code><br><br><code>:help &lt;Leader&gt;</code> 可查看该符号的说明文档<br>在<code>.vimrc</code>中添加<code>let mapleader = &quot;,&quot;</code>可将<code>&lt;Leader&gt;</code>符变为<code>,</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-在-vimrc开启代码语法折叠" class="article article-type-post" itemscope itemprop="blogPost">
   
