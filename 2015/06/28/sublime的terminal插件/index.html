@@ -3,27 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>在终端打开sublime | fazero</title>
+  <title>sublime的terminal插件 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在/bin目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。
-ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; /bin/subl
-用法：
-subl file\folder 打开文件或者目">
+  <meta name="description" content="terminal插件的作用是在终端打开当前文档所在路径，快捷键是Command+Shift+T默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。
+123456789101112&amp;#123;    // The command to execute for the terminal, leave blank for the OS default    // On OS X th">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在终端打开sublime">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/27/在终端打开sublime/index.html">
+<meta property="og:title" content="sublime的terminal插件">
+<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/sublime的terminal插件/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在/bin目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。
-ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; /bin/subl
-用法：
-subl file\folder 打开文件或者目">
-<meta property="og:updated_time" content="2015-06-27T15:42:48.000Z">
+<meta property="og:description" content="terminal插件的作用是在终端打开当前文档所在路径，快捷键是Command+Shift+T默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。
+123456789101112&amp;#123;    // The command to execute for the terminal, leave blank for the OS default    // On OS X th">
+<meta property="og:updated_time" content="2015-06-27T17:05:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在终端打开sublime">
-<meta name="twitter:description" content="虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在/bin目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。
-ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; /bin/subl
-用法：
-subl file\folder 打开文件或者目">
+<meta name="twitter:title" content="sublime的terminal插件">
+<meta name="twitter:description" content="terminal插件的作用是在终端打开当前文档所在路径，快捷键是Command+Shift+T默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。
+123456789101112&amp;#123;    // The command to execute for the terminal, leave blank for the OS default    // On OS X th">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -192,11 +186,11 @@ subl file\folder 打开文件或者目">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-在终端打开sublime" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-sublime的terminal插件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/27/在终端打开sublime/" class="article-date">
-  	<time datetime="2015-06-27T15:41:55.000Z" itemprop="datePublished">2015-06-27</time>
+      <a href="/2015/06/28/sublime的terminal插件/" class="article-date">
+  	<time datetime="2015-06-27T16:56:41.000Z" itemprop="datePublished">2015-06-28</time>
 </a>
     </div>
   
@@ -209,7 +203,7 @@ subl file\folder 打开文件或者目">
         
   
     <h1 class="article-title" itemprop="name">
-      在终端打开sublime
+      sublime的terminal插件
     </h1>
   
 
@@ -229,13 +223,11 @@ subl file\folder 打开文件或者目">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在<code>/bin</code>目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。</p>
-<p><code>ln -s &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot; /bin/subl</code></p>
-<p>用法：</p>
-<p><code>subl file\folder</code> 打开文件或者目录</p>
-<p><code>subl -n file\folder</code>参数-n 在新的窗口打开</p>
-<p><code>subl -a folder</code>参数-a 添加目录到当前窗口</p>
-<p>详细帮助可以查看<code>subl --help</code><br><br><a href="https://www.sublimetext.com/docs/2/osx_command_line.html" target="_blank" rel="external">官方文档</a></p>
+        <p>terminal插件的作用是在终端打开当前文档所在路径，快捷键是<code>Command+Shift+T</code><br>默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    // The command to <span class="operator"><span class="keyword">execute</span> <span class="keyword">for</span> the terminal, leave blank <span class="keyword">for</span> the OS <span class="keyword">default</span></span><br><span class="line">    // <span class="keyword">On</span> OS X the terminal can be <span class="keyword">set</span> <span class="keyword">to</span> iTerm.sh <span class="keyword">to</span> <span class="keyword">execute</span> iTerm</span><br><span class="line">    <span class="string">"terminal"</span>: <span class="string">"iTerm.sh"</span>,</span><br><span class="line"></span><br><span class="line">    // A list <span class="keyword">of</span> <span class="keyword">default</span> parameters <span class="keyword">to</span> pass <span class="keyword">to</span> the terminal, this can be</span><br><span class="line">    // overridden <span class="keyword">by</span> passing the <span class="string">"parameters"</span> <span class="keyword">key</span> <span class="keyword">with</span> a list <span class="keyword">value</span> <span class="keyword">to</span> the args</span><br><span class="line">    // dict <span class="keyword">when</span> calling the <span class="string">"open_terminal"</span> <span class="keyword">or</span> <span class="string">"open_terminal_project_folder"</span></span><br><span class="line">    // commands</span><br><span class="line">    <span class="string">"parameters"</span>: []</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>但是这样是在终端新的窗口打开，想在新的标签打开的话得修改terminal文件夹下得iTerm.sh文件，修改如下。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (( $RUNNING )); <span class="keyword">then</span></span><br><span class="line">    osascript&lt;&lt;END</span><br><span class="line">    <span class="keyword">tell</span> <span class="type">application</span> <span class="string">"iTerm"</span></span><br><span class="line">        <span class="command">activate</span></span><br><span class="line">        <span class="keyword">tell</span> <span class="keyword">the</span> <span class="keyword">first</span> terminal</span><br><span class="line">            <span class="keyword">set</span> sess <span class="keyword">to</span> (<span class="command">launch</span> session <span class="string">"Default Session"</span>)</span><br><span class="line">            <span class="keyword">tell</span> sess</span><br><span class="line">                <span class="command">write</span> <span class="type">text</span> <span class="string">"$CD_CMD"</span></span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+<p><a href="http://stackoverflow.com/questions/27482445/open-project-from-sublime-text-to-new-tab-in-iterm-not-to-new-window" target="_blank" rel="external">参考</a></p>
 
       
     </div>
@@ -245,18 +237,9 @@ subl file\folder 打开文件或者目">
     
 <nav id="article-nav">
   
-    <a href="/2015/06/28/sublime的terminal插件/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          sublime的terminal插件
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/24/vim注释插件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vim代码注释插件</div>
+    <a href="/2015/06/27/在终端打开sublime/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在终端打开sublime</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -285,7 +268,7 @@ subl file\folder 打开文件或者目">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="在终端打开sublime" data-title="在终端打开sublime" data-url="http://blog.fazero.cc/2015/06/27/在终端打开sublime/"></div>
+	<div class="ds-thread" data-thread-key="sublime的terminal插件" data-title="sublime的terminal插件" data-url="http://blog.fazero.cc/2015/06/28/sublime的terminal插件/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
