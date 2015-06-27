@@ -3,24 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>将本地git仓库推送到github上 | fazero</title>
+  <title>在终端打开sublime | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 在github创建项目2. 创建本地git仓库进入需要用git管理的目录。依次执行：git init                       # 本地仓库初始化，执行完后会在工程目录下生成一个.git的隐藏目录
-git add .                    # 添加所有文件到本地索引，命令用法：git add file
-git commit               # 提">
+  <meta name="description" content="虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在/bin目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。
+ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; /bin/subl
+用法：
+subl file\folder 打开文件或者目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="将本地git仓库推送到github上">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/22/将本地git仓库推送到github上/index.html">
+<meta property="og:title" content="在终端打开sublime">
+<meta property="og:url" content="http://blog.fazero.cc/2015/06/27/在终端打开sublime/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="1. 在github创建项目2. 创建本地git仓库进入需要用git管理的目录。依次执行：git init                       # 本地仓库初始化，执行完后会在工程目录下生成一个.git的隐藏目录
-git add .                    # 添加所有文件到本地索引，命令用法：git add file
-git commit               # 提">
-<meta property="og:updated_time" content="2015-06-22T05:47:24.000Z">
+<meta property="og:description" content="虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在/bin目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。
+ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; /bin/subl
+用法：
+subl file\folder 打开文件或者目">
+<meta property="og:updated_time" content="2015-06-27T15:42:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="将本地git仓库推送到github上">
-<meta name="twitter:description" content="1. 在github创建项目2. 创建本地git仓库进入需要用git管理的目录。依次执行：git init                       # 本地仓库初始化，执行完后会在工程目录下生成一个.git的隐藏目录
-git add .                    # 添加所有文件到本地索引，命令用法：git add file
-git commit               # 提">
+<meta name="twitter:title" content="在终端打开sublime">
+<meta name="twitter:description" content="虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在/bin目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。
+ln -s &amp;quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;quot; /bin/subl
+用法：
+subl file\folder 打开文件或者目">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -189,11 +192,11 @@ git commit               # 提">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-将本地git仓库推送到github上" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-在终端打开sublime" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/22/将本地git仓库推送到github上/" class="article-date">
-  	<time datetime="2015-06-22T04:57:53.000Z" itemprop="datePublished">2015-06-22</time>
+      <a href="/2015/06/27/在终端打开sublime/" class="article-date">
+  	<time datetime="2015-06-27T15:41:55.000Z" itemprop="datePublished">2015-06-27</time>
 </a>
     </div>
   
@@ -206,7 +209,7 @@ git commit               # 提">
         
   
     <h1 class="article-title" itemprop="name">
-      将本地git仓库推送到github上
+      在终端打开sublime
     </h1>
   
 
@@ -215,7 +218,7 @@ git commit               # 提">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
 	</div>
 
         
@@ -226,13 +229,13 @@ git commit               # 提">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-_在github创建项目">1. 在github创建项目</h3><h3 id="2-_创建本地git仓库">2. 创建本地git仓库</h3><h5 id="进入需要用git管理的目录。依次执行：">进入需要用git管理的目录。依次执行：</h5><p><code>git init</code>                       # 本地仓库初始化，执行完后会在工程目录下生成一个.git的隐藏目录</p>
-<p><code>git add .</code>                    # 添加所有文件到本地索引，命令用法：git add file</p>
-<p><code>git commit</code>               # 提交修改到本地仓库，可以使用git commit -a 代替git add . 和git commit两条命令</p>
-<p><code>git remote add origin git@github.com:sakz/vim.git</code>          # 添加远程仓库地址，保存在 origin变量中 </p>
-<p><code>git pull origin master</code>        #如果你让github给你智能生成过gitignore文件的话，那需要先pull一次</p>
-<p><code>git push -u origin master</code>          # 推送到上一步创建的github仓库</p>
-<h5 id="OK，打开仓库目录就可以看到了。">OK，打开仓库目录就可以看到了。</h5><p><strong>详细内容:<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000" target="_blank" rel="external">添加远程库</a></strong></p>
+        <p>虽然一般在终端打开文本文件都是用vim，但是有时想用Sublime打开，在<code>/bin</code>目录创建一个链接到Sublime命令的软链接就可以了,sudo下面命令就行了。</p>
+<p><code>ln -s &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot; /bin/subl</code></p>
+<p>用法：</p>
+<p><code>subl file\folder</code> 打开文件或者目录</p>
+<p><code>subl -n file\folder</code>参数-n 在新的窗口打开</p>
+<p><code>subl -a folder</code>参数-a 添加目录到当前窗口</p>
+<p>详细帮助可以查看<code>subl --help</code><br><br><a href="https://www.sublimetext.com/docs/2/osx_command_line.html" target="_blank" rel="external">官方文档</a></p>
 
       
     </div>
@@ -242,18 +245,9 @@ git commit               # 提">
     
 <nav id="article-nav">
   
-    <a href="/2015/06/24/在-vimrc开启代码语法折叠/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          在.vimrc开启代码语法折叠
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/21/Sublime Text 快捷键汇总[windows]/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Sublime Text 快捷键汇总[windows]</div>
+    <a href="/2015/06/24/vim注释插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim代码注释插件</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -282,7 +276,7 @@ git commit               # 提">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="将本地git仓库推送到github上" data-title="将本地git仓库推送到github上" data-url="http://blog.fazero.cc/2015/06/22/将本地git仓库推送到github上/"></div>
+	<div class="ds-thread" data-thread-key="在终端打开sublime" data-title="在终端打开sublime" data-url="http://blog.fazero.cc/2015/06/27/在终端打开sublime/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
