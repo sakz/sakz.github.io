@@ -19,7 +19,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
 自动安装
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
 git clone git://github.com/robbyrussell/oh-my-zsh">
-<meta property="og:updated_time" content="2015-06-28T12:49:28.000Z">
+<meta property="og:updated_time" content="2015-06-28T12:55:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac安装autojump">
 <meta name="twitter:description" content="安装ZSH
@@ -242,7 +242,9 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
 <p><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</code></p>
 <p>不多介绍，用命令行安装和卸载工具软件，官网 <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a></p>
 <p>添加<code>autojump</code>插件</p>
-<p><code>brew install autojump</code><br>autojump智能跳转，通过zsh记录访问过的目录，autojump的简写 j ＋ 目录名，随意的在目录间跳转，支持各种模糊匹配、补全，例如之前的 cd work；现在可以直接 work，或者 j wor 、 j work 达到同样的效果，节省大好的时间。</p>
+<p><code>brew install autojump</code><br>autojump智能跳转，通过zsh记录访问过的目录，autojump的简写 j ＋ 目录名，随意的在目录间跳转，支持各种模糊匹配、补全，例如之前的 cd work；现在可以直接 work，或者 j wor 、 j work 达到同样的效果，节省大好的时间。<code>j –s</code> 可以看你的历史路径库.</p>
+<p>目录浏览和跳转：输入 <code>d</code>，即可列出你在这个会话里访问的目录列表，输入列表前的序号，即可直接跳转。</p>
+<p>在当前目录下输入<code>..</code> 或 <code>...</code>，或直接输入当前目录名都可以跳转，你甚至不再需要输入 cd 命令了。</p>
 <p>关于 <code>zsh: command not found: j</code> 报错</p>
 <p>请在.zshrc文件相应的位置，找到 <code>plugins=(git)</code> 这行,改为下面<br><code>plugins=(git autojump)</code></p>
 <p><a href="http://fazero.cc/archives/462" target="_blank" rel="external">关于iterm2和zsh</a></p>
