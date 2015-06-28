@@ -3,21 +3,45 @@
 <head>
   <meta charset="utf-8">
   
-  <title>替换Sublime图标[Mac] | fazero</title>
+  <title>vim缓冲区命令 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Mac 下的替换方法：在 应用程序 目录中找到 Sublime Text，按住 Ctrl 并点击之，在弹出的菜单中选择“显示包内容”。进入 Contents/Resources/ 目录，用新下载的图标替换 Sublime Text.icns。
-图标下载地址">
+  <meta name="description" content=":ls  查看缓冲区
+:bd关闭当前缓冲区
+ctrl + ^ 切换缓冲区
+:e newfile  在新的缓冲区打开文件newfile 
+:bn下一个缓冲区内容（buffer next）
+:bp上一个缓冲区内容（buffer previous）
+:bl 最后一个缓冲区blast
+:bf 第一个缓冲区bfirst
+:b 4 切换到第四个缓冲区(:buffer 4)
+:buffer src/http/n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="替换Sublime图标[Mac]">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/替换sublime图标-Mac/index.html">
+<meta property="og:title" content="vim缓冲区命令">
+<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/vim缓冲区/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="Mac 下的替换方法：在 应用程序 目录中找到 Sublime Text，按住 Ctrl 并点击之，在弹出的菜单中选择“显示包内容”。进入 Contents/Resources/ 目录，用新下载的图标替换 Sublime Text.icns。
-图标下载地址">
-<meta property="og:updated_time" content="2015-06-28T03:23:24.000Z">
+<meta property="og:description" content=":ls  查看缓冲区
+:bd关闭当前缓冲区
+ctrl + ^ 切换缓冲区
+:e newfile  在新的缓冲区打开文件newfile 
+:bn下一个缓冲区内容（buffer next）
+:bp上一个缓冲区内容（buffer previous）
+:bl 最后一个缓冲区blast
+:bf 第一个缓冲区bfirst
+:b 4 切换到第四个缓冲区(:buffer 4)
+:buffer src/http/n">
+<meta property="og:updated_time" content="2015-06-28T04:34:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="替换Sublime图标[Mac]">
-<meta name="twitter:description" content="Mac 下的替换方法：在 应用程序 目录中找到 Sublime Text，按住 Ctrl 并点击之，在弹出的菜单中选择“显示包内容”。进入 Contents/Resources/ 目录，用新下载的图标替换 Sublime Text.icns。
-图标下载地址">
+<meta name="twitter:title" content="vim缓冲区命令">
+<meta name="twitter:description" content=":ls  查看缓冲区
+:bd关闭当前缓冲区
+ctrl + ^ 切换缓冲区
+:e newfile  在新的缓冲区打开文件newfile 
+:bn下一个缓冲区内容（buffer next）
+:bp上一个缓冲区内容（buffer previous）
+:bl 最后一个缓冲区blast
+:bf 第一个缓冲区bfirst
+:b 4 切换到第四个缓冲区(:buffer 4)
+:buffer src/http/n">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -186,11 +210,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-替换sublime图标-Mac" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-vim缓冲区" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/28/替换sublime图标-Mac/" class="article-date">
-  	<time datetime="2015-06-28T03:19:19.000Z" itemprop="datePublished">2015-06-28</time>
+      <a href="/2015/06/28/vim缓冲区/" class="article-date">
+  	<time datetime="2015-06-28T04:25:20.000Z" itemprop="datePublished">2015-06-28</time>
 </a>
     </div>
   
@@ -203,7 +227,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      替换Sublime图标[Mac]
+      vim缓冲区命令
     </h1>
   
 
@@ -212,7 +236,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
 	</div>
 
         
@@ -223,9 +247,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Mac 下的替换方法：<br>在 应用程序 目录中找到 <code>Sublime Text</code>，按住 <code>Ctrl</code> 并点击之，在弹出的菜单中选择<code>“显示包内容”</code>。<br>进入 <code>Contents/Resources/</code> 目录，用新下载的图标替换 <code>Sublime Text.icns</code>。</p>
-<p><a href="http://lucifr.com/2012/01/14/more-sublime-text-2-replacement-icons/" target="_blank" rel="external">图标下载地址</a></p>
-
+        <p><code>:ls</code>  查看缓冲区</p>
+<p><code>:bd</code>关闭当前缓冲区</p>
+<p><code>ctrl + ^</code> 切换缓冲区</p>
+<p><code>:e newfile</code>  在新的缓冲区打开文件newfile </p>
+<p><code>:bn</code>下一个缓冲区内容（buffer next）</p>
+<p><code>:bp</code>上一个缓冲区内容（buffer previous）</p>
+<p><code>:bl</code> 最后一个缓冲区blast</p>
+<p><code>:bf</code> 第一个缓冲区bfirst</p>
+<p><code>:b 4</code> 切换到第四个缓冲区(:buffer 4)</p>
+<p><code>:buffer src/http/ngx_http.c</code> 切换到对应的缓冲区</p>
+<p><code>:sp [filename]</code>水平打开一个新的缓冲区，如果有filename则内容为该文件，否则为当前文件</p>
+<p><code>:vs [filename]</code>垂直打开一个新的缓冲区，如果有filename则内容为该文件，否则为当前文件</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Ctrl+w <span class="keyword">n</span>新建一个缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w q退出光标所在的缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w j光标移动到下一缓冲区</span><br><span class="line">Ctrl+w k光标移动到上一缓冲区</span><br><span class="line">Ctrl+w <span class="keyword">l</span>光标移动到右一缓冲区</span><br><span class="line">Ctrl+w <span class="keyword">h</span>光标移动到左一缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w v左右切割窗口新建缓冲区</span><br><span class="line">Ctrl+w s上下切割窗口新建缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w o使光标所在缓冲区最大化，其他缓冲区隐藏</span><br></pre></td></tr></table></figure>
+<p>缓冲区相关的标记如下：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>（非活动的缓冲区）</span><br><span class="line">a （当前被激活缓冲区）</span><br><span class="line">h （隐藏的缓冲区）</span><br><span class="line">% （当前的缓冲区）</span><br><span class="line"># （交换缓冲区）</span><br><span class="line"><span class="header">= （只读缓冲区）</span></span><br><span class="line">+ （已经更改的缓冲区）</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -234,18 +270,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/06/28/vim缓冲区/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          vim缓冲区命令
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/28/使用Sublime-Text-3-编辑Markdown/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Sublime Text 3 编辑Markdown</div>
+    <a href="/2015/06/28/替换sublime图标-Mac/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">替换Sublime图标[Mac]</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -274,7 +301,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="替换sublime图标-Mac" data-title="替换Sublime图标[Mac]" data-url="http://blog.fazero.cc/2015/06/28/替换sublime图标-Mac/"></div>
+	<div class="ds-thread" data-thread-key="vim缓冲区" data-title="vim缓冲区命令" data-url="http://blog.fazero.cc/2015/06/28/vim缓冲区/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
