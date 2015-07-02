@@ -5,24 +5,27 @@
   
   <title>在 Sublime Text 3中编译和运行Java程序[Windows,Mac] | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Windows篇：1.配置java环境变量JDK下载地址
+  <meta name="description" content="Windows篇：[TOC]
+1.配置java环境变量JDK下载地址
 1）、这台电脑&amp;gt;属性&amp;gt;高级系统设置&amp;gt;环境变量，在用户变量里新建一个名为JAVA_HOME的变量，变量值为安装jdk时的路径，比如我的为C:\Program Files\Java\jdk1.8.0_45,点击“确定”第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录
-2）、在用户变量里新建一个">
+2）、在用户变">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Sublime Text 3中编译和运行Java程序[Windows,Mac]">
 <meta property="og:url" content="http://blog.fazero.cc/2015/07/02/在-Sublime-Text-3中编译和运行Java程序/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="Windows篇：1.配置java环境变量JDK下载地址
+<meta property="og:description" content="Windows篇：[TOC]
+1.配置java环境变量JDK下载地址
 1）、这台电脑&amp;gt;属性&amp;gt;高级系统设置&amp;gt;环境变量，在用户变量里新建一个名为JAVA_HOME的变量，变量值为安装jdk时的路径，比如我的为C:\Program Files\Java\jdk1.8.0_45,点击“确定”第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录
-2）、在用户变量里新建一个">
+2）、在用户变">
 <meta property="og:image" content="http://7xjzhp.dl1.z0.glb.clouddn.com/java.jpg">
 <meta property="og:image" content="http://f.cl.ly/items/3e0V1l2U0e3c222E2N46/java.png">
-<meta property="og:updated_time" content="2015-07-02T06:58:28.000Z">
+<meta property="og:updated_time" content="2015-07-02T07:13:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Sublime Text 3中编译和运行Java程序[Windows,Mac]">
-<meta name="twitter:description" content="Windows篇：1.配置java环境变量JDK下载地址
+<meta name="twitter:description" content="Windows篇：[TOC]
+1.配置java环境变量JDK下载地址
 1）、这台电脑&amp;gt;属性&amp;gt;高级系统设置&amp;gt;环境变量，在用户变量里新建一个名为JAVA_HOME的变量，变量值为安装jdk时的路径，比如我的为C:\Program Files\Java\jdk1.8.0_45,点击“确定”第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录
-2）、在用户变量里新建一个">
+2）、在用户变">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -228,7 +231,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Windows篇：">Windows篇：</h1><h5 id="1-配置java环境变量">1.配置java环境变量</h5><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK下载地址</a></strong></p>
+        <h1 id="Windows篇：">Windows篇：</h1><p>[TOC]</p>
+<h5 id="1-配置java环境变量">1.配置java环境变量</h5><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK下载地址</a></strong></p>
 <p>1）、<code>这台电脑&gt;属性&gt;高级系统设置&gt;环境变量</code>，在<code>用户变量</code>里新建一个名为<code>JAVA_HOME</code>的变量，变量值为安装jdk时的路径，比如我的为<code>C:\Program Files\Java\jdk1.8.0_45</code>,点击“确定”<br><strong>第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录</strong></p>
 <p>2）、在<code>用户变量</code>里新建一个名为<code>CLASSPATH</code>的变量，变量值为 <code>.;%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar;</code>，点击“确定”</p>
 <p>3）、找到并选中<code>用户变量</code>的“Path”变量，点击“编辑”,在后面添加<code>;%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin</code>，点击“确定”,如果原来没有变量值的话，就去掉前面的<code>;</code></p>
