@@ -17,7 +17,7 @@
 2）、在用户变量里新建一个">
 <meta property="og:image" content="http://7xjzhp.dl1.z0.glb.clouddn.com/java.jpg">
 <meta property="og:image" content="http://f.cl.ly/items/3e0V1l2U0e3c222E2N46/java.png">
-<meta property="og:updated_time" content="2015-07-02T06:55:42.000Z">
+<meta property="og:updated_time" content="2015-07-02T06:58:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Sublime Text 3中编译和运行Java程序[Windows,Mac]">
 <meta name="twitter:description" content="Windows篇：1.配置java环境变量JDK下载地址
@@ -270,6 +270,7 @@ java %~n1
 }
 </code></pre><p><img src="http://7xjzhp.dl1.z0.glb.clouddn.com/java.jpg" alt=""></p>
 <h6 id="到此为止已经可以用sublime编译运行java了。当然程序需要输入数据也行，会弹出一个输入框，可以自行测试。">到此为止已经可以用sublime编译运行java了。当然程序需要输入数据也行，会弹出一个输入框，可以自行测试。</h6><p><strong>还有一点要注意下，众所周知，sublime对中文支持不好，代码里出现中文会经常出现编译错误，是由于编码设置的问题导致的，上面我设置了编译系统的编码为<code>UTF-8</code>，那么对应的代码也要为<code>UTF-8</code>编码的。设置方法：<code>菜单&gt;文件&gt;设置文件编码</code>.如果你用了<code>GBK</code>，对应的文件编码就设置为<code>GBK</code>。建议代码中少出现中文，用英文代替，与国际接轨，sublime写些小程序还是很方便的，真正做java开发的话还是IDE方便点</strong></p>
+<hr>
 <h1 id="Mac篇：">Mac篇：</h1><h4 id="1-安装JDK">1.安装JDK</h4><p><a href="https://support.apple.com/kb/DL1572?locale=zh_CN" target="_blank" rel="external">JDK下载地址</a><br>直接安装好就行。</p>
 <h4 id="2-新建java编译系统-1">2.新建java编译系统</h4><p>新建一个编译系统，删除原来的内容，输入下面的内容保存为<code>Java.sublime-build</code></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">shell_cmd</span>": <span class="value"><span class="string">"javac -encoding utf-8 $file_name &amp;&amp; java $file_base_name"</span></span>,</span><br><span class="line">    "<span class="attribute">file_regex</span>": <span class="value"><span class="string">"^ *\\[javac\\] (.+):([0-9]+):() (.*)$"</span></span>,</span><br><span class="line">    "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.java"</span></span>,    </span><br><span class="line">    "<span class="attribute">encoding</span>": <span class="value"><span class="string">"gbk"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
