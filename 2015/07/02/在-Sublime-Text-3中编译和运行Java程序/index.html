@@ -19,7 +19,7 @@
 2）、在用户变">
 <meta property="og:image" content="http://7xjzhp.dl1.z0.glb.clouddn.com/java.jpg">
 <meta property="og:image" content="http://f.cl.ly/items/3e0V1l2U0e3c222E2N46/java.png">
-<meta property="og:updated_time" content="2015-07-02T07:18:04.000Z">
+<meta property="og:updated_time" content="2015-07-02T07:20:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Sublime Text 3中编译和运行Java程序[Windows,Mac]">
 <meta name="twitter:description" content="Windows篇：[TOC]
@@ -232,7 +232,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Windows篇：">Windows篇：</h1><p>[TOC]</p>
-<h5 id="1-配置java环境变量">1.配置java环境变量</h5><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK下载地址</a></strong></p>
+<h4 id="1-配置java环境变量">1.配置java环境变量</h4><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK下载地址</a></strong></p>
 <p>1）、<code>这台电脑&gt;属性&gt;高级系统设置&gt;环境变量</code>，在<code>用户变量</code>里新建一个名为<code>JAVA_HOME</code>的变量，变量值为安装jdk时的路径，比如我的为<code>C:\Program Files\Java\jdk1.8.0_45</code>,点击“确定”<br><strong>第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录</strong></p>
 <p>2）、在<code>用户变量</code>里新建一个名为<code>CLASSPATH</code>的变量，变量值为 <code>.;%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar;</code>，点击“确定”</p>
 <p>3）、找到并选中<code>用户变量</code>的“Path”变量，点击“编辑”,在后面添加<code>;%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin</code>，点击“确定”,如果原来没有变量值的话，就去掉前面的<code>;</code></p>
@@ -243,7 +243,7 @@
 java
 
 javac 
-</code></pre><h5 id="2-新建java编译系统">2.新建java编译系统</h5><p>1）、打开 菜单栏&gt;工具&gt;编译系统&gt;新编译系统<br>删除原来的内容，输入下面的内容保存为<code>Java.sublime-build</code></p>
+</code></pre><h4 id="2-新建java编译系统">2.新建java编译系统</h4><p>1）、打开 菜单栏&gt;工具&gt;编译系统&gt;新编译系统<br>删除原来的内容，输入下面的内容保存为<code>Java.sublime-build</code></p>
 <pre><code>{
     <span class="string">"shell_cmd"</span>: <span class="string">"runJava.bat \"</span><span class="variable">$file</span>\<span class="string">""</span>,
     <span class="string">"file_regex"</span>: <span class="string">"^(...*?):([0-9]*):?([0-9]*)"</span>,
@@ -264,7 +264,7 @@ javac %~nx1
 <span class="keyword">ECHO</span> -----------OUTPUT-----------
 java %~n1
 )
-</code></pre><h5 id="3-写好java文件，选择编译系统为Java,ctrl_+_b运行，测试如下。">3.写好java文件，选择编译系统为<code>Java</code>,<code>ctrl + b</code>运行，测试如下。</h5><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">hello</span> 
+</code></pre><h4 id="3-写好java文件，选择编译系统为Java,ctrl_+_b运行，测试如下。">3.写好java文件，选择编译系统为<code>Java</code>,<code>ctrl + b</code>运行，测试如下。</h4><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">hello</span> 
 { 
     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>) 
 </span>{ 
