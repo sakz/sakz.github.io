@@ -1,0 +1,380 @@
+* {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        background: #f1f4f5;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    #header {
+        clear: both;
+        height: 73px;
+    }
+    
+    #nav {
+        height: 73px;
+        width: 980px;
+        margin: 0 auto;
+    }
+    
+    #navLeft {
+        float: left;
+        width: 179px;
+        height: 43px;
+        margin-top: 20px;
+    }
+    
+    #navRight {
+        float: right;
+        margin-top: 20px;
+    }
+    
+    .menu {
+        height: 28px;
+        float: left;
+    }
+    
+    .menu a {
+        padding: 0 10px;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        color: gray;
+        font-size: 9pt;
+    }
+    
+    .menu a:hover {
+        color: #48b770;
+    }
+    
+    .menu .st-btn {
+        display: inline-block;
+        height: 28px;
+        padding-left: 32px;
+        margin-top: -2px;
+        background: url(st-btn1.png) no-repeat;
+        color: #48b770;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 28px;
+        outline: 0;
+    }
+    
+    .container {
+        clear: both;
+        margin-top: 5px;
+    }
+    
+    .full-page {
+        height: 570px;
+        width: 982px;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+    
+    .left {
+        float: left;
+        width: 360px;
+        height: 508px;
+        border: 1px solid #cfd6de;
+        box-shadow: 0 2px 2px #cfd6de;
+        overflow: hidden;
+        background: #fff;
+    }
+    
+    .left .loginBox {
+        display: inline;
+        width: 360px;
+        height: 479px;
+        margin-top: 31px;
+    }
+    
+    .left .login-logo {
+        border: 1px solid white;
+        width: 100px;
+        height: 100px;
+        margin: 29px auto;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .left .login-logo .shadow {
+        background: url(headershadow.png)0 0 no-repeat transparent;
+        width: 100px;
+        height: 100px;
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .left .login-logo .pic {
+        width: 100px;
+        height: 100px;
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .left .login-logo .pic img {
+        border: 0;
+    }
+    
+    .left .login-form {
+        width: 300px;
+        height: 208px;
+        padding: 0 30px;
+    }
+    
+    .left .login-form dl {
+        display: block;
+        clear: both;
+        position: relative;
+    }
+    
+    .left .login-form dl dd {
+        position: relative;
+        width: 296px;
+        border: 1px solid #c0c7cd;
+        border-radius: 3px;
+        height: 44px;
+        box-shadow: 0 0 1px #fff;
+        padding: 1px;
+    }
+    
+    .left .login-form .input-text {
+        background: transparent;
+        font-size: 16px;
+        height: 44px;
+        padding: 0 0 0 15px;
+        width: 281px;
+        border: 0;
+    }
+    
+    .left .login-form .pwd {
+        margin: 15px 0 0;
+    }
+    
+    .left .login-form .more {
+        height: 50px;
+    }
+    
+    .left .login-form .more .getPwd {
+        float: right;
+    }
+    
+    .left .login-form .more .getPwd a {
+        color: #aaa;
+        font-size: 14px;
+        line-height: 50px;
+    }
+    
+    .left .login-form .labelCheckbox {
+        font-weight: normal;
+        color: #666;
+        float: left;
+        font-size: 14px;
+        line-height: 50px;
+    }
+    
+    .left .login-form .labelCheckbox input {
+        margin-right: 8px;
+        width: 13px;
+    }
+    
+    .login-btn {
+        width: 300px;
+        height: 47px;
+        border: 0;
+        padding: 0 0 3px 0;
+        background: url(loginbox_v1.png);
+        background-position: -12px -349px;
+        color: white;
+        font-size: 20px;
+        letter-spacing: 10px;
+    }
+    
+    .regnow {
+        margin: 18px 30px 0;
+    }
+    
+    .regnow .regbutton {
+        background-position: -11px -275px;
+        margin-bottom: 20px;
+    }
+    
+    .login-crop {
+        width: 360px;
+        height: 55px;
+        background-color: #f8f8f8;
+        padding: 0 30px;
+    }
+    
+    .login-crop .login-word {
+        width: 85px;
+        height: 30px;
+        overflow: hidden;
+        margin-top: 15px;
+        font-weight: normal;
+        color: #aaa;
+        float: left;
+        font-size: 12px;
+        line-height: 27px;
+    }
+    
+    .login-crop .login-item {
+        float: left;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        margin: 15px 8px 0;
+        display: block;
+    }
+    
+    .yidong {
+        background: url(loginbox_v1.png);
+        background-position: -175px -11px;
+    }
+    
+    .yidong:hover {
+        background-position: 0px -215px;
+    }
+    
+    .tianyi {
+        background: url(loginbox_v1.png);
+        background-position: -217px -11px;
+    }
+    
+    .tianyi:hover {
+        background-position: -42px -215px;
+    }
+    
+    .login_360 {
+        background: url(loginbox_v1.png);
+        background-position: -260px -11px;
+    }
+    
+    .login_360:hover {
+        background-position: -85px -215px
+    }
+    
+    .baidu {
+        background: url(loginbox_v1.png);
+        background-position: -303px -11px;
+    }
+    
+    .baidu:hover {
+        background-position: -128px -215px;
+    }
+    
+    .right {
+        float: left;
+        width: 600px;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    
+    .right .bannerBox {
+        padding: 5px 0;
+    }
+    
+    .intro {
+        width: 600px;
+        margin: 20px auto;
+        height: 130px;
+    }
+    
+    .intro .intro-item {
+        float: left;
+        width: 150px;
+        height: 150px;
+        outline: 0;
+    }
+    
+    .intro .intro-item a {
+        display: block;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .intro .item-bg1 {
+        background: url(qrcode1-t.jpg);
+    }
+    
+    .intro .item-bg2 {
+        background: url(phone1-t.jpg);
+    }
+    
+    .intro .item-bg3 {
+        background: url(pad1-t.jpg);
+    }
+    
+    .intro .item-bg4 {
+        background: url(other1-t.jpg);
+    }
+    
+    .footer {
+        clear: both;
+        position: relative;
+        border-top: 1px solid #d8d8d8;
+        padding: 15px 0 30px;
+        width: 980px;
+        margin: 30px auto 0;
+        background: transparent;
+    }
+    
+    .footer p {
+        display: block;
+        float: left;
+        margin-right: 40px;
+        line-height: 1.4em;
+        font-size: 12px;
+    }
+    
+    .footer p strong {
+        display: block;
+        font-weight: bold;
+        line-height: 28px;
+        color: #666;
+    }
+    
+    .footer p a {
+        display: none;
+        display: block;
+        outline: 0;
+        line-height: 28px;
+        color: #666;
+        text-decoration: none;
+    }
+    
+    .footer p a:hover {
+        text-decoration: none;
+        color: blue;
+    }
+    
+    .footer p .a1-2 {
+        line-height: normal;
+    }
+    
+    .footer .copyright-info {
+        float: right;
+        margin-right: 0;
+    }
+    
+    .footer span {
+        text-align: right;
+        display: block;
+        line-height: 28px;
+        color: #666;
+    }
+    
+    #fazero {
+        color: red;
+    }
