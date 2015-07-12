@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux流量监控工具-iftop | fazero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、iftop是什么？iftop是类似于top的实时流量监控工具。
+官方网站：http://www.ex-parrot.com/~pdw/iftop/
+二、iftop有什么用？iftop可以用来监控网卡的实时流量（可以指定网段）、反向解析IP、显示端口信息等，详细的将会在后面的使用参数中说明。
+三、安装iftop安装方法1、编译安装
+如果采用编译安装可以到iftop官网下载最新的源码包。
+安装前需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux流量监控工具-iftop">
+<meta property="og:url" content="http://blog.fazero.cc/2015/07/12/Linux流量监控工具-iftop/index.html">
+<meta property="og:site_name" content="fazero">
+<meta property="og:description" content="一、iftop是什么？iftop是类似于top的实时流量监控工具。
+官方网站：http://www.ex-parrot.com/~pdw/iftop/
+二、iftop有什么用？iftop可以用来监控网卡的实时流量（可以指定网段）、反向解析IP、显示端口信息等，详细的将会在后面的使用参数中说明。
+三、安装iftop安装方法1、编译安装
+如果采用编译安装可以到iftop官网下载最新的源码包。
+安装前需">
+<meta property="og:image" content="http://7xjzhp.dl1.z0.glb.clouddn.com/iftop.png">
+<meta property="og:updated_time" content="2015-07-12T14:03:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux流量监控工具-iftop">
+<meta name="twitter:description" content="一、iftop是什么？iftop是类似于top的实时流量监控工具。
+官方网站：http://www.ex-parrot.com/~pdw/iftop/
+二、iftop有什么用？iftop可以用来监控网卡的实时流量（可以指定网段）、反向解析IP、显示端口信息等，详细的将会在后面的使用参数中说明。
+三、安装iftop安装方法1、编译安装
+如果采用编译安装可以到iftop官网下载最新的源码包。
+安装前需">
+  
+    <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xjzhp.dl1.z0.glb.clouddn.com/logo1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">fazero</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/+saberfazero" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 13.33px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/vim/" style="font-size: 16.67px;">vim</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://erona.me">Erona的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fazero.cc/">fazero的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">关于博主 爱生活、爱折腾、爱电影、爱音乐 手拿kpw2的非文艺青年、东饭、知乎三无用户 一个有点无聊的人喜欢做点不无聊的事 学习 记录 技术 分享 倡导开放、共享、自由的互联网 痛恨GFW，准程序员，Linuxer</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">fazero</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xjzhp.dl1.z0.glb.clouddn.com/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">fazero</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/+saberfazero" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Linux流量监控工具-iftop" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/12/Linux流量监控工具-iftop/" class="article-date">
+  	<time datetime="2015-07-12T13:50:34.000Z" itemprop="datePublished">2015-07-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux流量监控工具-iftop
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iftop/">iftop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、iftop是什么？">一、iftop是什么？</h4><p>iftop是类似于top的实时流量监控工具。</p>
+<p>官方网站：<a href="http://www.ex-parrot.com/~pdw/iftop/" target="_blank" rel="external">http://www.ex-parrot.com/~pdw/iftop/</a></p>
+<h4 id="二、iftop有什么用？">二、iftop有什么用？</h4><p>iftop可以用来监控网卡的实时流量（可以指定网段）、反向解析IP、显示端口信息等，详细的将会在后面的使用参数中说明。</p>
+<h4 id="三、安装iftop">三、安装iftop</h4><p>安装方法1、编译安装</p>
+<p>如果采用编译安装可以到iftop官网下载最新的源码包。</p>
+<p>安装前需要已经安装好基本的编译所需的环境，比如make、gcc、autoconf等。安装iftop还需要安装libpcap和libcurses。</p>
+<p>CentOS上安装所需依赖包：</p>
+<p><code>yum install flex byacc  libpcap ncurses ncurses-devel libpcap-devel</code><br><a id="more"></a></p>
+<p>Debian上安装所需依赖包：</p>
+<p><code>apt-get install flex byacc  libpcap0.8 libncurses5</code></p>
+<p>下载iftop</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wget http:<span class="comment">//www.ex-parrot.com/pdw/iftop/download/iftop-0.17.tar.gz</span></span><br><span class="line"></span><br><span class="line">tar zxvf iftop-<span class="number">0.17</span><span class="class">.tar</span><span class="class">.gz</span></span><br><span class="line"></span><br><span class="line">cd iftop-<span class="number">0.17</span></span><br><span class="line"></span><br><span class="line">./configure</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>安装方法2：(懒人办法，最简单)</p>
+<p>直接省略上面的步骤</p>
+<p>CentOS系统：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">yum install <span class="attribute">flex</span> byacc  libpcap ncurses ncurses-devel</span><br><span class="line"></span><br><span class="line">wget ftp:<span class="comment">//fr2.rpmfind.net/linux/dag/redhat/el5/en/i386/dag/RPMS/iftop-0.17-1.el5.rf.i386.rpm</span></span><br><span class="line"></span><br><span class="line">rpm -ivh iftop-<span class="number">0.17</span>-<span class="number">1</span><span class="class">.el5</span><span class="class">.rf</span><span class="class">.i386</span><span class="class">.rpm</span></span><br></pre></td></tr></table></figure>
+<p>Debian系统 运行：<code>apt-get install iftop</code></p>
+<h4 id="四、运行iftop">四、运行iftop</h4><p>直接运行： iftop</p>
+<p>效果如下图：<br><img src="http://7xjzhp.dl1.z0.glb.clouddn.com/iftop.png" alt=""></p>
+<p>五、相关参数及说明</p>
+<p>1、iftop界面相关说明</p>
+<p>界面上面显示的是类似刻度尺的刻度范围，为显示流量图形的长条作标尺用的。</p>
+<p>中间的&lt;= =&gt;这两个左右箭头，表示的是流量的方向。</p>
+<p>TX：发送流量<br>RX：接收流量<br>TOTAL：总流量<br>Cumm：运行iftop到目前时间的总流量<br>peak：流量峰值<br>rates：分别表示过去 2s 10s 40s 的平均流量</p>
+<p>2、iftop相关参数</p>
+<p>常用的参数</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">i设定监测的网卡，如：<span class="comment"># iftop -i eth1</span></span><br><span class="line"></span></span><br><span class="line">-<span class="ruby"><span class="constant">B</span> 以bytes为单位显示流量(默认是bits)，如：<span class="comment"># iftop -B</span></span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">n使host信息默认直接都显示<span class="constant">IP</span>，如：<span class="comment"># iftop -n</span></span><br><span class="line"></span></span><br><span class="line">-<span class="ruby"><span class="constant">N</span>使端口信息默认直接都显示端口号，如<span class="symbol">:</span> <span class="comment"># iftop -N</span></span><br><span class="line"></span></span><br><span class="line">-<span class="ruby"><span class="constant">F</span>显示特定网段的进出流量，如<span class="comment"># iftop -F 10.10.1.0/24或# iftop -F 10.10.1.0/255.255.255.0</span></span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">h（display this message），帮助，显示参数信息</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">p使用这个参数后，中间的列表显示的本地主机信息，出现了本机以外的<span class="constant">IP</span>信息;</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">b使流量图形条默认就显示;</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">f这个暂时还不太会用，过滤计算包用的;</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby"><span class="constant">P</span>使host信息及端口信息默认就都显示;</span><br><span class="line"></span></span><br><span class="line">-<span class="ruby">m设置界面最上边的刻度的最大值，刻度分五个大段显示，例：<span class="comment"># iftop -m 100M</span></span></span><br></pre></td></tr></table></figure>
+<p>进入iftop画面后的一些操作命令<code>(注意大小写)</code></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">按h切换是否显示帮助<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 n 切换显示本机的IP或主机名<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 s 切换是否显示本机的host信息<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 d 切换是否显示远端目标主机的host信息<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 t 切换显示格式为2行/1行/只显示发送流量/只显示接收流量<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 N 切换显示端口号或端口服务名称<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 S 切换是否显示本机的端口信息<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 D 切换是否显示远端目标主机的端口信息<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 p 切换是否显示端口信息<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 P 切换暂停/继续显示<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 b 切换是否显示平均流量图形条<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 B 切换计算2秒或10秒或40秒内的平均流量<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 T 切换是否显示每个连接的总流量<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 l 打开屏幕过滤功能，输入要过滤的字符，比如ip,按回车后，屏幕就只显示这个IP相关的流量信息<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 L 切换显示画面上边的刻度<span class="comment">;刻度不同，流量图形条会有变化;</span></span><br><span class="line"></span><br><span class="line">按 j 或按k可以向上或向下滚动屏幕显示的连接记录<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 1 或 2 或 3 可以根据右侧显示的三列流量数据进行排序<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 &lt; 根据左边的本机名或IP排序<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 &gt; 根据远端目标主机的主机名或IP排序<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 o 切换是否固定只显示当前的连接<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">按 f 可以编辑过滤代码，这是翻译过来的说法，我还没用过这个！</span><br><span class="line"></span><br><span class="line">按 ! 可以使用shell命令，这个没用过！没搞明白啥命令在这好用呢！</span><br><span class="line"></span><br><span class="line">按q退出监控。</span><br></pre></td></tr></table></figure>
+<p>六、常见问题</p>
+<p>1、make: yacc: Command not found<br>make: <em>*</em> [grammar.c] Error 127</p>
+<p>解决方法：<code>apt-get install byacc   /   yum install byacc</code></p>
+<p>2、configure: error: Curses! Foiled again!<br>(Can’t find a curses library supporting mvchgat.)<br>Consider installing ncurses.</p>
+<p>解决方法：<code>apt-get install libncurses5-dev  /    yum  install ncurses-devel</code></p>
+<p>reference<a href="http://www.vpser.net/manage/iftop.html" target="_blank" rel="external">1</a><a href="http://down.chinaz.com/server/201112/1478_1.htm" target="_blank" rel="external">2</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/11/用shadowsocks加速git-clone/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用shadowsocks加速git clone</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Linux流量监控工具-iftop" data-title="Linux流量监控工具-iftop" data-url="http://blog.fazero.cc/2015/07/12/Linux流量监控工具-iftop/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fazeroblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 fazero
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
