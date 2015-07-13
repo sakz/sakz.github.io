@@ -3,39 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>vim缓冲区命令 | fazero</title>
+  <title>shadowsocks-go一键安装脚本 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=":ls  查看缓冲区
-:bd关闭当前缓冲区
-ctrl + ^ 切换缓冲区
-:e newfile  在新的缓冲区打开文件newfile 
-:bn下一个缓冲区内容（buffer next）
-:bp上一个缓冲区内容（buffer previous）
-:bl 最后一个缓冲区blast
-:bf 第一个缓冲区bfirst">
+  <meta name="description" content="本脚本适用环境：系统支持：CentOS，Debian，Ubuntu内存要求：≥128M
+使用方法：使用root用户登录，运行以下命令：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vim缓冲区命令">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/vim缓冲区/index.html">
+<meta property="og:title" content="shadowsocks-go一键安装脚本">
+<meta property="og:url" content="http://blog.fazero.cc/2015/07/13/shadowsocks-go一键安装脚本/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content=":ls  查看缓冲区
-:bd关闭当前缓冲区
-ctrl + ^ 切换缓冲区
-:e newfile  在新的缓冲区打开文件newfile 
-:bn下一个缓冲区内容（buffer next）
-:bp上一个缓冲区内容（buffer previous）
-:bl 最后一个缓冲区blast
-:bf 第一个缓冲区bfirst">
-<meta property="og:updated_time" content="2015-06-28T04:36:26.000Z">
+<meta property="og:description" content="本脚本适用环境：系统支持：CentOS，Debian，Ubuntu内存要求：≥128M
+使用方法：使用root用户登录，运行以下命令：">
+<meta property="og:updated_time" content="2015-07-13T08:34:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vim缓冲区命令">
-<meta name="twitter:description" content=":ls  查看缓冲区
-:bd关闭当前缓冲区
-ctrl + ^ 切换缓冲区
-:e newfile  在新的缓冲区打开文件newfile 
-:bn下一个缓冲区内容（buffer next）
-:bp上一个缓冲区内容（buffer previous）
-:bl 最后一个缓冲区blast
-:bf 第一个缓冲区bfirst">
+<meta name="twitter:title" content="shadowsocks-go一键安装脚本">
+<meta name="twitter:description" content="本脚本适用环境：系统支持：CentOS，Debian，Ubuntu内存要求：≥128M
+使用方法：使用root用户登录，运行以下命令：">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -204,11 +186,11 @@ ctrl + ^ 切换缓冲区
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-vim缓冲区" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-shadowsocks-go一键安装脚本" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/28/vim缓冲区/" class="article-date">
-  	<time datetime="2015-06-28T04:25:20.000Z" itemprop="datePublished">2015-06-28</time>
+      <a href="/2015/07/13/shadowsocks-go一键安装脚本/" class="article-date">
+  	<time datetime="2015-07-13T08:28:52.000Z" itemprop="datePublished">2015-07-13</time>
 </a>
     </div>
   
@@ -221,7 +203,7 @@ ctrl + ^ 切换缓冲区
         
   
     <h1 class="article-title" itemprop="name">
-      vim缓冲区命令
+      shadowsocks-go一键安装脚本
     </h1>
   
 
@@ -230,7 +212,7 @@ ctrl + ^ 切换缓冲区
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
 	</div>
 
         
@@ -241,21 +223,46 @@ ctrl + ^ 切换缓冲区
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>:ls</code>  查看缓冲区</p>
-<p><code>:bd</code>关闭当前缓冲区</p>
-<p><code>ctrl + ^</code> 切换缓冲区</p>
-<p><code>:e newfile</code>  在新的缓冲区打开文件newfile </p>
-<p><code>:bn</code>下一个缓冲区内容（buffer next）</p>
-<p><code>:bp</code>上一个缓冲区内容（buffer previous）</p>
-<p><code>:bl</code> 最后一个缓冲区blast</p>
-<p><code>:bf</code> 第一个缓冲区bfirst<br><a id="more"></a></p>
-<p><code>:b 4</code> 切换到第四个缓冲区(:buffer 4)</p>
-<p><code>:buffer src/http/ngx_http.c</code> 切换到对应的缓冲区</p>
-<p><code>:sp [filename]</code>水平打开一个新的缓冲区，如果有filename则内容为该文件，否则为当前文件</p>
-<p><code>:vs [filename]</code>垂直打开一个新的缓冲区，如果有filename则内容为该文件，否则为当前文件</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Ctrl+w <span class="keyword">n</span>新建一个缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w q退出光标所在的缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w j光标移动到下一缓冲区</span><br><span class="line">Ctrl+w k光标移动到上一缓冲区</span><br><span class="line">Ctrl+w <span class="keyword">l</span>光标移动到右一缓冲区</span><br><span class="line">Ctrl+w <span class="keyword">h</span>光标移动到左一缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w v左右切割窗口新建缓冲区</span><br><span class="line">Ctrl+w s上下切割窗口新建缓冲区</span><br><span class="line"></span><br><span class="line">Ctrl+w o使光标所在缓冲区最大化，其他缓冲区隐藏</span><br></pre></td></tr></table></figure>
-<p>缓冲区相关的标记如下：</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">- </span>（非活动的缓冲区）</span><br><span class="line">a （当前被激活缓冲区）</span><br><span class="line">h （隐藏的缓冲区）</span><br><span class="line">% （当前的缓冲区）</span><br><span class="line"># （交换缓冲区）</span><br><span class="line"><span class="header">= （只读缓冲区）</span></span><br><span class="line">+ （已经更改的缓冲区）</span><br></pre></td></tr></table></figure>
+        <p>本脚本适用环境：<br>系统支持：CentOS，Debian，Ubuntu<br>内存要求：≥128M</p>
+<p>使用方法：<br>使用root用户登录，运行以下命令：</p>
+<a id="more"></a>
+<p><code>wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</code></p>
+<p><code>chmod +x shadowsocks-go.sh</code></p>
+<p><code>./shadowsocks-go.sh 2&gt;&amp;1 | tee shadowsocks-go.log</code></p>
+<p>中途提示输入密码</p>
+<p>安装完成后，脚本提示如下：</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Congratulations, shadowsocks-go install completed! </span><br><span class="line"></span><br><span class="line">Your Server IP:your_server_ip</span><br><span class="line"></span><br><span class="line">Your Server Port:<span class="number">8989</span></span><br><span class="line"></span><br><span class="line">Your Password:your_password</span><br><span class="line"></span><br><span class="line">Your Local Port:<span class="number">1080</span></span><br><span class="line"></span><br><span class="line">Your Encryption <span class="function"><span class="keyword">Method</span>:</span>aes-<span class="number">256</span>-cfb</span><br><span class="line"></span><br><span class="line">Welcome <span class="keyword">to</span> visit:http:<span class="comment">//teddysun.com/392.html</span></span><br><span class="line"></span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure>
+<p>卸载方法：<br>使用 root 用户登录，运行以下命令：</p>
+<p><code>./shadowsocks-go.sh uninstall</code></p>
+<p>安装完成后即已后台启动 shadowsocks-go ，运行：</p>
+<p><code>/etc/init.d/shadowsocks status</code></p>
+<p>可以查看 shadowsocks-go 进程是否存在。<br>本脚本安装完成后，已将 shadowsocks-go 加入开机自启动。</p>
+<p>使用命令：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">启动：<span class="regexp">/etc/</span>init.d/shadowsocks start</span><br><span class="line">停止：<span class="regexp">/etc/</span>init.d/shadowsocks stop</span><br><span class="line">重启：<span class="regexp">/etc/</span>init.d/shadowsocks restart</span><br><span class="line">状态：<span class="regexp">/etc/</span>init.d/shadowsocks status</span><br></pre></td></tr></table></figure>
+<p>多用户多端口配置文件 sample（2015年01月08日）：<br>配置文件路径：/etc/shadowsocks/config.json</p>
+<p>{ </p>
+<pre><code><span class="string">"port_password"</span>:{ 
+
+     <span class="string">"8989"</span>:<span class="string">"password0"</span>, 
+
+     <span class="string">"9001"</span>:<span class="string">"password1"</span>, 
+
+     <span class="string">"9002"</span>:<span class="string">"password2"</span>,
+
+     <span class="string">"9003"</span>:<span class="string">"password3"</span>, 
+
+     <span class="string">"9004"</span>:<span class="string">"password4"</span> 
+
+}, 
+
+<span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>, 
+
+<span class="string">"timeout"</span>:<span class="number">600</span>
+</code></pre><p> }</p>
+<p>官方版本的 sample ，详见<a href="https://github.com/shadowsocks/shadowsocks-go/blob/master/sample-config/server-multi-port.json" target="_blank" rel="external">这里</a>。</p>
+<p>teddysun大神还写了其他的语言的一键安装脚本，但是我试过之后发现还是go语言的安装最快，几分钟就搞定,我一般用这个，快速方便。</p>
+<p>via: <a href="http://teddysun.com/392.html" target="_blank" rel="external">http://teddysun.com/392.html</a></p>
+
       
     </div>
     
@@ -264,18 +271,9 @@ ctrl + ^ 切换缓冲区
     
 <nav id="article-nav">
   
-    <a href="/2015/06/28/Mac安装autojump/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Mac安装autojump
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/28/替换sublime图标-Mac/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">替换Sublime图标[Mac]</div>
+    <a href="/2015/07/12/Linux流量监控工具-iftop/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux流量监控工具-iftop</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -304,7 +302,7 @@ ctrl + ^ 切换缓冲区
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="vim缓冲区" data-title="vim缓冲区命令" data-url="http://blog.fazero.cc/2015/06/28/vim缓冲区/"></div>
+	<div class="ds-thread" data-thread-key="shadowsocks-go一键安装脚本" data-title="shadowsocks-go一键安装脚本" data-url="http://blog.fazero.cc/2015/07/13/shadowsocks-go一键安装脚本/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
