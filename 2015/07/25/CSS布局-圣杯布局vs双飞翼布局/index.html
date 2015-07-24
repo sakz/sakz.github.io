@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS布局-圣杯布局vs双飞翼布局 | fazero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。
+圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。
+不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS布局-圣杯布局vs双飞翼布局">
+<meta property="og:url" content="http://blog.fazero.cc/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/index.html">
+<meta property="og:site_name" content="fazero">
+<meta property="og:description" content="圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。
+圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。
+不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-">
+<meta property="og:updated_time" content="2015-07-24T17:53:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS布局-圣杯布局vs双飞翼布局">
+<meta name="twitter:description" content="圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。
+圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。
+不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-">
+  
+    <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xjzhp.dl1.z0.glb.clouddn.com/logo1.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">fazero</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/+saberfazero" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/css学习笔记/" style="font-size: 10px;">css学习笔记</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/shadowsocks/" style="font-size: 13.33px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/vim/" style="font-size: 16.67px;">vim</a> <a href="/tags/web前端/" style="font-size: 10px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://erona.me">Erona的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fazero.cc/">fazero的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">关于博主 爱生活、爱折腾、爱电影、爱音乐 手拿kpw2的非文艺青年、东饭、知乎三无用户 一个有点无聊的人喜欢做点不无聊的事 学习 记录 技术 分享 倡导开放、共享、自由的互联网 痛恨GFW，准程序员，Linuxer</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">fazero</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://7xjzhp.dl1.z0.glb.clouddn.com/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">fazero</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/+saberfazero" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-CSS布局-圣杯布局vs双飞翼布局" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/" class="article-date">
+  	<time datetime="2015-07-24T17:37:56.000Z" itemprop="datePublished">2015-07-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS布局-圣杯布局vs双飞翼布局
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css学习笔记/">css学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。</p>
+<p>圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
+<p>不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：<br>圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。</p>
+<p>双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。<br>多了1个div，少用大致4个css属性（圣杯布局中间divpadding-left和padding-right这2个属性，加上左右两个div用相对布局position: relative及对应的right和left共4个属性，一共6个；而双飞翼布局子div里用margin-left和margin-right共2个属性，6-2=4），个人感觉比圣杯布局思路更直接和简洁一点。</p>
+<p>简单说起来就是”双飞翼布局比圣杯布局多创建了一个div，但不用相对布局了。<br><a id="more"></a></p>
+<p>参考自：<a href="http://www.zhihu.com/question/21504052" target="_blank" rel="external">知乎</a></p>
+<h3 id="圣杯布局">圣杯布局</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>圣杯布局<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">    *<span class="rules">&#123;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;&#125;</span></span><br><span class="line">    <span class="tag">body</span><span class="rules">&#123;<span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">700px</span></span></span>;&#125;</span></span><br><span class="line">    <span class="class">.header</span>,</span><br><span class="line">    <span class="class">.footer</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#333</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#aaa</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.left</span>,</span><br><span class="line">    <span class="class">.middle</span>,</span><br><span class="line">    <span class="class">.right</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">130px</span></span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.container</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">220px</span> <span class="number">0</span> <span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.left</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">100%</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">left</span>:<span class="value"> -<span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.right</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">220px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">right</span>:<span class="value"> -<span class="number">220px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">220px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.middle</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">word-break</span>:<span class="value"> break-all</span></span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.footer</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"header"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>header<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"middle"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>middle<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span>HHHHHHHHHHHHHHHHHHHHHH</span><br><span class="line">        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span><br><span class="line">        HHHHHHHHHHHHHHHHHHHHHH</span><br><span class="line">        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span><br><span class="line">        <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>left<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span>oooooooooooooo</span><br><span class="line">        00000000000000000</span><br><span class="line">        ooooooooooooooo</span><br><span class="line">        ooooooooooooooo</span><br><span class="line">        000000000000000<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>right<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span>BBBBBBBBBBBBBB</span><br><span class="line">        BBBBBBBBBBBBBBBBBB</span><br><span class="line">        88888888888888888888<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"footer"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>footer<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>双飞翼布局</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>双飞翼布局<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">    *<span class="rules">&#123;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;&#125;</span></span><br><span class="line">    <span class="tag">body</span><span class="rules">&#123;<span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">700px</span></span></span>;&#125;</span></span><br><span class="line">    <span class="class">.header</span>,</span><br><span class="line">    <span class="class">.footer</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#333</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#aaa</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">50px</span></span></span>;</span><br><span class="line">        <span class="comment">/*height和line-height设置一样使文字居中*/</span></span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.sub</span>,</span><br><span class="line">    <span class="class">.main</span>,</span><br><span class="line">    <span class="class">.extra</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">130px</span></span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.sub</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">100%</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.extra</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">220px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">220px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.main</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.main-inner</span><span class="rules">&#123; </span><br><span class="line">        <span class="comment">/*padding: 0 220px 0 200px;一样的效果*/</span></span><br><span class="line">        <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">220px</span> <span class="number">0</span> <span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">130px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">word-break</span>:<span class="value"> break-all</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    <span class="class">.footer</span><span class="rules">&#123; </span><br><span class="line">        <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"header"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>header<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main-inner"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>main<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span>HHHHHHHHHHHHHHHHHHHHHH</span><br><span class="line">        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span><br><span class="line">        HHHHHHHHHHHHHHHHHHHHHH</span><br><span class="line">        hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span><br><span class="line">        <span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"sub"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>sub<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span>oooooooooooooo</span><br><span class="line">        00000000000000000</span><br><span class="line">        ooooooooooooooo</span><br><span class="line">        ooooooooooooooo</span><br><span class="line">        000000000000000<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"extra"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h4</span>&gt;</span>extra<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span>BBBBBBBBBBBBBB</span><br><span class="line">        BBBBBBBBBBBBBBBBBB</span><br><span class="line">        88888888888888888888<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"footer"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">h4</span>&gt;</span>footer<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>references</p>
+<p>圣杯布局的来历是2006年发在a list part上的这篇文章：<a href="http://alistapart.com/article/holygrail" target="_blank" rel="external">http://alistapart.com/article/holygrail</a><br>双飞翼布局介绍-始于淘宝UED：<a href="http://www.imooc.com/wenda/detail/254035" target="_blank" rel="external">http://www.imooc.com/wenda/detail/254035</a><br>还有这里的一篇两者的比较：<a href="http://www.cnblogs.com/imwtr/p/4441741.html" target="_blank" rel="external">http://www.cnblogs.com/imwtr/p/4441741.html</a><br>双飞翼布局实战：<a href="http://www.jikexueyuan.com/course/981.html" target="_blank" rel="external">http://www.jikexueyuan.com/course/981.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/13/shadowsocks-go一键安装脚本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shadowsocks-go一键安装脚本</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="CSS布局-圣杯布局vs双飞翼布局" data-title="CSS布局-圣杯布局vs双飞翼布局" data-url="http://blog.fazero.cc/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fazeroblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 fazero
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

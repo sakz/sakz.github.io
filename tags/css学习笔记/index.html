@@ -3,36 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>亚马逊AWS更改LINUX为ROOT权限密码登陆 | fazero</title>
+  <title>Tag: css学习笔记 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的AWS VPS的LINUX版本是UBUNTU 14.04，首先用AWS证书验证的账户登录.
-1、修改ROOT密码
-sudo passwd root
-2、修改sshd_config文件
-sudo vim /etc/ssh/sshd_config
-PermitRootLogin这行改为PermitRootLogin yes
-PasswordAuthentication no上面的no改为yesUs">
-<meta property="og:type" content="article">
-<meta property="og:title" content="亚马逊AWS更改LINUX为ROOT权限密码登陆">
-<meta property="og:url" content="http://blog.fazero.cc/2015/07/01/亚马逊AWS更改LINUX为ROOT权限密码登陆/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="fazero">
+<meta property="og:url" content="http://blog.fazero.cc/tags/css学习笔记/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="我的AWS VPS的LINUX版本是UBUNTU 14.04，首先用AWS证书验证的账户登录.
-1、修改ROOT密码
-sudo passwd root
-2、修改sshd_config文件
-sudo vim /etc/ssh/sshd_config
-PermitRootLogin这行改为PermitRootLogin yes
-PasswordAuthentication no上面的no改为yesUs">
-<meta property="og:updated_time" content="2015-07-01T12:30:19.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="亚马逊AWS更改LINUX为ROOT权限密码登陆">
-<meta name="twitter:description" content="我的AWS VPS的LINUX版本是UBUNTU 14.04，首先用AWS证书验证的账户登录.
-1、修改ROOT密码
-sudo passwd root
-2、修改sshd_config文件
-sudo vim /etc/ssh/sshd_config
-PermitRootLogin这行改为PermitRootLogin yes
-PasswordAuthentication no上面的no改为yesUs">
+<meta name="twitter:title" content="fazero">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -201,119 +182,53 @@ PasswordAuthentication no上面的no改为yesUs">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-亚马逊AWS更改LINUX为ROOT权限密码登陆" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2015/07/01/亚马逊AWS更改LINUX为ROOT权限密码登陆/" class="article-date">
-  	<time datetime="2015-07-01T12:25:42.000Z" itemprop="datePublished">2015-07-01</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/" class="archive-article-date">
+  	<time datetime="2015-07-24T17:37:56.000Z" itemprop="datePublished">7月 25</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      亚马逊AWS更改LINUX为ROOT权限密码登陆
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/">CSS布局-圣杯布局vs双飞翼布局</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws/">aws</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css学习笔记/">css学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
 	</div>
 
-        
+          
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我的AWS VPS的LINUX版本是UBUNTU 14.04，首先用AWS证书验证的账户登录.</p>
-<p>1、修改ROOT密码</p>
-<p><code>sudo passwd root</code></p>
-<p>2、修改sshd_config文件</p>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p><code>PermitRootLogin</code><br>这行改为<br><code>PermitRootLogin yes</code></p>
-<p><code>PasswordAuthentication no</code><br>上面的<code>no</code>改为<code>yes</code><br><code>UsePAM yes</code><br>上面的<code>yes</code>改为<code>no</code><br>修改完保存退出。</p>
-<p>3、重启AWS VPS，就可以使用root正常登陆了。</p>
-
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/07/02/在-Sublime-Text-3中编译和运行Java程序/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          在 Sublime Text 3中编译和运行Java程序[Windows,Mac]
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/06/28/Mac安装autojump/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac安装autojump</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="亚马逊AWS更改LINUX为ROOT权限密码登陆" data-title="亚马逊AWS更改LINUX为ROOT权限密码登陆" data-url="http://blog.fazero.cc/2015/07/01/亚马逊AWS更改LINUX为ROOT权限密码登陆/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"fazeroblog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -339,9 +254,9 @@ PasswordAuthentication no上面的no改为yesUs">
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
