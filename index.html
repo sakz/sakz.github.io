@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/css学习笔记/" style="font-size: 10px;">css学习笔记</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/shadowsocks/" style="font-size: 12.5px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/vim/" style="font-size: 17.5px;">vim</a> <a href="/tags/webstorm/" style="font-size: 12.5px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 12.5px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 12.5px;">blog</a> <a href="/tags/css学习笔记/" style="font-size: 10px;">css学习笔记</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/shadowsocks/" style="font-size: 12.5px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/vim/" style="font-size: 17.5px;">vim</a> <a href="/tags/webstorm/" style="font-size: 12.5px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 12.5px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -183,6 +183,156 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-hexo-common-commands" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/30/hexo-common-commands/" class="article-date">
+  	<time datetime="2015-07-30T02:49:00.000Z" itemprop="datePublished">2015-07-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/30/hexo-common-commands/">hexo-common-commands</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="hexo">hexo</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install hexo -g <span class="comment">#安装  </span></span><br><span class="line"><span class="built_in">npm</span> update hexo -g <span class="comment">#升级  </span></span><br><span class="line">hexo init <span class="comment">#初始化</span></span><br></pre></td></tr></table></figure>
+<h3 id="简写">简写</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"我的博客"</span> == hexo new <span class="string">"我的博客"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo <span class="variable">p =</span>= hexo publish</span><br><span class="line">hexo <span class="variable">g =</span>= hexo generate<span class="comment">#生成</span></span><br><span class="line">hexo <span class="variable">s =</span>= hexo server <span class="comment">#启动服务预览</span></span><br><span class="line">hexo <span class="variable">d =</span>= hexo deploy<span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+<h3 id="服务器">服务器</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span> <span class="preprocessor">#Hexo 会监视文件变动并自动更新，您无须重启服务器。</span></span><br><span class="line">hexo <span class="keyword">server</span> -s <span class="preprocessor">#静态模式</span></span><br><span class="line">hexo <span class="keyword">server</span> -p <span class="number">5000</span> <span class="preprocessor">#更改端口</span></span><br><span class="line">hexo <span class="keyword">server</span> -i <span class="number">192.168</span>.1.1 <span class="preprocessor">#自定义 IP</span></span><br><span class="line"></span><br><span class="line">hexo clean <span class="preprocessor">#清除缓存 网页正常情况下可以忽略此条命令</span></span><br><span class="line">hexo g <span class="preprocessor">#生成静态网页</span></span><br><span class="line">hexo d <span class="preprocessor">#开始部署</span></span><br></pre></td></tr></table></figure>
+<h3 id="监视文件变动">监视文件变动</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> generate <span class="comment">#使用 Hexo 生成静态文件快速而且简单</span></span><br><span class="line">hexo generate --watch <span class="comment">#监视文件变动</span></span><br></pre></td></tr></table></figure>
+<h3 id="完成后部署">完成后部署</h3><blockquote>
+<p>两个命令的作用是相同的<br><br><code>hexo generate --deploy</code><br><br><code>hexo deploy --generate</code><br><br></p>
+</blockquote>
+<p><code>hexo deploy -g</code><br><code>hexo server -g</code></p>
+<h3 id="草稿">草稿</h3><p><code>hexo publish [layout] &lt;title&gt;</code></p>
+<h3 id="模版">模版</h3><p><code>hexo new &quot;postName&quot;</code>#新建文章<br><code>hexo new page &quot;pageName&quot;</code>#新建页面<br><code>hexo generate</code>#生成静态页面至public目录<br><code>hexo server</code>#开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br><code>hexo deploy</code>#将.deploy目录部署到GitHub</p>
+<p><code>hexo new [layout] &lt;title&gt;</code><br><code>hexo new photo &quot;My Gallery&quot;</code><br><code>hexo new &quot;Hello World&quot; --lang tw</code></p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>layout</td>
+<td style="text-align:center">布局</td>
+</tr>
+<tr>
+<td>title</td>
+<td style="text-align:center">标题</td>
+</tr>
+<tr>
+<td>date</td>
+<td style="text-align:center">文件建立日期</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">title</span>: <span class="string">使用Hexo搭建个人博客</span></span><br><span class="line"><span class="attribute">layout</span>: <span class="string">post</span></span><br><span class="line"><span class="attribute">date</span>: <span class="string">2014-03-03 19:07:43</span></span><br><span class="line"><span class="attribute">comments</span>: <span class="string">true</span></span><br><span class="line"><span class="attribute">categories</span>: <span class="string">Blog</span></span><br><span class="line"><span class="attribute">tags</span>: <span class="string">[Hexo]</span></span><br><span class="line"><span class="attribute">keywords</span>: <span class="string">Hexo, Blog</span></span><br><span class="line"><span class="attribute">description</span>: <span class="string">生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。</span></span><br></pre></td></tr></table></figure>
+<h3 id="模版（Scaffold）">模版（Scaffold）</h3><p><code>hexo new photo &quot;My Gallery&quot;</code></p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>layout</td>
+<td style="text-align:center">布局</td>
+</tr>
+<tr>
+<td>title</td>
+<td style="text-align:center">标题</td>
+</tr>
+<tr>
+<td>date</td>
+<td style="text-align:center">文件建立日期</td>
+</tr>
+</tbody>
+</table>
+<h3 id="设置文章摘要">设置文章摘要</h3><p><code>以上是文章摘要 &lt;!--more--&gt; 以下是余下全文</code></p>
+<h3 id="写作">写作</h3><p><code>hexo new page &lt;title&gt;</code><br><code>hexo new post &lt;title&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:title</td>
+<td style="text-align:center">标题</td>
+</tr>
+<tr>
+<td>:year</td>
+<td style="text-align:center">建立的年份</td>
+<td>（4 位数）</td>
+</tr>
+<tr>
+<td>:month</td>
+<td style="text-align:center">建立的月份（2 位数）</td>
+</tr>
+<tr>
+<td>:i_month</td>
+<td style="text-align:center">建立的月份（去掉开头的零）</td>
+</tr>
+<tr>
+<td>:day</td>
+<td style="text-align:center">建立的日期（2 位数）</td>
+</tr>
+<tr>
+<td>:i_day</td>
+<td style="text-align:center">建立的日期</td>
+<td>（去掉开头的零）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="推送到服务器上">推送到服务器上</h3><p><code>hexo n</code> #写文章<br><code>hexo g</code>#生成<br><code>hexo d</code>#部署 #可与<code>hexo g</code>合并为 <code>hexo d -g</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-vim-for-new" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -710,68 +860,6 @@
       
         <p class="article-more-link">
           <a  href="/2015/07/11/WordPress博客网站搬家和换域名方法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-在-Sublime-Text-3中编译和运行Java程序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/02/在-Sublime-Text-3中编译和运行Java程序/" class="article-date">
-  	<time datetime="2015-07-02T05:29:46.000Z" itemprop="datePublished">2015-07-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/02/在-Sublime-Text-3中编译和运行Java程序/">在 Sublime Text 3中编译和运行Java程序[Windows,Mac]</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Windows篇：">Windows篇：</h1><h4 id="1-配置java环境变量">1.配置java环境变量</h4><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK下载地址</a></strong></p>
-<p>1）、<code>这台电脑&gt;属性&gt;高级系统设置&gt;环境变量</code>，在<code>用户变量</code>里新建一个名为<code>JAVA_HOME</code>的变量，变量值为安装jdk时的路径，比如我的为<code>C:\Program Files\Java\jdk1.8.0_45</code>,点击“确定”<br><strong>第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录</strong></p>
-<p>2）、在<code>用户变量</code>里新建一个名为<code>CLASSPATH</code>的变量，变量值为 <code>.;%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar;</code>，点击“确定”</p>
-<p>3）、找到并选中<code>用户变量</code>的“Path”变量，点击“编辑”,在后面添加<code>;%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin</code>，点击“确定”,如果原来没有变量值的话，就去掉前面的<code>;</code></p>
-<p>最后在“环境变量”上点击“确定”，完成环境变量的配置.<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/02/在-Sublime-Text-3中编译和运行Java程序/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
