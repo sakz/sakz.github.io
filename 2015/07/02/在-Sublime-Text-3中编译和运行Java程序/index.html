@@ -17,7 +17,7 @@
 2）、在用户变量里新建一个">
 <meta property="og:image" content="http://7xjzhp.dl1.z0.glb.clouddn.com/java.jpg">
 <meta property="og:image" content="http://f.cl.ly/items/3e0V1l2U0e3c222E2N46/java.png">
-<meta property="og:updated_time" content="2015-07-02T07:47:54.000Z">
+<meta property="og:updated_time" content="2015-08-04T20:53:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Sublime Text 3中编译和运行Java程序[Windows,Mac]">
 <meta name="twitter:description" content="Windows篇：1.配置java环境变量JDK下载地址
@@ -276,7 +276,7 @@ java %~n1
 <hr>
 <h1 id="Mac篇：">Mac篇：</h1><h4 id="1-安装JDK">1.安装JDK</h4><p><a href="https://support.apple.com/kb/DL1572?locale=zh_CN" target="_blank" rel="external">JDK下载地址</a><br>直接安装好就行。</p>
 <h4 id="2-新建java编译系统-1">2.新建java编译系统</h4><p>新建一个编译系统，删除原来的内容，输入下面的内容保存为<code>Java.sublime-build</code></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">shell_cmd</span>": <span class="value"><span class="string">"javac -encoding utf-8 $file_name &amp;&amp; java $file_base_name"</span></span>,</span><br><span class="line">    "<span class="attribute">file_regex</span>": <span class="value"><span class="string">"^ *\\[javac\\] (.+):([0-9]+):() (.*)$"</span></span>,</span><br><span class="line">    "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.java"</span></span>,    </span><br><span class="line">    "<span class="attribute">encoding</span>": <span class="value"><span class="string">"gbk"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">shell_cmd</span>": <span class="value"><span class="string">"javac -encoding utf-8 $file_name &amp;&amp; java $file_base_name"</span></span>,</span><br><span class="line">    "<span class="attribute">file_regex</span>": <span class="value"><span class="string">"^ *\\[javac\\] (.+):([0-9]+):() (.*)$"</span></span>,</span><br><span class="line">    "<span class="attribute">selector</span>": <span class="value"><span class="string">"source.java"</span></span>,    </span><br><span class="line">    "<span class="attribute">encoding</span>": <span class="value"><span class="string">"utf-8"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="3-写好java文件，选择编译系统为Java,ctrl_+_b运行，测试如下。-1">3.写好java文件，选择编译系统为<code>Java</code>,<code>ctrl + b</code>运行，测试如下。</h4><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">hello</span> 
 { 
     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>) 
