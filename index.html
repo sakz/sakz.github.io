@@ -214,11 +214,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前一直没有关注过登陆日志，用 cat /var/log/auth.log命令查看的时候，满屏满屏的<code>&quot;Failed password for root XXX.XXX.XXX.XXX&quot;</code>，等了十多秒都没停下来，用ctrl + c终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用<code>grep &quot;Failed password for root&quot; /var/log/auth.log | awk &#39;{print $11}&#39; | sort | uniq -c | sort -nr | more</code>  这个命令查看了有多少ip在暴力破解我的ssh，又是满屏满屏的。<br>找了两条防暴力破解的命令</p>
+        <p>之前一直没有关注过登陆日志，用 <code>cat /var/log/auth.log</code>命令查看的时候，centos对应<code>cat /var/log/secure</code>满屏满屏的<code>&quot;Failed password for root XXX.XXX.XXX.XXX&quot;</code>，等了十多秒都没停下来，用<code>ctrl + c</code>终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用<code>grep &quot;Failed password for root&quot; /var/log/auth.log | awk &#39;{print $11}&#39; | sort | uniq -c | sort -nr | more</code>  这个命令查看了有多少ip在暴力破解我的ssh，又是满屏满屏的。<br>找了两条防暴力破解的命令</p>
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport <span class="number">22</span> -i eth0 -m <span class="keyword">state</span> --state NEW -m recent --set</span><br><span class="line">iptables -I INPUT -p tcp --dport <span class="number">22</span> -i eth0 -m <span class="keyword">state</span> --state NEW -m recent --update --seconds <span class="number">60</span> --hitcount <span class="number">4</span> -j DROP</span><br></pre></td></tr></table></figure>
 <p>第一句是说，对于外来数据，如果是 TCP 协议，目标端口号是 22，网络接口是 eth0，状态是新连接，那么把它加到最近列表中。</p>
 <p>第二句是说，对于这样的连接，如果在最近列表中，并且在 60 秒内达到或者超过四次，那么丢弃该数据。其中的-m是模块的意思。<br>也就是说，如果有人从一个 IP 一分钟内连接尝试四次 ssh 登录的话，那么它就会被加入黑名单，后续连接将会被丢弃。</p>
 <p>我在使用的时候，43.229.53.47这个ip 正在尝试ssh登录,使用了之后查看日志，果然停止了，效果还是很明显，使用之前，每分钟日志记录都在增加。</p>
+<p>其他安全设置例如修改ssh端口，禁止root用户登录，禁止密码登录也可以让vps更安全,可参考<a href="http://www.phpgao.com/vps_ssh.html" target="_blank" rel="external">这里</a>.</p>
 
       
     </div>
