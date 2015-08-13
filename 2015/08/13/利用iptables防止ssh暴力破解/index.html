@@ -3,30 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac安装autojump | fazero</title>
+  <title>利用iptables防止ssh暴力破解 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装ZSH
-用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。
-自动安装
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
-git clone git://github.com/robbyrussell/oh-my-zsh">
+  <meta name="description" content="之前一直没有关注过登陆日志，用 cat /var/log/auth.log命令查看的时候，满屏满屏的&amp;quot;Failed password for root XXX.XXX.XXX.XXX&amp;quot;，等了十多秒都没停下来，用ctrl + c终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用grep &amp;quot;Failed password for root&amp;quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mac安装autojump">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/Mac安装autojump/index.html">
+<meta property="og:title" content="利用iptables防止ssh暴力破解">
+<meta property="og:url" content="http://blog.fazero.cc/2015/08/13/利用iptables防止ssh暴力破解/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="安装ZSH
-用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。
-自动安装
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
-git clone git://github.com/robbyrussell/oh-my-zsh">
-<meta property="og:updated_time" content="2015-06-28T12:55:47.000Z">
+<meta property="og:description" content="之前一直没有关注过登陆日志，用 cat /var/log/auth.log命令查看的时候，满屏满屏的&amp;quot;Failed password for root XXX.XXX.XXX.XXX&amp;quot;，等了十多秒都没停下来，用ctrl + c终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用grep &amp;quot;Failed password for root&amp;quot;">
+<meta property="og:updated_time" content="2015-08-13T14:18:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac安装autojump">
-<meta name="twitter:description" content="安装ZSH
-用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。
-自动安装
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
-git clone git://github.com/robbyrussell/oh-my-zsh">
+<meta name="twitter:title" content="利用iptables防止ssh暴力破解">
+<meta name="twitter:description" content="之前一直没有关注过登陆日志，用 cat /var/log/auth.log命令查看的时候，满屏满屏的&amp;quot;Failed password for root XXX.XXX.XXX.XXX&amp;quot;，等了十多秒都没停下来，用ctrl + c终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用grep &amp;quot;Failed password for root&amp;quot;">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -199,11 +187,11 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Mac安装autojump" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-利用iptables防止ssh暴力破解" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/28/Mac安装autojump/" class="article-date">
-  	<time datetime="2015-06-28T12:43:08.000Z" itemprop="datePublished">2015-06-28</time>
+      <a href="/2015/08/13/利用iptables防止ssh暴力破解/" class="article-date">
+  	<time datetime="2015-08-13T14:08:18.000Z" itemprop="datePublished">2015-08-13</time>
 </a>
     </div>
   
@@ -216,7 +204,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
         
   
     <h1 class="article-title" itemprop="name">
-      Mac安装autojump
+      利用iptables防止ssh暴力破解
     </h1>
   
 
@@ -225,7 +213,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autojump/">autojump</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vps/">vps</a></li></ul>
 	</div>
 
         
@@ -236,22 +224,11 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>安装ZSH</p>
-<p>用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。</p>
-<p>自动安装</p>
-<p><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</code><br>手动安装</p>
-<p><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</code><br><code>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</code><br><a id="more"></a></p>
-<p>安装Homebrew，简称brew</p>
-<p>mac 自带的ruby安装起来很方便</p>
-<p><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</code></p>
-<p>不多介绍，用命令行安装和卸载工具软件，官网 <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a></p>
-<p>添加<code>autojump</code>插件</p>
-<p><code>brew install autojump</code><br>autojump智能跳转，通过zsh记录访问过的目录，autojump的简写 j ＋ 目录名，随意的在目录间跳转，支持各种模糊匹配、补全，例如之前的 cd work；现在可以直接 work，或者 j wor 、 j work 达到同样的效果，节省大好的时间。<code>j –s</code> 可以看你的历史路径库.</p>
-<p>目录浏览和跳转：输入 <code>d</code>，即可列出你在这个会话里访问的目录列表，输入列表前的序号，即可直接跳转。</p>
-<p>在当前目录下输入<code>..</code> 或 <code>...</code>，或直接输入当前目录名都可以跳转，你甚至不再需要输入 cd 命令了。</p>
-<p>关于 <code>zsh: command not found: j</code> 报错</p>
-<p>请在.zshrc文件相应的位置，找到 <code>plugins=(git)</code> 这行,改为下面<br><code>plugins=(git autojump)</code></p>
-<p><a href="http://fazero.cc/archives/462" target="_blank" rel="external">关于iterm2和zsh</a></p>
+        <p>之前一直没有关注过登陆日志，用 cat /var/log/auth.log命令查看的时候，满屏满屏的<code>&quot;Failed password for root XXX.XXX.XXX.XXX&quot;</code>，等了十多秒都没停下来，用ctrl + c终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用<code>grep &quot;Failed password for root&quot; /var/log/auth.log | awk &#39;{print $11}&#39; | sort | uniq -c | sort -nr | more</code>  这个命令查看了有多少ip在暴力破解我的ssh，又是满屏满屏的。<br>找了两条防暴力破解的命令</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport <span class="number">22</span> -i eth0 -m <span class="keyword">state</span> --state NEW -m recent --set</span><br><span class="line">iptables -I INPUT -p tcp --dport <span class="number">22</span> -i eth0 -m <span class="keyword">state</span> --state NEW -m recent --update --seconds <span class="number">60</span> --hitcount <span class="number">4</span> -j DROP</span><br></pre></td></tr></table></figure>
+<p>第一句是说，对于外来数据，如果是 TCP 协议，目标端口号是 22，网络接口是 eth0，状态是新连接，那么把它加到最近列表中。</p>
+<p>第二句是说，对于这样的连接，如果在最近列表中，并且在 60 秒内达到或者超过四次，那么丢弃该数据。其中的-m是模块的意思。<br>也就是说，如果有人从一个 IP 一分钟内连接尝试四次 ssh 登录的话，那么它就会被加入黑名单，后续连接将会被丢弃。</p>
+<p>我在使用的时候，43.229.53.47这个ip 正在尝试ssh登录,使用了之后查看日志，果然停止了，效果还是很明显，使用之前，每分钟日志记录都在增加。</p>
 
       
     </div>
@@ -261,18 +238,9 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
     
 <nav id="article-nav">
   
-    <a href="/2015/07/01/亚马逊AWS更改LINUX为ROOT权限密码登陆/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          亚马逊AWS更改LINUX为ROOT权限密码登陆
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/28/vim缓冲区/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vim缓冲区命令</div>
+    <a href="/2015/08/05/mac-jdk-switch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac JDK版本切换</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -301,7 +269,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Mac安装autojump" data-title="Mac安装autojump" data-url="http://blog.fazero.cc/2015/06/28/Mac安装autojump/"></div>
+	<div class="ds-thread" data-thread-key="利用iptables防止ssh暴力破解" data-title="利用iptables防止ssh暴力破解" data-url="http://blog.fazero.cc/2015/08/13/利用iptables防止ssh暴力破解/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
