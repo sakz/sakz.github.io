@@ -11,11 +11,11 @@
 <meta property="og:url" content="http://blog.fazero.cc/2015/08/29/ubuntu-reset-passwd/index.html">
 <meta property="og:site_name" content="fazero">
 <meta property="og:description" content="在win8系统的Ubuntu虚拟机很久没用，密码全忘了，Google了一些资料终于找到重置密码的方法。1. 重启ubuntu，随即长按shift进入grub菜单，如下图，然后选择第二个，回车进入">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/456470-fd1f986de0234064.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/456470-854cef994d695729.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/456470-3bb625f6d00f332e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/456470-0403f68615dc66c8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2015-08-29T10:31:18.000Z">
+<meta property="og:image" content="http://imgchr.com/images/1ba807.jpg">
+<meta property="og:image" content="http://imgchr.com/images/23e691.jpg">
+<meta property="og:image" content="http://imgchr.com/images/3e975d.jpg">
+<meta property="og:image" content="http://imgchr.com/images/4e1f8f.jpg">
+<meta property="og:updated_time" content="2015-08-29T10:50:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu14.10 root密码重置 单用户模式">
 <meta name="twitter:description" content="在win8系统的Ubuntu虚拟机很久没用，密码全忘了，Google了一些资料终于找到重置密码的方法。1. 重启ubuntu，随即长按shift进入grub菜单，如下图，然后选择第二个，回车进入">
@@ -228,10 +228,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="在win8系统的Ubuntu虚拟机很久没用，密码全忘了，Google了一些资料终于找到重置密码的方法。">在win8系统的Ubuntu虚拟机很久没用，密码全忘了，Google了一些资料终于找到重置密码的方法。</h4><h4 id="1-_重启ubuntu，随即长按shift进入grub菜单，如下图，然后选择第二个，回车进入">1. 重启ubuntu，随即长按shift进入grub菜单，如下图，然后选择第二个，回车进入</h4><p><img src="http://upload-images.jianshu.io/upload_images/456470-fd1f986de0234064.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.jpg"><br><a id="more"></a></p>
-<h4 id="2-用方向键将光标移至recovery_mode，按”e”键进入编辑页面，如下图">2.用方向键将光标移至recovery mode，按”e”键进入编辑页面，如下图</h4><p><img src="http://upload-images.jianshu.io/upload_images/456470-854cef994d695729.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.jpg"></p>
-<h4 id="3-将_ro_recovery_nomodeset_改为_rw_single_init=/bin/bash如下图，修改完ctrl+x启动单用户模式">3.将 <code>ro recovery nomodeset</code> 改为 <code>rw single init=/bin/bash</code>如下图，修改完<code>ctrl+x</code>启动单用户模式</h4><p><img src="http://upload-images.jianshu.io/upload_images/456470-3bb625f6d00f332e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.jpg"></p>
-<h4 id="4-此时为root用户，可以输入passwd_root修改密码，修改完重启就行了。">4.此时为root用户，可以输入<code>passwd root</code>修改密码，修改完重启就行了。</h4><p><img src="http://upload-images.jianshu.io/upload_images/456470-0403f68615dc66c8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.jpg"></p>
+        <h4 id="在win8系统的Ubuntu虚拟机很久没用，密码全忘了，Google了一些资料终于找到重置密码的方法。">在win8系统的Ubuntu虚拟机很久没用，密码全忘了，Google了一些资料终于找到重置密码的方法。</h4><h4 id="1-_重启ubuntu，随即长按shift进入grub菜单，如下图，然后选择第二个，回车进入">1. 重启ubuntu，随即长按shift进入grub菜单，如下图，然后选择第二个，回车进入</h4><p><img src="http://imgchr.com/images/1ba807.jpg" alt="1.jpg"><br><a id="more"></a></p>
+<h4 id="2-用方向键将光标移至recovery_mode，按”e”键进入编辑页面，如下图">2.用方向键将光标移至recovery mode，按”e”键进入编辑页面，如下图</h4><p><img src="http://imgchr.com/images/23e691.jpg" alt="2.jpg"></p>
+<h4 id="3-将_ro_recovery_nomodeset_改为_rw_single_init=/bin/bash如下图，修改完ctrl+x启动单用户模式">3.将 <code>ro recovery nomodeset</code> 改为 <code>rw single init=/bin/bash</code>如下图，修改完<code>ctrl+x</code>启动单用户模式</h4><p><img src="http://imgchr.com/images/3e975d.jpg" alt="3.jpg"></p>
+<h4 id="4-此时为root用户，可以输入passwd_root修改密码，修改完重启就行了。">4.此时为root用户，可以输入<code>passwd root</code>修改密码，修改完重启就行了。</h4><p><img src="http://imgchr.com/images/4e1f8f.jpg" alt="4.jpg"></p>
 <p>参考：<br><a href="http://blog.csdn.net/damonhao/article/details/18421731" target="_blank" rel="external">Ubuntu 进入单用户模式—修改启动项利器</a><br><a href="https://help.ubuntu.com/community/LostPassword?action=fullsearch&amp;value=linkto%3A%22LostPassword%22&amp;context=180" target="_blank" rel="external">LostPassword</a></p>
 
       
