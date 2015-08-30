@@ -851,6 +851,8 @@ var domains = {
   "google.co.jp": 1, 
   "google.com": 1, 
   "google.com.nl": 1,
+  "google.com.sg": 1,
+  "google.com.hk": 1,
   "googleadservices.com": 1, 
   "googleapis.com": 1, 
   "googlecode.com": 1, 
