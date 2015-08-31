@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: git | fazero</title>
+  <title>利用proxychains在终端使用socks5代理 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fazero">
-<meta property="og:url" content="http://blog.fazero.cc/tags/git/index.html">
+  <meta name="description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychians.confcd .. &amp;amp;&amp;amp; rm -r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用proxychains在终端使用socks5代理">
+<meta property="og:url" content="http://blog.fazero.cc/2015/08/31/利用proxychains在终端使用socks5代理/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description">
+<meta property="og:description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychians.confcd .. &amp;amp;&amp;amp; rm -r">
+<meta property="og:updated_time" content="2015-08-31T04:49:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fazero">
-<meta name="twitter:description">
+<meta name="twitter:title" content="利用proxychains在终端使用socks5代理">
+<meta name="twitter:description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychians.confcd .. &amp;amp;&amp;amp; rm -r">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -186,84 +187,110 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-利用proxychains在终端使用socks5代理" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/11/用shadowsocks加速git-clone/" class="archive-article-date">
-  	<time datetime="2015-07-11T08:14:42.000Z" itemprop="datePublished">7月 11</time>
+    <div class="article-meta">
+      <a href="/2015/08/31/利用proxychains在终端使用socks5代理/" class="article-date">
+  	<time datetime="2015-08-31T04:35:10.000Z" itemprop="datePublished">2015-08-31</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/11/用shadowsocks加速git-clone/">用shadowsocks加速git clone</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用proxychains在终端使用socks5代理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/22/将本地git仓库推送到github上/" class="archive-article-date">
-  	<time datetime="2015-06-22T04:57:53.000Z" itemprop="datePublished">6月 22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/22/将本地git仓库推送到github上/">将本地git仓库推送到github上</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-proxychains安装">1.proxychains安装</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/rofl0r/proxychains-ng.git</span><br><span class="line"><span class="keyword">cd</span> proxychains-ng</span><br><span class="line">./configure</span><br><span class="line"><span class="keyword">make</span> &amp;&amp; <span class="keyword">make</span> install</span><br><span class="line"><span class="keyword">cp</span> ./src/proxychains.<span class="keyword">conf</span> /etc/proxychians.<span class="keyword">conf</span></span><br><span class="line"><span class="keyword">cd</span> .. &amp;&amp; rm -rf proxychains-ng</span><br></pre></td></tr></table></figure>
+<p>也可以用<code>brew install proxychains-ng</code>安装。</p>
+<h3 id="2-编辑proxychains配置">2.编辑proxychains配置</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/proxychains.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-将socks4_127-0-0-1_9095改为">3.将<code>socks4 127.0.0.1 9095</code>改为</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">socks5</span> 127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span> 1080</span><br></pre></td></tr></table></figure>
+<p>ps: 默认的<code>socks4 127.0.0.1 9095</code>是tor代理，而<code>socks5 127.0.0.1 1080</code>是shadowsocks的代理,这里根据自己使用的代理配置。</p>
+<h3 id="4-使用方法">4.使用方法</h3><p><strong>在需要代理的命令前加上 proxychains4 ，如：</strong></p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychai<span class="label">ns4</span> wget http:<span class="comment">//<span class="doctag"><span class="keyword">xxx</span>.</span>com/<span class="doctag"><span class="keyword">xxx</span>.</span>zip</span></span><br></pre></td></tr></table></figure>
+<p>参考资料：<br><a href="http://blog.ainhaato.moe/proxychains-socks5-shell/" target="_blank" rel="external">幻想驿站</a><br><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="external">官方文档</a></p>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/29/ubuntu-reset-passwd/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu14.10 root密码重置 单用户模式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="利用proxychains在终端使用socks5代理" data-title="利用proxychains在终端使用socks5代理" data-url="http://blog.fazero.cc/2015/08/31/利用proxychains在终端使用socks5代理/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fazeroblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -289,9 +316,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
