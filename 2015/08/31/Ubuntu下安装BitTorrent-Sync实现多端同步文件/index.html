@@ -5,19 +5,20 @@
   
   <title>Ubuntu下安装BitTorrent Sync实现多端同步文件 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、执行以下命令1234567sudo add-apt-repository ppa:tuxpoldo/btsyncsudo apt-get updatesudo apt-get install btsync-usersudo apt-get install btsync
+  <meta name="description" content="1、执行以下命令1234567sudo add-apt-repository ppa:tuxpoldo/btsyncsudo apt-get updatesudo apt-get install btsync-usersudo apt-get install btsync
 安装过程会出现选择项，一路回车即可到最后一条命令有交互式的配置，认真看说明去配置就行了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu下安装BitTorrent Sync实现多端同步文件">
 <meta property="og:url" content="http://blog.fazero.cc/2015/08/31/Ubuntu下安装BitTorrent-Sync实现多端同步文件/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="一、执行以下命令1234567sudo add-apt-repository ppa:tuxpoldo/btsyncsudo apt-get updatesudo apt-get install btsync-usersudo apt-get install btsync
+<meta property="og:description" content="1、执行以下命令1234567sudo add-apt-repository ppa:tuxpoldo/btsyncsudo apt-get updatesudo apt-get install btsync-usersudo apt-get install btsync
 安装过程会出现选择项，一路回车即可到最后一条命令有交互式的配置，认真看说明去配置就行了。">
 <meta property="og:image" content="http://imgchr.com/images/bts.jpg">
-<meta property="og:updated_time" content="2015-08-31T14:58:54.000Z">
+<meta property="og:image" content="http://imgchr.com/images/QQ20150831-12x.png">
+<meta property="og:updated_time" content="2015-08-31T15:36:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下安装BitTorrent Sync实现多端同步文件">
-<meta name="twitter:description" content="一、执行以下命令1234567sudo add-apt-repository ppa:tuxpoldo/btsyncsudo apt-get updatesudo apt-get install btsync-usersudo apt-get install btsync
+<meta name="twitter:description" content="1、执行以下命令1234567sudo add-apt-repository ppa:tuxpoldo/btsyncsudo apt-get updatesudo apt-get install btsync-usersudo apt-get install btsync
 安装过程会出现选择项，一路回车即可到最后一条命令有交互式的配置，认真看说明去配置就行了。">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
@@ -228,14 +229,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="一、执行以下命令">一、执行以下命令</h4><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:tuxpoldo/btsync</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install btsync-user</span><br><span class="line"></span><br><span class="line">sudo apt-get install btsync</span><br></pre></td></tr></table></figure>
+        <h4 id="1、执行以下命令">1、执行以下命令</h4><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:tuxpoldo/btsync</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install btsync-user</span><br><span class="line"></span><br><span class="line">sudo apt-get install btsync</span><br></pre></td></tr></table></figure>
 <p>安装过程会出现选择项，一路回车即可<br>到最后一条命令有交互式的配置，认真看说明去配置就行了。<br><a id="more"></a></p>
-<h4 id="二、配置说明：">二、配置说明：</h4><p>本地浏览器中打开以下链接</p>
+<h4 id="2、配置说明：">2、配置说明：</h4><p>本地浏览器中打开以下链接</p>
 <p><code>http://127.0.0.1:8888/gui/</code></p>
 <p>首次登陆需设置用户名密码，就是你安装的时候配置的那个，默认的是<code>账号:admin 密码:Passwd</code>登录之后默认英语界面，可在设置中改成简体中文，之后重新登录即可。</p>
 <p>注：<code>127.0.0.1</code>换成VPS主机ip</p>
 <p>在浏览器界面添加同步的文件夹的时候，遇到没有权限的添加的文件夹，就<code>chmod 777 dir</code>赋予<code>dir</code>权限，貌似赋予全部权限不太好，不过问题不大吧。</p>
 <p>下图为浏览器，Mac客户端，手机客户端界面。<br><img src="http://imgchr.com/images/bts.jpg" alt=""></p>
+<h4 id="3、使用场景">3、使用场景</h4><p>利用youtube-dl在vps下载YouTube视频飞快，然后通过BitTorrent Sync同步下载回来。<br>下载YouTube视频的方法还有很多，看<a href="http://fazero.cc/archives/269" target="_blank" rel="external">这里</a><br>YouTube-dl项目地址:<a href="https://github.com/rg3/youtube-dl" target="_blank" rel="external">https://github.com/rg3/youtube-dl</a><br>常用命令</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">youtube-<span class="tag">dl</span> https:<span class="comment">//www.youtube.com/watch?v=-CmadmM5cOk  //直接下载，默认下载最高清的</span></span><br><span class="line">youtube-<span class="tag">dl</span> -F https:<span class="comment">//www.youtube.com/watch?v=-CmadmM5cOk    //列出视频清晰度</span></span><br><span class="line">youtube-<span class="tag">dl</span> -f format-<span class="tag">code</span> https:<span class="comment">//www.youtube.com/watch?v=-CmadmM5cOk  //下载对应清晰度的视频</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://imgchr.com/images/QQ20150831-12x.png" alt=""></p>
 
       
     </div>
