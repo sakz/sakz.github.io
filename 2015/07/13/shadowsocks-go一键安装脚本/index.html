@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="fazero">
 <meta property="og:description" content="本脚本适用环境：系统支持：CentOS，Debian，Ubuntu内存要求：≥128M
 使用方法：使用root用户登录，运行以下命令：">
-<meta property="og:updated_time" content="2015-07-13T08:40:41.000Z">
+<meta property="og:updated_time" content="2015-09-01T13:24:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shadowsocks-go一键安装脚本">
 <meta name="twitter:description" content="本脚本适用环境：系统支持：CentOS，Debian，Ubuntu内存要求：≥128M
@@ -243,26 +243,8 @@
 <p>可以查看 shadowsocks-go 进程是否存在。<br>本脚本安装完成后，已将 shadowsocks-go 加入开机自启动。</p>
 <p>使用命令：</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">启动：<span class="regexp">/etc/</span>init.d/shadowsocks start</span><br><span class="line">停止：<span class="regexp">/etc/</span>init.d/shadowsocks stop</span><br><span class="line">重启：<span class="regexp">/etc/</span>init.d/shadowsocks restart</span><br><span class="line">状态：<span class="regexp">/etc/</span>init.d/shadowsocks status</span><br></pre></td></tr></table></figure>
-<p>多用户多端口配置文件 sample（2015年01月08日）：<br>配置文件路径：/etc/shadowsocks/config.json</p>
-<p>{ </p>
-<pre><code><span class="string">"port_password"</span>:{ 
-
-     <span class="string">"8989"</span>:<span class="string">"password0"</span>, 
-
-     <span class="string">"9001"</span>:<span class="string">"password1"</span>, 
-
-     <span class="string">"9002"</span>:<span class="string">"password2"</span>,
-
-     <span class="string">"9003"</span>:<span class="string">"password3"</span>, 
-
-     <span class="string">"9004"</span>:<span class="string">"password4"</span> 
-
-}, 
-
-<span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>, 
-
-<span class="string">"timeout"</span>:<span class="number">600</span>
-</code></pre><p> }</p>
+<p>多用户多端口配置文件 sample（2015年01月08日）：<br>配置文件路径：<code>/etc/shadowsocks/config.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123; </span><br><span class="line"></span><br><span class="line">    "<span class="attribute">port_password</span>":<span class="value">&#123; </span><br><span class="line"></span><br><span class="line">         "<span class="attribute">8989</span>":<span class="value"><span class="string">"password0"</span></span>, </span><br><span class="line"></span><br><span class="line">         "<span class="attribute">9001</span>":<span class="value"><span class="string">"password1"</span></span>, </span><br><span class="line"></span><br><span class="line">         "<span class="attribute">9002</span>":<span class="value"><span class="string">"password2"</span></span>,</span><br><span class="line"></span><br><span class="line">         "<span class="attribute">9003</span>":<span class="value"><span class="string">"password3"</span></span>, </span><br><span class="line"></span><br><span class="line">         "<span class="attribute">9004</span>":<span class="value"><span class="string">"password4"</span> </span><br><span class="line"></span><br><span class="line">    </span>&#125;</span>, </span><br><span class="line"></span><br><span class="line">    "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span>, </span><br><span class="line"></span><br><span class="line">    "<span class="attribute">timeout</span>":<span class="value"><span class="number">600</span></span><br><span class="line"></span><br><span class="line"> </span>&#125;</span><br></pre></td></tr></table></figure>
 <p>官方版本的 sample ，详见<a href="https://github.com/shadowsocks/shadowsocks-go/blob/master/sample-config/server-multi-port.json" target="_blank" rel="external">这里</a>。</p>
 <p>teddysun大神还写了其他的语言的一键安装脚本，但是我试过之后发现还是go语言的安装最快，几分钟就搞定,我一般用这个，快速方便。不过不同语言有不同的优缺点，具体参考shadowsocks作者的<strong><a href="https://github.com/shadowsocks/shadowsocks/wiki/Feature-Comparison-across-Different-Versions" target="_blank" rel="external">介绍</a></strong></p>
 <p>via: <a href="http://teddysun.com/392.html" target="_blank" rel="external">http://teddysun.com/392.html</a></p>
