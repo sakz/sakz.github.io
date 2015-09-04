@@ -5,19 +5,19 @@
   
   <title>Mac用iTerm2连接到Linux上,不能输入中文 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端不能显示中文，也不能输入中文，然而本地终端可以显示和输入。
-解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8，">
+  <meta name="description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端显示中文乱码，也不能输入中文，然而本地终端可以显示和输入。
+解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8编">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac用iTerm2连接到Linux上,不能输入中文">
 <meta property="og:url" content="http://blog.fazero.cc/2015/09/04/Mac用iTerm2连接到Linux上-不能输入中文/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端不能显示中文，也不能输入中文，然而本地终端可以显示和输入。
-解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8，">
-<meta property="og:updated_time" content="2015-09-04T09:58:41.000Z">
+<meta property="og:description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端显示中文乱码，也不能输入中文，然而本地终端可以显示和输入。
+解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8编">
+<meta property="og:updated_time" content="2015-09-04T10:02:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac用iTerm2连接到Linux上,不能输入中文">
-<meta name="twitter:description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端不能显示中文，也不能输入中文，然而本地终端可以显示和输入。
-解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8，">
+<meta name="twitter:description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端显示中文乱码，也不能输入中文，然而本地终端可以显示和输入。
+解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8编">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -227,17 +227,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="问题:">问题:</h4><p>服务器是ubuntu，用Mac的iterm2 ssh连上去，终端不能显示中文，也不能输入中文，然而本地终端可以显示和输入。</p>
-<h5 id="解决方法：">解决方法：</h5><p>这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。<br>输入<code>locale</code>可以查看字符编码设置情况，而我的对应值是空的。<br>因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8，所以本地和服务器端都要在.zshrc设置，步骤如下，bash对应<code>.bash_profile</code>或<code>.bashrc</code>文件。</p>
+        <h4 id="问题:">问题:</h4><p>服务器是ubuntu，用Mac的iterm2 ssh连上去，终端显示中文乱码，也不能输入中文，然而本地终端可以显示和输入。</p>
+<h5 id="解决方法：">解决方法：</h5><p>这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。<br>输入<code>locale</code>可以查看字符编码设置情况，而我的对应值是空的。<br>因为我在本地和服务器都用<code>zsh</code>替代了<code>bash</code>，而且使用了<code>oh-my-zsh</code>，而默认的<code>.zshrc</code>没有设置为<code>utf-8</code>编码，所以本地和服务器端都要在<code>.zshrc</code>设置，步骤如下，bash对应<code>.bash_profile</code>或<code>.bashrc</code>文件。</p>
 <p>1.在终端下输入</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>或者使用其他你喜欢的编辑器编辑~/.zshrc</p>
+<p>或者使用其他你喜欢的编辑器编辑<code>~/.zshrc</code>文件<br><a id="more"></a></p>
 <p>2.在文件内容末端添加：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LC_ALL=en_US.UTF-<span class="number">8</span>  </span><br><span class="line"><span class="built_in">export</span> LANG=en_US.UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure>
 <p>接着重启一下终端，或者输入<code>source ~/.zshrc</code>使设置生效。</p>
 <p>设置成功的话，在本地和登录到服务器输入<code>locale</code>回车会显示下面内容。</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">LANG=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_COLLATE=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_CTYPE=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_MESSAGES=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_MONETARY=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_NUMERIC=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_TIME=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_ALL=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br></pre></td></tr></table></figure>
 <p>这时，中文输入和显示都正常了。</p>
+<p>参考：<br><a href="http://hearrain.com/2013/04/738" target="_blank" rel="external">oh-my-zsh中文乱码问题</a></p>
 
       
     </div>
