@@ -3,30 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac安装autojump | fazero</title>
+  <title>Tag: learn | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装ZSH
-用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。
-自动安装
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
-git clone git://github.com/robbyrussell/oh-my-zsh">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mac安装autojump">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/Mac安装autojump/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="fazero">
+<meta property="og:url" content="http://blog.fazero.cc/tags/learn/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="安装ZSH
-用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。
-自动安装
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
-git clone git://github.com/robbyrussell/oh-my-zsh">
-<meta property="og:updated_time" content="2015-06-28T12:55:47.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac安装autojump">
-<meta name="twitter:description" content="安装ZSH
-用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。
-自动安装
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh手动安装
-git clone git://github.com/robbyrussell/oh-my-zsh">
+<meta name="twitter:title" content="fazero">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -199,127 +186,53 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Mac安装autojump" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2015/06/28/Mac安装autojump/" class="article-date">
-  	<time datetime="2015-06-28T12:43:08.000Z" itemprop="datePublished">2015-06-28</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2015/09/04/how-to-find-information/" class="archive-article-date">
+  	<time datetime="2015-09-04T11:41:09.000Z" itemprop="datePublished">9月 4</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Mac安装autojump
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/09/04/how-to-find-information/">how-to-find-technical-information</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autojump/">autojump</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/">learn</a></li></ul>
 	</div>
 
-        
+          
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>安装ZSH</p>
-<p>用ZSH来替代原生的bash，兼容bash，保留习惯转移很方便，各种记录补全，自定义别名等工具利器。</p>
-<p>自动安装</p>
-<p><code>wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</code><br>手动安装</p>
-<p><code>git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</code><br><code>cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</code><br><a id="more"></a></p>
-<p>安装Homebrew，简称brew</p>
-<p>mac 自带的ruby安装起来很方便</p>
-<p><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</code></p>
-<p>不多介绍，用命令行安装和卸载工具软件，官网 <a href="http://brew.sh" target="_blank" rel="external">http://brew.sh</a></p>
-<p>添加<code>autojump</code>插件</p>
-<p><code>brew install autojump</code><br>autojump智能跳转，通过zsh记录访问过的目录，autojump的简写 j ＋ 目录名，随意的在目录间跳转，支持各种模糊匹配、补全，例如之前的 cd work；现在可以直接 work，或者 j wor 、 j work 达到同样的效果，节省大好的时间。<code>j –s</code> 可以看你的历史路径库.</p>
-<p>目录浏览和跳转：输入 <code>d</code>，即可列出你在这个会话里访问的目录列表，输入列表前的序号，即可直接跳转。</p>
-<p>在当前目录下输入<code>..</code> 或 <code>...</code>，或直接输入当前目录名都可以跳转，你甚至不再需要输入 cd 命令了。</p>
-<p>关于 <code>zsh: command not found: j</code> 报错</p>
-<p>请在.zshrc文件相应的位置，找到 <code>plugins=(git)</code> 这行,改为下面<br><code>plugins=(git autojump)</code></p>
-<p><a href="http://fazero.cc/archives/462" target="_blank" rel="external">关于iterm2和zsh</a></p>
-
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/07/01/亚马逊AWS更改LINUX为ROOT权限密码登陆/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          亚马逊AWS更改LINUX为ROOT权限密码登陆
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/06/28/vim缓冲区/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vim缓冲区命令</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Mac安装autojump" data-title="Mac安装autojump" data-url="http://blog.fazero.cc/2015/06/28/Mac安装autojump/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"fazeroblog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -345,9 +258,9 @@ git clone git://github.com/robbyrussell/oh-my-zsh">
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
