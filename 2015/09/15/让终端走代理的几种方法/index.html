@@ -9,8 +9,7 @@
 1export http_proxy=http://proxyAddress:port
 这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
 方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
-直接在.bashrc或者.zshrc添加下面内容
-12export http_proxy=&quot;http://localhost:port&quot;ex">
+直接在.bashrc或者.zshrc添加下面内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="让终端走代理的几种方法">
 <meta property="og:url" content="http://blog.fazero.cc/2015/09/15/让终端走代理的几种方法/index.html">
@@ -19,17 +18,15 @@
 1export http_proxy=http://proxyAddress:port
 这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
 方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
-直接在.bashrc或者.zshrc添加下面内容
-12export http_proxy=&quot;http://localhost:port&quot;ex">
-<meta property="og:updated_time" content="2015-09-15T09:10:50.000Z">
+直接在.bashrc或者.zshrc添加下面内容">
+<meta property="og:updated_time" content="2015-09-15T09:27:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让终端走代理的几种方法">
 <meta name="twitter:description" content="方法1:在终端中直接运行命令
 1export http_proxy=http://proxyAddress:port
 这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
 方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
-直接在.bashrc或者.zshrc添加下面内容
-12export http_proxy=&quot;http://localhost:port&quot;ex">
+直接在.bashrc或者.zshrc添加下面内容">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -243,19 +240,21 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> http_proxy=http:<span class="comment">//proxyAddress:port</span></span><br></pre></td></tr></table></figure>
 <p>这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。</p>
 <h4 id="方法2:">方法2:</h4><p>把代理服务器地址写入shell配置文件<code>.bashrc</code>或者<code>.zshrc</code></p>
-<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容</p>
+<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容<br><a id="more"></a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://localhost:port"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://localhost:port"</span></span><br></pre></td></tr></table></figure>
 <p>以使用shadowsocks代理为例，ss的代理端口为<code>1080</code>,那么应该设置为</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
 <p><code>localhost</code>就是一个域名，域名默认指向 <code>127.0.0.1</code>，两者是一样的。</p>
 <p>然后<code>ESC</code>后<code>:wq</code>保存文件，接着在终端中执行<br><code>source  ~/.bashrc</code></p>
 <p>或者退出当前终端再起一个终端。 这个办法的好处是把代理服务器永久保存了，下次就可以直接用了。</p>
-<h4 id="方法3:">方法3:</h4><p>改相应工具的配置，比如apt的配置</p>
+<h4 id="方法3:">方法3:</h4><p>改相应工具的配置，比如<code>apt</code>的配置</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/apt/apt.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 <p>在文件末尾加入下面这行</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">"http://proxyAddress:port"</span></span><br></pre></td></tr></table></figure>
-<p>保存apt.conf文件即可。</p>
-<p>补充<br>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
+<p>保存<code>apt.conf</code>文件即可。<br>关于<code>apt</code>的代理设置可以参考<a href="http://askubuntu.com/questions/349702/apt-conf-acquirehttpproxy-proxyserverport-seems-not-to-be-used-ubuntu-13" target="_blank" rel="external">这里</a></p>
+<p>关于git的代理设置看这里:<a href="http://blog.fazero.cc/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/">用shadowsocks加速git clone</a></p>
+<h4 id="方法4:">方法4:</h4><p><a href="http://blog.fazero.cc/2015/08/31/%E5%88%A9%E7%94%A8proxychains%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/">利用proxychains在终端使用socks5代理</a></p>
+<h4 id="补充：">补充：</h4><p>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=<span class="string">http:</span><span class="comment">//userName:password@proxyAddress:port</span></span><br></pre></td></tr></table></figure>
       
     </div>

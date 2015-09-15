@@ -218,20 +218,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> http_proxy=http:<span class="comment">//proxyAddress:port</span></span><br></pre></td></tr></table></figure>
 <p>这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。</p>
 <h4 id="方法2:">方法2:</h4><p>把代理服务器地址写入shell配置文件<code>.bashrc</code>或者<code>.zshrc</code></p>
-<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://localhost:port"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://localhost:port"</span></span><br></pre></td></tr></table></figure>
-<p>以使用shadowsocks代理为例，ss的代理端口为<code>1080</code>,那么应该设置为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
-<p><code>localhost</code>就是一个域名，域名默认指向 <code>127.0.0.1</code>，两者是一样的。</p>
-<p>然后<code>ESC</code>后<code>:wq</code>保存文件，接着在终端中执行<br><code>source  ~/.bashrc</code></p>
-<p>或者退出当前终端再起一个终端。 这个办法的好处是把代理服务器永久保存了，下次就可以直接用了。</p>
-<h4 id="方法3:">方法3:</h4><p>改相应工具的配置，比如apt的配置</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/apt/apt.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
-<p>在文件末尾加入下面这行</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">"http://proxyAddress:port"</span></span><br></pre></td></tr></table></figure>
-<p>保存apt.conf文件即可。</p>
-<p>补充<br>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=<span class="string">http:</span><span class="comment">//userName:password@proxyAddress:port</span></span><br></pre></td></tr></table></figure>
+<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容<br>
       
     </div>
     
@@ -244,6 +231,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/09/15/让终端走代理的几种方法/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
