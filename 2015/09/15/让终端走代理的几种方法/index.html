@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | fazero</title>
+  <title>让终端走代理的几种方法 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fazero">
-<meta property="og:url" content="http://blog.fazero.cc/archives/2015/page/4/index.html">
+  <meta name="description" content="方法1:在终端中直接运行命令
+1export http_proxy=http://proxyAddress:port
+这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
+方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
+直接在.bashrc或者.zshrc添加下面内容
+12export http_proxy=&quot;http://localhost:port&quot;ex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让终端走代理的几种方法">
+<meta property="og:url" content="http://blog.fazero.cc/2015/09/15/让终端走代理的几种方法/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description">
+<meta property="og:description" content="方法1:在终端中直接运行命令
+1export http_proxy=http://proxyAddress:port
+这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
+方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
+直接在.bashrc或者.zshrc添加下面内容
+12export http_proxy=&quot;http://localhost:port&quot;ex">
+<meta property="og:updated_time" content="2015-09-15T09:10:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fazero">
-<meta name="twitter:description">
+<meta name="twitter:title" content="让终端走代理的几种方法">
+<meta name="twitter:description" content="方法1:在终端中直接运行命令
+1export http_proxy=http://proxyAddress:port
+这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
+方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
+直接在.bashrc或者.zshrc添加下面内容
+12export http_proxy=&quot;http://localhost:port&quot;ex">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -186,119 +202,119 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-让终端走代理的几种方法" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2015/09/15/让终端走代理的几种方法/" class="article-date">
+  	<time datetime="2015-09-15T09:08:20.000Z" itemprop="datePublished">2015-09-15</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      让终端走代理的几种方法
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/21/Sublime Text 快捷键汇总[windows]/" class="archive-article-date">
-  	<time datetime="2015-06-21T11:14:58.000Z" itemprop="datePublished">6月 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/21/Sublime Text 快捷键汇总[windows]/">Sublime Text 快捷键汇总[windows]</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="方法1:">方法1:</h4><p>在终端中直接运行命令</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> http_proxy=http:<span class="comment">//proxyAddress:port</span></span><br></pre></td></tr></table></figure>
+<p>这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。</p>
+<h4 id="方法2:">方法2:</h4><p>把代理服务器地址写入shell配置文件<code>.bashrc</code>或者<code>.zshrc</code></p>
+<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://localhost:port"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://localhost:port"</span></span><br></pre></td></tr></table></figure>
+<p>以使用shadowsocks代理为例，ss的代理端口为<code>1080</code>,那么应该设置为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
+<p><code>localhost</code>就是一个域名，域名默认指向 <code>127.0.0.1</code>，两者是一样的。</p>
+<p>然后<code>ESC</code>后<code>:wq</code>保存文件，接着在终端中执行<br><code>source  ~/.bashrc</code></p>
+<p>或者退出当前终端再起一个终端。 这个办法的好处是把代理服务器永久保存了，下次就可以直接用了。</p>
+<h4 id="方法3:">方法3:</h4><p>改相应工具的配置，比如apt的配置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/apt/apt.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p>在文件末尾加入下面这行</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">"http://proxyAddress:port"</span></span><br></pre></td></tr></table></figure>
+<p>保存apt.conf文件即可。</p>
+<p>补充<br>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=<span class="string">http:</span><span class="comment">//userName:password@proxyAddress:port</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/21/Sublime Text 实用快捷键[Mac OS X]/" class="archive-article-date">
-  	<time datetime="2015-06-21T10:32:25.000Z" itemprop="datePublished">6月 21</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/21/Sublime Text 实用快捷键[Mac OS X]/">Sublime Text 实用快捷键[Mac OS X]</a>
-    </h1>
   
+    <a href="/2015/09/04/how-to-find-information/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How-to-find-technical-information</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/06/21/Hello-Hexo/" class="archive-article-date">
-  	<time datetime="2015-06-21T08:34:38.000Z" itemprop="datePublished">6月 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/06/21/Hello-Hexo/">Hello Hexo</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="让终端走代理的几种方法" data-title="让终端走代理的几种方法" data-url="http://blog.fazero.cc/2015/09/15/让终端走代理的几种方法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fazeroblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2015/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2015/">1</a><a class="page-number" href="/archives/2015/page/2/">2</a><a class="page-number" href="/archives/2015/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
-  
 
 </div>
       <footer id="footer">
@@ -324,8 +340,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
