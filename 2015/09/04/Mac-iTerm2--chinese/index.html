@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="fazero">
 <meta property="og:description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端显示中文乱码，也不能输入中文，然而本地终端可以显示和输入。
 解决方法：这种情况一般是终端和服务器的字符集不匹配，MacOSX下默认的是utf8字符集。输入locale可以查看字符编码设置情况，而我的对应值是空的。因为我在本地和服务器都用zsh替代了bash，而且使用了oh-my-zsh，而默认的.zshrc没有设置为utf-8编">
-<meta property="og:updated_time" content="2015-09-04T10:02:57.000Z">
+<meta property="og:updated_time" content="2015-10-17T05:12:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac用iTerm2连接到Linux上,不能输入中文">
 <meta name="twitter:description" content="问题:服务器是ubuntu，用Mac的iterm2 ssh连上去，终端显示中文乱码，也不能输入中文，然而本地终端可以显示和输入。
@@ -238,7 +238,12 @@
 <p>设置成功的话，在本地和登录到服务器输入<code>locale</code>回车会显示下面内容。</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">LANG=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_COLLATE=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_CTYPE=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_MESSAGES=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_MONETARY=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_NUMERIC=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_TIME=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br><span class="line"><span class="setting">LC_ALL=<span class="value"><span class="string">"en_US.UTF-8"</span></span></span></span><br></pre></td></tr></table></figure>
 <p>这时，中文输入和显示都正常了。</p>
-<p>参考：<br><a href="http://hearrain.com/2013/04/738" target="_blank" rel="external">oh-my-zsh中文乱码问题</a></p>
+<p>3.如果设置之后出现以下问题</p>
+<p><code>-bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)</code><br>解决办法：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo locale-gen en_US<span class="class">.UTF-8</span></span><br><span class="line"></span><br><span class="line">sudo dpkg-reconfigure locales</span><br></pre></td></tr></table></figure>
+<p>解释：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The error <span class="string">"bash: warning: setlocale: LC_ALL: cannot change locale (en_US)"</span> occurs when the remote server does not <span class="keyword">understand</span> the locale <span class="string">"en_US.UTF-8"</span>. The fix <span class="keyword">is</span> to generate the locale using the command <span class="string">"sudo locale-gen en_US.UTF-8"</span> and update the locale repository to store this locale, such that future connections(ssh) can <span class="keyword">understand</span> this locale. The command <span class="string">"sudo dpkg-reconfigure locales"</span> updates the local repository with the newly generated locale, i.e en_US.UTF-8.</span><br></pre></td></tr></table></figure>
+<p>（大概意思就是服务器上没有安装这个编码的字符集，安装之后设置一下就支持了）<br>参考：<br><a href="http://hearrain.com/2013/04/738" target="_blank" rel="external">oh-my-zsh中文乱码问题</a></p>
 
       
     </div>
