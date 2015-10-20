@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Sublime的terminal插件 | fazero</title>
+  <title>git push | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="terminal插件的作用是在终端打开当前文档所在路径，快捷键是Command+Shift+T默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。
-123456789101112&amp;#123;    // The command to execute for the terminal, leave blank for the OS default    // On OS X th">
+  <meta name="description" content="git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。
+1$ git push &amp;lt;远程主机名&amp;gt; &amp;lt;本地分支名&amp;gt;:&amp;lt;远程分支名&amp;gt;
+注意，分支推送顺序的写法是&amp;lt;来源地&amp;gt;:&amp;lt;目的地&amp;gt;，所以git pull是&amp;lt;远程分支&amp;gt;:&amp;lt;本地分支&amp;gt;，而git push是&amp;lt;本地分支&amp;gt;:&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sublime的terminal插件">
-<meta property="og:url" content="http://blog.fazero.cc/2015/06/28/sublime的terminal插件/index.html">
+<meta property="og:title" content="git push">
+<meta property="og:url" content="http://blog.fazero.cc/2015/10/20/git-push/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="terminal插件的作用是在终端打开当前文档所在路径，快捷键是Command+Shift+T默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。
-123456789101112&amp;#123;    // The command to execute for the terminal, leave blank for the OS default    // On OS X th">
-<meta property="og:updated_time" content="2015-06-28T03:23:21.000Z">
+<meta property="og:description" content="git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。
+1$ git push &amp;lt;远程主机名&amp;gt; &amp;lt;本地分支名&amp;gt;:&amp;lt;远程分支名&amp;gt;
+注意，分支推送顺序的写法是&amp;lt;来源地&amp;gt;:&amp;lt;目的地&amp;gt;，所以git pull是&amp;lt;远程分支&amp;gt;:&amp;lt;本地分支&amp;gt;，而git push是&amp;lt;本地分支&amp;gt;:&amp;">
+<meta property="og:updated_time" content="2015-10-20T03:26:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sublime的terminal插件">
-<meta name="twitter:description" content="terminal插件的作用是在终端打开当前文档所在路径，快捷键是Command+Shift+T默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。
-123456789101112&amp;#123;    // The command to execute for the terminal, leave blank for the OS default    // On OS X th">
+<meta name="twitter:title" content="git push">
+<meta name="twitter:description" content="git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。
+1$ git push &amp;lt;远程主机名&amp;gt; &amp;lt;本地分支名&amp;gt;:&amp;lt;远程分支名&amp;gt;
+注意，分支推送顺序的写法是&amp;lt;来源地&amp;gt;:&amp;lt;目的地&amp;gt;，所以git pull是&amp;lt;远程分支&amp;gt;:&amp;lt;本地分支&amp;gt;，而git push是&amp;lt;本地分支&amp;gt;:&amp;">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -190,11 +193,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-sublime的terminal插件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-git-push" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/28/sublime的terminal插件/" class="article-date">
-  	<time datetime="2015-06-27T16:56:41.000Z" itemprop="datePublished">2015-06-28</time>
+      <a href="/2015/10/20/git-push/" class="article-date">
+  	<time datetime="2015-10-20T03:20:31.000Z" itemprop="datePublished">2015-10-20</time>
 </a>
     </div>
   
@@ -207,7 +210,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Sublime的terminal插件
+      git push
     </h1>
   
 
@@ -216,7 +219,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
 	</div>
 
         
@@ -227,12 +230,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>terminal插件的作用是在终端打开当前文档所在路径，快捷键是<code>Command+Shift+T</code><br>默认是调用自带终端，而我用的是iterm，要修改插件的设置，改为下面的。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    // The command to <span class="operator"><span class="keyword">execute</span> <span class="keyword">for</span> the terminal, leave blank <span class="keyword">for</span> the OS <span class="keyword">default</span></span><br><span class="line">    // <span class="keyword">On</span> OS X the terminal can be <span class="keyword">set</span> <span class="keyword">to</span> iTerm.sh <span class="keyword">to</span> <span class="keyword">execute</span> iTerm</span><br><span class="line">    <span class="string">"terminal"</span>: <span class="string">"iTerm.sh"</span>,</span><br><span class="line"></span><br><span class="line">    // A list <span class="keyword">of</span> <span class="keyword">default</span> parameters <span class="keyword">to</span> pass <span class="keyword">to</span> the terminal, this can be</span><br><span class="line">    // overridden <span class="keyword">by</span> passing the <span class="string">"parameters"</span> <span class="keyword">key</span> <span class="keyword">with</span> a list <span class="keyword">value</span> <span class="keyword">to</span> the args</span><br><span class="line">    // dict <span class="keyword">when</span> calling the <span class="string">"open_terminal"</span> <span class="keyword">or</span> <span class="string">"open_terminal_project_folder"</span></span><br><span class="line">    // commands</span><br><span class="line">    <span class="string">"parameters"</span>: []</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+        <p>git push命令用于将本地分支的更新，推送到远程主机。它的格式与git pull命令相仿。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push <span class="tag">&lt;<span class="title">远程主机名</span>&gt;</span> <span class="tag">&lt;<span class="title">本地分支名</span>&gt;</span>:<span class="tag">&lt;<span class="title">远程分支名</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意，分支推送顺序的写法是&lt;来源地&gt;:&lt;目的地&gt;，所以git pull是&lt;远程分支&gt;:&lt;本地分支&gt;，而git push是&lt;本地分支&gt;:&lt;远程分支&gt;。</p>
+<p>如果省略远程分支名，则表示将本地分支推送与之存在”追踪关系”的远程分支(通常两者同名)，如果该远程分支不存在，则会被新建。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">push </span>origin master</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>但默认是在终端新的窗口打开，想在新的标签打开的话得修改terminal文件夹下得iTerm.sh文件，修改如下。</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (( $RUNNING )); <span class="keyword">then</span></span><br><span class="line">    osascript&lt;&lt;END</span><br><span class="line">    <span class="keyword">tell</span> <span class="type">application</span> <span class="string">"iTerm"</span></span><br><span class="line">        <span class="command">activate</span></span><br><span class="line">        <span class="keyword">tell</span> <span class="keyword">the</span> <span class="keyword">first</span> terminal</span><br><span class="line">            <span class="keyword">set</span> sess <span class="keyword">to</span> (<span class="command">launch</span> session <span class="string">"Default Session"</span>)</span><br><span class="line">            <span class="keyword">tell</span> sess</span><br><span class="line">                <span class="command">write</span> <span class="type">text</span> <span class="string">"$CD_CMD"</span></span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">    <span class="keyword">end</span> <span class="keyword">tell</span></span><br><span class="line">END</span><br></pre></td></tr></table></figure>
-<p><a href="http://stackoverflow.com/questions/27482445/open-project-from-sublime-text-to-new-tab-in-iterm-not-to-new-window" target="_blank" rel="external">参考</a></p>
+<p>上面命令表示，将本地的master分支推送到origin主机的master分支。如果后者不存在，则会被新建。</p>
+<p>如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git push origin <span class="symbol">:master</span></span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line"><span class="variable">$ </span>git push origin --delete master</span><br></pre></td></tr></table></figure>
+<p>上面命令表示删除origin主机的master分支。</p>
+<p>如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">push </span>origin</span><br></pre></td></tr></table></figure>
+<p>上面命令表示，将当前分支推送到origin主机的对应分支。</p>
+<p>如果当前分支只有一个追踪分支，那么主机名都可以省略。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
+<p>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">push </span>-u origin master</span><br></pre></td></tr></table></figure>
+<p>上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
+<p>不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。如果要修改这个设置，可以采用git config命令。</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="built_in">global</span> push.<span class="reserved">default</span> matching</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ git config --<span class="built_in">global</span> push.<span class="reserved">default</span> simple</span><br></pre></td></tr></table></figure>
+<p>还有一种情况，就是不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用–all选项。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push <span class="comment">--all origin</span></span><br></pre></td></tr></table></figure>
+<p>上面命令表示，将所有本地分支都推送到origin主机。</p>
+<p>如果远程主机的版本比本地版本更新，推送时Git会报错，要求先在本地做git pull合并差异，然后再推送到远程主机。这时，如果你一定要推送，可以使用–force选项。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push <span class="comment">--force origin</span></span><br></pre></td></tr></table></figure>
+<p>上面命令使用–force选项，结果导致在远程主机产生一个”非直进式”的合并(non-fast-forward merge)。除非你很确定要这样做，否则应该尽量避免使用–force选项。</p>
+<p>最后，git push不会推送标签(tag)，除非使用–tags选项。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin <span class="comment">--tags</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://www.yiibai.com/git/git_push.html" target="_blank" rel="external">来源</a></p>
 
       
     </div>
@@ -242,18 +268,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/06/28/使用Sublime-Text-3-编辑Markdown/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          使用Sublime Text 3 编辑Markdown
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/06/27/在终端打开sublime/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在终端打开sublime</div>
+    <a href="/2015/10/01/SwitchyOmega/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shadowsocks配合SwitchyOmega科学上网</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -282,7 +299,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="sublime的terminal插件" data-title="Sublime的terminal插件" data-url="http://blog.fazero.cc/2015/06/28/sublime的terminal插件/"></div>
+	<div class="ds-thread" data-thread-key="git-push" data-title="git push" data-url="http://blog.fazero.cc/2015/10/20/git-push/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
