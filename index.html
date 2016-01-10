@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Mac/" style="font-size: 16.67px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 11.67px;">blog</a> <a href="/tags/css学习笔记/" style="font-size: 10px;">css学习笔记</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/linux/" style="font-size: 18.33px;">linux</a> <a href="/tags/markdown/" style="font-size: 11.67px;">markdown</a> <a href="/tags/proxy/" style="font-size: 13.33px;">proxy</a> <a href="/tags/shadowsocks/" style="font-size: 13.33px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/terminal/" style="font-size: 13.33px;">terminal</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vps/" style="font-size: 13.33px;">vps</a> <a href="/tags/webstorm/" style="font-size: 11.67px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 11.67px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/Mac/" style="font-size: 16.67px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 11.67px;">blog</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/linux/" style="font-size: 18.33px;">linux</a> <a href="/tags/markdown/" style="font-size: 11.67px;">markdown</a> <a href="/tags/proxy/" style="font-size: 13.33px;">proxy</a> <a href="/tags/shadowsocks/" style="font-size: 13.33px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 20px;">sublime</a> <a href="/tags/terminal/" style="font-size: 13.33px;">terminal</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vps/" style="font-size: 13.33px;">vps</a> <a href="/tags/webstorm/" style="font-size: 11.67px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 13.33px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -187,6 +187,68 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-CSS选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/10/CSS选择器/" class="article-date">
+  	<time datetime="2016-01-10T13:04:20.000Z" itemprop="datePublished">2016-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/10/CSS选择器/">CSS选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>常用的CSS选择器大家都熟悉，但是说到属性选择器，一些伪类选择器，伪元素未必每个人都会用，现在微软已经停止支持IE11以前的IE浏览器了，不考虑兼容问题的话，用CSS3新增的选择器还是挺方便的，例如<code>:last-child</code>,<code>:not</code>这些。看了几篇文章,详细学习了所有的CSS选择器,大部分都写demo尝试了一遍，也体验了emmet强大的语法，例如想生成下面的html代码，输入<code>ul&gt;li[class=num$]{number $}*10</code>后按下<code>Tab</code>键就搞定,其他emmet的用法可以看<a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">官方文档</a>。</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num1"</span>&gt;number 1&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num2"</span>&gt;number 2&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num3"</span>&gt;number 3&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num4"</span>&gt;number 4&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num5"</span>&gt;number 5&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num6"</span>&gt;number 6&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num7"</span>&gt;number 7&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num8"</span>&gt;number 8&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num9"</span>&gt;number 9&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num10"</span>&gt;number 10&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://www.w3cplus.com/css/advanced-html-css-lesson3-complex-selectors.html" target="_blank" rel="external">HTML和CSS高级指南之三——丰富多彩的选择器</a></li>
+<li><a href="http://segmentfault.com/a/1190000003088878" target="_blank" rel="external">玩转CSS选择器（一） 之 使用方法介绍</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors" target="_blank" rel="external">MDN属性选择器</a></li>
+</ul>
+<p>第一篇文章里的思维导图非常详细，可以拿来快速参考。<br><img src="http://i4.tietuku.com/23a97c2efeb179eb.png" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-git-push" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -716,66 +778,6 @@ v2ex<span class="class">.com</span>
 
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-mac-jdk-switch" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/05/mac-jdk-switch/" class="article-date">
-  	<time datetime="2015-08-04T21:04:36.000Z" itemprop="datePublished">2015-08-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/05/mac-jdk-switch/">Mac JDK版本切换</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-安装JDK">1.安装JDK</h4><p><a href="https://support.apple.com/kb/DL1572?locale=zh_CN">JDK1.6下载地址</a><br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK1.8下载地址</a><br></p>
-<p>JDK1.6安装目录:<code>/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/</code><br>JDK1.8安装目录:<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk</code></p>
-<h4 id="2-在用户目录下的bash配置文件-bashrc中配置JAVA_HOME的路径,zsh对应-zshrc文件。">2.在用户目录下的<code>bash</code>配置文件<code>.bashrc</code>中配置<code>JAVA_HOME</code>的路径,<code>zsh</code>对应<code>.zshrc</code>文件。</h4><p>添加下面配置即可。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/05/mac-jdk-switch/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
