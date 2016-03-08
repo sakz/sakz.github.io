@@ -239,6 +239,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
+      <!-- Table of Contents -->
+
         <p>之前一直没有关注过登陆日志，用 <code>cat /var/log/auth.log</code>命令查看的时候，centos对应<code>cat /var/log/secure</code>满屏满屏的<code>&quot;Failed password for root XXX.XXX.XXX.XXX&quot;</code>，等了十多秒都没停下来，用<code>ctrl + c</code>终止后，查看auth.log文件大小，居然有67m,网上搜索了一下，用<code>grep &quot;Failed password for root&quot; /var/log/auth.log | awk &#39;{print $11}&#39; | sort | uniq -c | sort -nr | more</code>  这个命令查看了有多少ip在暴力破解我的ssh，又是满屏满屏的。<br>找了两条防暴力破解的命令</p>
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport <span class="number">22</span> -i eth0 -m <span class="keyword">state</span> --state NEW -m recent --set</span><br><span class="line">iptables -I INPUT -p tcp --dport <span class="number">22</span> -i eth0 -m <span class="keyword">state</span> --state NEW -m recent --update --seconds <span class="number">60</span> --hitcount <span class="number">4</span> -j DROP</span><br></pre></td></tr></table></figure>
 <p>第一句是说，对于外来数据，如果是 TCP 协议，目标端口号是 22，网络接口是 eth0，状态是新连接，那么把它加到最近列表中。</p>

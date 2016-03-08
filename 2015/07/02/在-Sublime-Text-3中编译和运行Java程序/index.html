@@ -247,6 +247,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
+      <!-- Table of Contents -->
+
         <h1 id="Windows篇：">Windows篇：</h1><h4 id="1-配置java环境变量">1.配置java环境变量</h4><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK下载地址</a></strong></p>
 <p>1）、<code>这台电脑&gt;属性&gt;高级系统设置&gt;环境变量</code>，在<code>用户变量</code>里新建一个名为<code>JAVA_HOME</code>的变量，变量值为安装jdk时的路径，比如我的为<code>C:\Program Files\Java\jdk1.8.0_45</code>,点击“确定”<br><strong>第一步很重要，默认安装路径就是上面的，更改了安装目录的话变量值就要更改为对应的目录</strong></p>
 <p>2）、在<code>用户变量</code>里新建一个名为<code>CLASSPATH</code>的变量，变量值为 <code>.;%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar;</code>，点击“确定”</p>
