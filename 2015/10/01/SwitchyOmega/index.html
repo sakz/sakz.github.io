@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/8b953c4agw1ewlzcywlmnj20dq0de3zx.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/8b953c4agw1ewlzde2d3bj20qa0dowgo.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzdqmeh2j20u70fwaep.jpg">
-<meta property="og:updated_time" content="2016-07-30T13:27:08.000Z">
+<meta property="og:updated_time" content="2016-08-01T12:55:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shadowsocks配合SwitchyOmega科学上网">
 <meta name="twitter:description" content="1.shadowsocks客户端的基本使用主要步骤:1.   下载客户端，各平台的客户端都有，windows,linux,mac,android,ios。    shadowsocks各平台客户端下载地址2.   输入ss账号信息（也可以直接扫屏幕上的二维码账号）,选择服务器。    免费ss账号网站：    1.http://freeshadowsocks.cf/    2.http://ss.">
@@ -261,6 +261,9 @@ var _hmt = _hmt || [];
 <p>但是问题来了，如果我访问的某个国外网址被墙了，但是pac代理规则里没有，那么这时只能在ss客户端切换到全局模式，这样毕竟有点麻烦，用过红杏都知道它可以很方便决定某个网址是否经过代理，那么ss能不能做到呢，请看下面的部分。</p>
 <hr>
 <h3 id="2-shadowsocks配合SwitchyOmega科学上网">2.shadowsocks配合SwitchyOmega科学上网</h3><p>SwitchyOmega是chrome下非常好用的代理管理插件。<br><a href="http://pan.baidu.com/s/1pJosoKr" target="_blank" rel="external">SwitchyOmega插件下载地址</a>,<code>.crx</code>是插件，<code>.bak</code>是备份文件<br>1.在chrome下安装SwitchyOmega插件。<br>PS:其实搜狗浏览器，UC浏览器，360极速浏览器也是可以使用这个插件的</p>
+<blockquote>
+<p>2016.7.27更新：<br>经测试最新版的chrome，版本号51以后，在windows平台使用auto awitch模式和shadowsocks全局模式都有问题，但使用<code>系统代理模式</code>就可以用。<br><a href="http://pan.baidu.com/s/1xIP8s" target="_blank" rel="external">chrome历史版本下载地址</a><br>Mac平台没问题。</p>
+</blockquote>
 <p><strong>步骤：</strong>打开chrome的设置&gt;扩展程序，然后把插件拖进来就行了。<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzacfdujj20ab0egt9w.jpg" alt="1.png"></p>
 <p><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzasf5x2j20nj0dp3yy.jpg" alt="2.png"></p>
 <p><img src="http://ww2.sinaimg.cn/large/8b953c4agw1ewlzb8gso9j20nf0e3q3k.jpg" alt="3"><br>2.设置SwitchyOmega。<br>直接导入我设置好的配置文件。<br><img src="http://ww4.sinaimg.cn/large/8b953c4agw1ewlzbn7azzj20pr0iatcp.jpg" alt="2x.png"><br>3.使用SwitchyOmega<br>下图中的<code>auto switch</code>相当于ss客户端的PAC模式,<code>shadowsocks</code>相当于全局模式。<br>下图就是通过<code>auto switch</code>访问谷歌。<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzcaura7j20yg0k9763.jpg" alt="2x.png"></p>
