@@ -19,11 +19,12 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/8b953c4agw1ewlzbn7azzj20pr0iatcp.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzcaura7j20yg0k9763.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzcmyorsj20yd0kd447.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/8b953c4agw1f74vbs4hkij20oh0f2tbk.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/8b953c4agw1f6mglpry6hj20pb0a3gnc.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/8b953c4agw1ewlzcywlmnj20dq0de3zx.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/8b953c4agw1ewlzde2d3bj20qa0dowgo.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzdqmeh2j20u70fwaep.jpg">
-<meta property="og:updated_time" content="2016-08-19T04:17:44.000Z">
+<meta property="og:updated_time" content="2016-08-24T07:37:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shadowsocks配合SwitchyOmega科学上网">
 <meta name="twitter:description" content="1.shadowsocks客户端的基本使用主要步骤:1.   下载客户端，各平台的客户端都有，windows,linux,mac,android,ios。    shadowsocks各平台客户端下载地址2.   输入ss账号信息（也可以直接扫屏幕上的二维码账号）,选择服务器。    免费ss账号网站：    1.http://freeshadowsocks.cf/    2.http://ss.">
@@ -265,7 +266,9 @@ var _hmt = _hmt || [];
 <p><strong>步骤：</strong>打开chrome的设置&gt;扩展程序，然后把插件拖进来就行了。<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzacfdujj20ab0egt9w.jpg" alt="1.png"></p>
 <p><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzasf5x2j20nj0dp3yy.jpg" alt="2.png"></p>
 <p><img src="http://ww2.sinaimg.cn/large/8b953c4agw1ewlzb8gso9j20nf0e3q3k.jpg" alt="3"><br>2.设置SwitchyOmega。<br>直接导入我设置好的配置文件。<br><img src="http://ww4.sinaimg.cn/large/8b953c4agw1ewlzbn7azzj20pr0iatcp.jpg" alt="2x.png"><br>3.使用SwitchyOmega<br>下图中的<code>auto switch</code>相当于ss客户端的PAC模式,<code>shadowsocks</code>相当于全局模式。<br>下图就是通过<code>auto switch</code>访问谷歌。<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzcaura7j20yg0k9763.jpg" alt="2x.png"></p>
-<h2 id="重点来了，就是如何把想要通过代理的网址加入到代理列表。">重点来了，就是如何把想要通过代理的网址加入到代理列表。</h2><p>下图就是在<code>auto switch</code>模式下，根据已有的规则（规则里大部分被Q的网站都有）去决定一个网址是否经过shaodwsocks代理，如果规则里又想经过<code>shadowsocks</code>代理把<code>github.com</code>这个网址加入到<code>shadowsocks</code>代理中，想不经过代理就选择<code>直接连接</code>。<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzcmyorsj20yd0kd447.jpg" alt="2x.png"></p>
+<h2 id="重点来了，就是如何把想要通过代理的网址加入到代理列表，有2种方法。">重点来了，就是如何把想要通过代理的网址加入到代理列表，有2种方法。</h2><h5 id="方法1：">方法1：</h5><p>下图1就是在<code>auto switch</code>模式下，点击那个插件的图标，点击那个网址，这里以<code>github.com</code>为例，然后点击<code>shadowsocks</code>就把当前网址加入到shadowsocks代理中，想不经过代理就选择<code>直接连接</code>。用<code>ip.cn</code>这个网址试的话，经过代理和不经过代理的显示地址不一样的，自行尝试。上述方式只是单次起作用，下次打开浏览器又做上述步骤，永久加入代理规则看方法2。<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzcmyorsj20yd0kd447.jpg" alt="图1"></p>
+<h5 id="方法2：">方法2：</h5><p>在<code>auto switch</code>模式下，点击那个插件的图标，点击那个网址，这里以<code>ip.cn</code>为例，要永久加入代理规则可以点击<code>添加条件</code>，选择<code>shadowsocks</code>就行了，看图2，代理服务器在新加坡，所以就显示新加坡。</p>
+<p><img src="http://ww2.sinaimg.cn/large/8b953c4agw1f74vbs4hkij20oh0f2tbk.jpg" alt="图2"></p>
 <blockquote>
 <h3 id="2016-8-8更新：">2016.8.8更新：</h3><p> 使用 Shadowsocks 的用户<strong>如果</strong>遇到 <code>Chrome + Windows 10</code> 环境下 SOCKS5 不稳定的问题， <strong>请在代理设置中把SOCK5换成 HTTP 代理协议。</strong> 如下图<br><img src="http://ww4.sinaimg.cn/large/8b953c4agw1f6mglpry6hj20pb0a3gnc.jpg" alt="">原因已经确定，是迅雷组件修改系统连接参数所致，卸载迅雷并重启也能修复。此问题与 SwitchyOmega 无关，其他代理设置软件或者手动设置代理也会导致 Chrome 发生此问题。<a href="https://github.com/FelisCatus/SwitchyOmega/issues/557" target="_blank" rel="external">参考来源</a><br><a href="http://pan.baidu.com/s/1xIP8s" target="_blank" rel="external">chrome历史版本下载地址</a><br>Mac平台没问题用原来的sock5就行。</p>
 </blockquote>
