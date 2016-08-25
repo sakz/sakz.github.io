@@ -24,7 +24,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/8b953c4agw1ewlzcywlmnj20dq0de3zx.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/8b953c4agw1ewlzde2d3bj20qa0dowgo.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/8b953c4agw1ewlzdqmeh2j20u70fwaep.jpg">
-<meta property="og:updated_time" content="2016-08-24T07:37:02.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/456470-c360ea145203c532.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-08-25T03:54:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shadowsocks配合SwitchyOmega科学上网">
 <meta name="twitter:description" content="1.shadowsocks客户端的基本使用主要步骤:1.   下载客户端，各平台的客户端都有，windows,linux,mac,android,ios。    shadowsocks各平台客户端下载地址2.   输入ss账号信息（也可以直接扫屏幕上的二维码账号）,选择服务器。    免费ss账号网站：    1.http://freeshadowsocks.cf/    2.http://ss.">
@@ -282,7 +283,14 @@ var _hmt = _hmt || [];
 </strong>Shadowsocks 是一种安全的 socks5 代理，可以保护你的上网流量。基于多种加密方式，推荐使用 aes-256-cfb 加密。安装和使用需要本地端和服务端。本地客户端已经包含了多种版本，包括iOS，Android，Windows，MAC，甚至是路由器 (基于OpenWRT)，所以使用方便，各取所需。远程服务端则一般安装在基于 Linux 的各种发行版操作系统，比如 Debian， CentOS， Fedora， Redhat， Ubuntu， openSUSE等。<br><strong>2、Shadowsocks 的作者是谁<br>
 </strong>最初只有 Python 版，由 <a href="https://github.com/clowwindy" target="_blank" rel="external">@clowwindy</a> 开发和维护，后来随着知名度提高，开始出现各种语言的版本，其中比较知名的是 libev ， go， nodejs 等版本，需要注意的是，nodejs 的作者也是 @clowwindy，但最近已不再维护该版本。libev 的维护者是<a href="https://github.com/madeye" target="_blank" rel="external">@madeye</a>，长期更新。<br><strong> 3、火狐上类似的插件是<code>AutoProxy</code><br>
 </strong>由于 <code>AutoProxy</code> 的作者没有更新，新的版本无法在 <code>Firefox 27.0</code>以后进行代理规则设置，所以我们用 xthunder 作者 的修复版，下载链接<a href="http://fxthunder.com/files/autoproxy.xpi" target="_blank" rel="external">http://fxthunder.com/files/autoproxy.xpi</a><br>如果您无法访问，也可以摸这个链接：<br><a href="http://pan.baidu.com/s/1F6k7G" target="_blank" rel="external">http://pan.baidu.com/s/1F6k7G</a><br>下载好这个 <code>.xpi</code>文件后，直接拖入任何 Firefox 窗口，然后安装重启浏览器即可，设置类似SwitchyOmega，就不多说了。</p>
-<p>1.其他平台的使用方法:<a href="http://www.jianshu.com/p/08ba65d1f91a" target="_blank" rel="external">http://www.jianshu.com/p/08ba65d1f91a</a><br>2.其他： <a href="http://fazero.cc/archives/341" target="_blank" rel="external">http://fazero.cc/archives/341</a></p>
+<h3 id="拓展3:">拓展3:</h3><p>Shadowsocks原理<br>简单理解的话，Shadowsocks是将以前通过SSH创建的Socks5协议拆开成Server端和client端，下面这个原理图能简单介绍其翻墙原理，基本上和利用SSH tunnel大致类似：<br><img src="http://upload-images.jianshu.io/upload_images/456470-c360ea145203c532.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>PC客户端（即你的电脑）发出请求基于Socks5协议跟SS-Local端进行通讯，由于这个SS-Local一般是本机或路由器等局域网的其他机器，不经过GFW，所以解决GFW通过特征分析进行干扰的问题。<br>SS-Local和SS-Server两端通过多种可选的加密方法进行通讯，经过GFW的时候因为是常规的TCP包，没有明显特征码GFW也无法对通讯数据进行解密，因此通讯放行。<br>SS-Server将收到的加密数据进行解密，还原初始请求，再发送到用户需要访问的服务网站，获取响应原路再返回SS-04，返回途中依然使用了加密，使得流量是普通TCP包，并成功穿过GFW防火墙。<br>因此，Shadowsocks的优点在于它解决了GFW通过分析流量特征从而干扰的问题，这是它优于SSH和VPN翻墙的地方。</p>
+<p>1.其他平台的使用方法:</p>
+<ul>
+<li>IOS平台使用教程 <a href="http://www.jianshu.com/p/e06c639b44d5" target="_blank" rel="external">http://www.jianshu.com/p/e06c639b44d5</a></li>
+<li>安卓平台使用教程 <a href="http://t.cn/RtlgWrp" target="_blank" rel="external">http://t.cn/RtlgWrp</a></li>
+<li>Linux平台使用教程<a href="http://www.jianshu.com/p/b8082300dc42" target="_blank" rel="external">http://www.jianshu.com/p/b8082300dc42</a></li>
+</ul>
+<p>2.其他： <a href="http://fazero.cc/archives/341" target="_blank" rel="external">http://fazero.cc/archives/341</a><br>3.<a href="http://t.cn/RUn8Hgy" target="_blank" rel="external">http://t.cn/RUn8Hgy</a></p>
 <p>需要稳定ss可联系我<strong>me@fazero.cc</strong><br>20块一年，美国节点，50g流量每个月</p>
 
       
