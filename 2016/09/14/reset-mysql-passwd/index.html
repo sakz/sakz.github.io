@@ -3,30 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>让终端走代理的几种方法 | fazero</title>
+  <title>Linux下MySql重置密码 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="方法1:在终端中直接运行命令
-1export http_proxy=http://proxyAddress:port
-这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
-方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
-直接在.bashrc或者.zshrc添加下面内容">
+  <meta name="description" content="1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的 状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对 外的端口封闭，并且停止nginx以及所有的用户进程的方法实现服务器的准安全 状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。 
+2．">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让终端走代理的几种方法">
-<meta property="og:url" content="http://blog.fazero.cc/2015/09/15/让终端走代理的几种方法/index.html">
+<meta property="og:title" content="Linux下MySql重置密码">
+<meta property="og:url" content="http://blog.fazero.cc/2016/09/14/reset-mysql-passwd/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="方法1:在终端中直接运行命令
-1export http_proxy=http://proxyAddress:port
-这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
-方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
-直接在.bashrc或者.zshrc添加下面内容">
-<meta property="og:updated_time" content="2015-09-15T09:30:05.000Z">
+<meta property="og:description" content="1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的 状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对 外的端口封闭，并且停止nginx以及所有的用户进程的方法实现服务器的准安全 状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。 
+2．">
+<meta property="og:updated_time" content="2016-09-13T17:02:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让终端走代理的几种方法">
-<meta name="twitter:description" content="方法1:在终端中直接运行命令
-1export http_proxy=http://proxyAddress:port
-这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
-方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
-直接在.bashrc或者.zshrc添加下面内容">
+<meta name="twitter:title" content="Linux下MySql重置密码">
+<meta name="twitter:description" content="1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的 状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对 外的端口封闭，并且停止nginx以及所有的用户进程的方法实现服务器的准安全 状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。 
+2．">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -214,11 +205,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-让终端走代理的几种方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-reset-mysql-passwd" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/15/让终端走代理的几种方法/" class="article-date">
-  	<time datetime="2015-09-15T09:08:20.000Z" itemprop="datePublished">2015-09-15</time>
+      <a href="/2016/09/14/reset-mysql-passwd/" class="article-date">
+  	<time datetime="2016-09-13T16:53:07.000Z" itemprop="datePublished">2016-09-14</time>
 </a>
     </div>
   
@@ -231,7 +222,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      让终端走代理的几种方法
+      Linux下MySql重置密码
     </h1>
   
 
@@ -240,7 +231,7 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
 	</div>
 
         
@@ -253,26 +244,28 @@ var _hmt = _hmt || [];
       
       <!-- Table of Contents -->
 
-        <h4 id="方法1:">方法1:</h4><p>在终端中直接运行命令</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> http_proxy=http:<span class="comment">//proxyAddress:port</span></span><br></pre></td></tr></table></figure>
-<p>这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。</p>
-<h4 id="方法2:">方法2:</h4><p>把代理服务器地址写入shell配置文件<code>.bashrc</code>或者<code>.zshrc</code></p>
-<p>直接在<code>.bashrc</code>或者<code>.zshrc</code>添加下面内容<br><a id="more"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://localhost:port"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://localhost:port"</span></span><br></pre></td></tr></table></figure>
-<p>以使用shadowsocks代理为例，ss的代理端口为<code>1080</code>,那么应该设置为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
-<p><code>localhost</code>就是一个域名，域名默认指向 <code>127.0.0.1</code>，两者是一样的。</p>
-<p>然后<code>ESC</code>后<code>:wq</code>保存文件，接着在终端中执行<br><code>source  ~/.bashrc</code></p>
-<p>或者退出当前终端再起一个终端。 这个办法的好处是把代理服务器永久保存了，下次就可以直接用了。</p>
-<h4 id="方法3:">方法3:</h4><p>改相应工具的配置，比如<code>apt</code>的配置</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/apt/apt.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
-<p>在文件末尾加入下面这行</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">"http://proxyAddress:port"</span></span><br></pre></td></tr></table></figure>
-<p>保存<code>apt.conf</code>文件即可。<br>关于<code>apt</code>的代理设置可以参考<a href="http://askubuntu.com/questions/349702/apt-conf-acquirehttpproxy-proxyserverport-seems-not-to-be-used-ubuntu-13" target="_blank" rel="external">这里</a></p>
-<p>关于git的代理设置看这里:<a href="http://blog.fazero.cc/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/">用shadowsocks加速git clone</a></p>
-<h4 id="方法4:">方法4:</h4><p><a href="http://blog.fazero.cc/2015/08/31/%E5%88%A9%E7%94%A8proxychains%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/">利用proxychains在终端使用socks5代理</a></p>
-<h4 id="补充：">补充：</h4><p>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=<span class="string">http:</span><span class="comment">//userName:password@proxyAddress:port</span></span><br></pre></td></tr></table></figure>
+        <p><strong>1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。 因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的 状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对 外的端口封闭，并且停止nginx以及所有的用户进程的方法实现服务器的准安全 状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。 </strong></p>
+<p><strong>2．修改MySQL的登录设置： </strong></p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># vim /etc/my.cnf</span></span><br></pre></td></tr></table></figure>
+<p>在[mysqld]的段后面加上一句：<code>skip-grant-tables</code><br>保存并且退出vim。 </p>
+<p><strong>3．重新启动mysql</strong></p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># /etc/init.d/mysql restart</span></span><br></pre></td></tr></table></figure>
+<p>Stopping MySQL: [ OK ]<br>Starting MySQL: [ OK ]<br><a id="more"></a></p>
+<p><strong>4．登录并修改MySQL的root密码</strong> </p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /usr/bin/mysql</span></span><br><span class="line">``` </span><br><span class="line">Welcome to the MySQ<span class="class">L monitor.  Commands end with ;</span><span class="instruction"> or </span>\g.</span><br><span class="line">Your MySQL connection id is 1</span><br><span class="line">Server version: 5.5.48-log Source distribution</span><br><span class="line"></span><br><span class="line">Copyright<span class="function"> (</span>c<span class="function">)</span> 2000, 2016, Oracle<span class="instruction"> and/or </span>its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation<span class="instruction"> and/or </span>its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type 'help;'<span class="instruction"> or </span>'\h' for help. Type '\c' to clear the current input statement.</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">mysql&gt; USE mysql ;</span><br></pre></td></tr></table></figure>
+<p>Database changed</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="subst">&gt;</span> UPDATE user <span class="built_in">SET</span> Password <span class="subst">=</span> password ( <span class="string">'new-password'</span> ) <span class="keyword">WHERE</span> User <span class="subst">=</span> <span class="string">'root'</span> ;</span><br></pre></td></tr></table></figure>
+<p>Query OK, 3 rows affected (0.00 sec)<br>Rows matched: 3  Changed: 3  Warnings: 0</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; flush privileges <span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>Query OK, 0 rows affected (0.00 sec)</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="keyword">quit</span></span><br></pre></td></tr></table></figure>
+<p>Bye </p>
+<p><strong>5．将MySQL的登录设置修改回来 </strong></p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># vim /etc/my.cnf</span></span><br></pre></td></tr></table></figure>
+<p>将刚才在[mysqld]的段中加上的<code>skip-grant-tables</code>删除<br>保存并且退出vim。<br>6．重新启动mysqld </p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># /etc/init.d/mysql restart</span></span><br></pre></td></tr></table></figure>
+<p>Shutting down MySQL. SUCCESS!<br>Starting MySQL.. SUCCESS!</p>
+
       
     </div>
     
@@ -281,18 +274,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2015/10/01/SwitchyOmega/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          shadowsocks配合SwitchyOmega科学上网
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/09/04/how-to-find-information/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">How-to-find-technical-information</div>
+    <a href="/2016/09/10/install-epel/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS-RHEL-Linux安装EPEL第三方软件源</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -321,7 +305,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="让终端走代理的几种方法" data-title="让终端走代理的几种方法" data-url="http://blog.fazero.cc/2015/09/15/让终端走代理的几种方法/"></div>
+	<div class="ds-thread" data-thread-key="reset-mysql-passwd" data-title="Linux下MySql重置密码" data-url="http://blog.fazero.cc/2016/09/14/reset-mysql-passwd/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
