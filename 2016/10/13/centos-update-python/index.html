@@ -19,7 +19,7 @@
 1wget http://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
 在下载目录解压源码
 1tar -zxvf Pytho">
-<meta property="og:updated_time" content="2016-10-13T07:46:48.000Z">
+<meta property="og:updated_time" content="2016-10-13T07:48:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos升级Python 2.7.12并安装最新pip">
 <meta name="twitter:description" content="Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
@@ -272,16 +272,15 @@ var _hmt = _hmt || [];
 <p>这个时候输入<br><code>python</code><br>就会显示出python的新版本信息</p>
 <blockquote>
 <p>Python 2.7.12 (default, Oct 13 2016, 03:17:14)<br>[GCC 4.4.7 20120313 (Red Hat 4.4.7-17)] on linux2<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<blockquote>
-<p>&gt;</p>
-</blockquote>
 </blockquote>
 <h4 id="2-修改yum配置文件">2.修改yum配置文件</h4><p>之所以要保留旧版本，因为yum依赖Python2.6，改下yum的配置文件，指定旧的Python版本就可以了。</p>
 <p><code>vim /usr/bin/yum</code>，将第一行的<code>#!/usr/bin/python</code>修改成<code>#!/usr/bin/python2.6.6</code></p>
 <h4 id="3-安装最新版本的pip">3.安装最新版本的pip</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http<span class="variable">s:</span>//bootstrap.pypa.io/<span class="built_in">get</span>-pip.<span class="keyword">py</span></span><br><span class="line"><span class="keyword">python</span> <span class="built_in">get</span>-pip.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
 <p>找到pip2.7的路径</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -<span class="property">name</span> <span class="string">"pip*"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">上面的命令输出</span><br><span class="line"><span class="regexp">/root/</span>.cache/pip</span><br><span class="line">这里省略一堆输出</span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/python2.7.12/</span>bin/pip</span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/python2.7.12/</span>bin/pip2</span><br><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/python2.7.12/</span>bin/pip2.7   #就是这个</span><br><span class="line"><span class="regexp">/usr/</span>bin/pip</span><br><span class="line"><span class="regexp">/usr/</span>bin/pip2</span><br><span class="line"><span class="regexp">/usr/</span>bin/pip2.6</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的命令输出<br>/root/.cache/pip<br>这里省略一堆输出<br>/usr/local/python2.7.12/bin/pip<br>/usr/local/python2.7.12/bin/pip2<br>/usr/local/python2.7.12/bin/pip2.7   #就是这个<br>/usr/bin/pip<br>/usr/bin/pip2<br>/usr/bin/pip2.6</p>
+</blockquote>
 <p>为其创建软链作为系统默认的启动版本（之前有旧版本的话就先删掉<code>rm -rf /usr/bin/pip</code>）</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="regexp">/usr/</span>local<span class="regexp">/python2.7.12/</span>bin<span class="regexp">/pip2.7 /u</span>sr<span class="regexp">/bin/</span>pip</span><br></pre></td></tr></table></figure>
 <p>看下pip的版本<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">pip</span> -V</span><br></pre></td></tr></table></figure></p>
