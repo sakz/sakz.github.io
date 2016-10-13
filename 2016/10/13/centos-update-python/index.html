@@ -19,7 +19,7 @@
 1wget http://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
 在下载目录解压源码
 1tar -zxvf Pytho">
-<meta property="og:updated_time" content="2016-10-13T07:48:06.000Z">
+<meta property="og:updated_time" content="2016-10-13T14:40:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos升级Python 2.7.12并安装最新pip">
 <meta name="twitter:description" content="Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
@@ -263,7 +263,12 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <p>在编译前先在/usr/local建一个文件夹<code>python2.7.12</code>（作为python的安装路径，以免覆盖老的版本，新旧版本可以共存的)</p>
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> /usr/<span class="keyword">local</span>/python2.<span class="number">7.12</span></span><br></pre></td></tr></table></figure>
-<p>在解压缩后的目录下编译安装(编译需要gcc，没安装的话就<code>yum install -y gcc</code>)</p>
+<p>，编译前需要安装下面依赖，否则下面安装pip就会出错</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> openssl openssl-devel zlib-devel gcc -y</span><br></pre></td></tr></table></figure>
+<p>安装完依赖后执行下面命令</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .<span class="regexp">/Modules/</span>Setup</span><br></pre></td></tr></table></figure>
+<p>找到<code>#zlib zlibmodule.c -I$(prefix)/include -L$(exec_prefix)/lib -lz</code>去掉注释并保存(即去掉井号)</p>
+<p>在解压缩后的目录下编译安装</p>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.</span><span class="comment">/configure</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">prefix=/usr/local/python2</span><span class="string">.</span><span class="comment">7</span><span class="string">.</span><span class="comment">12</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">zlib</span></span><br><span class="line"><span class="comment">make</span></span><br><span class="line"><span class="comment">make</span> <span class="comment">install</span></span><br></pre></td></tr></table></figure>
 <p>此时没有覆盖老版本，再将原来<code>/usr/bin/python</code>链接改为别的名字</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="regexp">/usr/</span>bin<span class="regexp">/python /u</span>sr<span class="regexp">/bin/</span>python2.<span class="number">6.6</span></span><br></pre></td></tr></table></figure>
