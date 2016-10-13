@@ -19,7 +19,7 @@
 1wget http://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
 在下载目录解压源码
 1tar -zxvf Pytho">
-<meta property="og:updated_time" content="2016-10-13T14:40:23.000Z">
+<meta property="og:updated_time" content="2016-10-13T15:01:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos升级Python 2.7.12并安装最新pip">
 <meta name="twitter:description" content="Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
@@ -291,6 +291,8 @@ var _hmt = _hmt || [];
 <p>看下pip的版本<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">pip</span> -V</span><br></pre></td></tr></table></figure></p>
 <p>pip 8.1.2 from /usr/local/python2.7.12/lib/python2.7/site-packages (python 2.7)</p>
 <p>pip安装完毕，现在可以用它下载安装各种包了</p>
+<p>我把上面的所有写成下面简单的脚本，一键就可以升级好。</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="keyword">http</span>://<span class="number">7</span>xpt4s.com1.z0.glb.clouddn.com/<span class="keyword">update</span>-python2.7.12.sh &amp;&amp; bash <span class="keyword">update</span>-python2.7.12.sh</span><br></pre></td></tr></table></figure>
 <p>参考：</p>
 <p><a href="https://ruter.github.io/2015/12/03/Update-python/" target="_blank" rel="external">https://ruter.github.io/2015/12/03/Update-python/</a></p>
 <p><a href="https://blog.phpgao.com/pip-easy_install-setuptool.html" target="_blank" rel="external">https://blog.phpgao.com/pip-easy_install-setuptool.html</a></p>
