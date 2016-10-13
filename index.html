@@ -203,6 +203,70 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-backup-vps-to-by" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/13/backup-vps-to-by/" class="article-date">
+  	<time datetime="2016-10-13T08:18:00.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/backup-vps-to-by/">使用百度网盘备份网站附件和数据库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-安装百度网盘Python客户端">1.安装百度网盘Python客户端</h4><p>这是一个百度云/百度网盘的Python客户端。具体的<a href="https://github.com/houtianze/bypy">github地址</a>。需要Python2.7 / 3.3 或以上版本支持，一般自带的Python版本是2.6.6，需要升级，<a href="http://blog.fazero.me/2016/10/13/centos-update-python/">Python升级安装教程</a>。</p>
+<p>升级Python后，需要安装这个工具需要的依赖</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip <span class="keyword">install</span> requests</span><br></pre></td></tr></table></figure>
+<p>然后下载</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone <span class="string">https:</span><span class="comment">//github.com/houtianze/bypy.git</span></span><br></pre></td></tr></table></figure>
+<p>第一次运行时需要授权，只需跑任何一个命令（比如 bypy.py info）然后跟着说明（登陆等）来授权即可。授权只需一次，一旦成功，以后不会再出现授权提示.</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">cd</span> <span class="keyword">bypy</span><br><span class="line"></span></span><br><span class="line">./<span class="keyword">bypy.py </span><span class="preprocessor">info</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/13/backup-vps-to-by/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-centos-update-python" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -741,71 +805,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/01/19/ngx-google/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-css-selectors" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/10/css-selectors/" class="article-date">
-  	<time datetime="2016-01-10T13:04:20.000Z" itemprop="datePublished">2016-01-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/10/css-selectors/">CSS选择器</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>常用的CSS选择器大家都熟悉，但是说到属性选择器，一些伪类选择器，伪元素未必每个人都会用，现在微软已经停止支持IE11以前的IE浏览器了，不考虑兼容问题的话，用CSS3新增的选择器还是挺方便的，例如<code>:last-child</code>,<code>:not</code>这些。看了几篇文章,详细学习了所有的CSS选择器,大部分都写demo尝试了一遍，也体验了emmet强大的语法，例如想生成下面的html代码，输入<code>ul&gt;li[class=num$]{number $}*10</code>后按下<code>Tab</code>键就搞定,其他emmet的用法可以看<a href="http://docs.emmet.io/cheat-sheet/">官方文档</a>。</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num1"</span>&gt;number 1&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num2"</span>&gt;number 2&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num3"</span>&gt;number 3&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num4"</span>&gt;number 4&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num5"</span>&gt;number 5&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num6"</span>&gt;number 6&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num7"</span>&gt;number 7&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num8"</span>&gt;number 8&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num9"</span>&gt;number 9&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">li</span> <span class="keyword">class</span>=<span class="string">"num10"</span>&gt;number 10&lt;/<span class="keyword">li</span>&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="http://www.w3cplus.com/css/advanced-html-css-lesson3-complex-selectors.html">HTML和CSS高级指南之三——丰富多彩的选择器</a></li>
-<li><a href="http://segmentfault.com/a/1190000003088878">玩转CSS选择器（一） 之 使用方法介绍</a></li>
-<li><a href="http://segmentfault.com/a/1190000003801556">CSS选择器</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Attribute_selectors">MDN属性选择器</a></li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/10/css-selectors/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
