@@ -5,7 +5,7 @@
   
   <title>Centos升级Python 2.7.12并安装最新pip | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="centos系统一般默认就安装有python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
+  <meta name="description" content="Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
 1.安装步骤下载源码
 1wget http://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
 在下载目录解压源码
@@ -14,15 +14,15 @@
 <meta property="og:title" content="Centos升级Python 2.7.12并安装最新pip">
 <meta property="og:url" content="http://blog.fazero.cc/2016/10/13/centos-update-python/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="centos系统一般默认就安装有python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
+<meta property="og:description" content="Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
 1.安装步骤下载源码
 1wget http://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
 在下载目录解压源码
 1tar -zxvf Pytho">
-<meta property="og:updated_time" content="2016-10-13T07:42:55.000Z">
+<meta property="og:updated_time" content="2016-10-13T07:46:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos升级Python 2.7.12并安装最新pip">
-<meta name="twitter:description" content="centos系统一般默认就安装有python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
+<meta name="twitter:description" content="Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。
 1.安装步骤下载源码
 1wget http://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz
 在下载目录解压源码
@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
       
       <!-- Table of Contents -->
 
-        <p>centos系统一般默认就安装有python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。</p>
+        <p>Centos系统一般默认就安装有Python2.6.6版本，不少软件需要2.7以上的，通过包管理工具安装不了最新的版本，通过源码编译可以方便安装指定版本，只需要把下面版本的数字换成你想要的版本号。</p>
 <h4 id="1-安装步骤">1.安装步骤</h4><p>下载源码</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="symbol">http:</span>/<span class="regexp">/www.python.org/ftp</span><span class="regexp">/python/</span><span class="number">2.7</span>.<span class="number">12</span>/<span class="constant">Python-</span><span class="number">2.7</span>.<span class="number">12</span>.tgz</span><br></pre></td></tr></table></figure>
 <p>在下载目录解压源码</p>
@@ -269,7 +269,13 @@ var _hmt = _hmt || [];
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="regexp">/usr/</span>bin<span class="regexp">/python /u</span>sr<span class="regexp">/bin/</span>python2.<span class="number">6.6</span></span><br></pre></td></tr></table></figure>
 <p>再建立新版本python的软链接</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s <span class="regexp">/usr/</span>local<span class="regexp">/python2.7.12/</span>bin<span class="regexp">/python2.7 /u</span>sr<span class="regexp">/bin/</span>python</span><br></pre></td></tr></table></figure>
-<p>这个时候输入<br><code>python -V</code><br>就会显示出python的新版本信息</p>
+<p>这个时候输入<br><code>python</code><br>就会显示出python的新版本信息</p>
+<blockquote>
+<p>Python 2.7.12 (default, Oct 13 2016, 03:17:14)<br>[GCC 4.4.7 20120313 (Red Hat 4.4.7-17)] on linux2<br>Type “help”, “copyright”, “credits” or “license” for more information.</p>
+<blockquote>
+<p>&gt;</p>
+</blockquote>
+</blockquote>
 <h4 id="2-修改yum配置文件">2.修改yum配置文件</h4><p>之所以要保留旧版本，因为yum依赖Python2.6，改下yum的配置文件，指定旧的Python版本就可以了。</p>
 <p><code>vim /usr/bin/yum</code>，将第一行的<code>#!/usr/bin/python</code>修改成<code>#!/usr/bin/python2.6.6</code></p>
 <h4 id="3-安装最新版本的pip">3.安装最新版本的pip</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http<span class="variable">s:</span>//bootstrap.pypa.io/<span class="built_in">get</span>-pip.<span class="keyword">py</span></span><br><span class="line"><span class="keyword">python</span> <span class="built_in">get</span>-pip.<span class="keyword">py</span></span><br></pre></td></tr></table></figure>
