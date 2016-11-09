@@ -19,7 +19,7 @@
 这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
 方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc
 直接在.bashrc或者.zshrc添加下面内容">
-<meta property="og:updated_time" content="2015-09-15T09:30:05.000Z">
+<meta property="og:updated_time" content="2016-11-09T14:50:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让终端走代理的几种方法">
 <meta name="twitter:description" content="方法1:在终端中直接运行命令
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
 <p>在文件末尾加入下面这行</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Acquire::http::Proxy <span class="string">"http://proxyAddress:port"</span></span><br></pre></td></tr></table></figure>
 <p>保存<code>apt.conf</code>文件即可。<br>关于<code>apt</code>的代理设置可以参考<a href="http://askubuntu.com/questions/349702/apt-conf-acquirehttpproxy-proxyserverport-seems-not-to-be-used-ubuntu-13" target="_blank" rel="external">这里</a></p>
-<p>关于git的代理设置看这里:<a href="http://blog.fazero.cc/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/">用shadowsocks加速git clone</a></p>
+<p>关于git的代理设置看这里:<a href="http://blog.fazero.me/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/" target="_blank" rel="external">用shadowsocks加速git clone</a></p>
 <h4 id="方法4:">方法4:</h4><p><a href="http://blog.fazero.cc/2015/08/31/%E5%88%A9%E7%94%A8proxychains%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/">利用proxychains在终端使用socks5代理</a></p>
 <h4 id="补充：">补充：</h4><p>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=<span class="string">http:</span><span class="comment">//userName:password@proxyAddress:port</span></span><br></pre></td></tr></table></figure>
