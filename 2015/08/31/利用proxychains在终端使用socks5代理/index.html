@@ -5,16 +5,16 @@
   
   <title>利用proxychains在终端使用socks5代理 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychians.confcd .. &amp;amp;&amp;amp; rm -r">
+  <meta name="description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychains.confcd .. &amp;amp;&amp;amp; rm -r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用proxychains在终端使用socks5代理">
 <meta property="og:url" content="http://blog.fazero.cc/2015/08/31/利用proxychains在终端使用socks5代理/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychians.confcd .. &amp;amp;&amp;amp; rm -r">
-<meta property="og:updated_time" content="2015-09-15T09:30:18.000Z">
+<meta property="og:description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychains.confcd .. &amp;amp;&amp;amp; rm -r">
+<meta property="og:updated_time" content="2016-12-02T13:48:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用proxychains在终端使用socks5代理">
-<meta name="twitter:description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychians.confcd .. &amp;amp;&amp;amp; rm -r">
+<meta name="twitter:description" content="1.proxychains安装123456git clone https://github.com/rofl0r/proxychains-ng.gitcd proxychains-ng./configuremake &amp;amp;&amp;amp; make installcp ./src/proxychains.conf /etc/proxychains.confcd .. &amp;amp;&amp;amp; rm -r">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
       
       <!-- Table of Contents -->
 
-        <h3 id="1-proxychains安装">1.proxychains安装</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/rofl0r/proxychains-ng.git</span><br><span class="line"><span class="keyword">cd</span> proxychains-ng</span><br><span class="line">./configure</span><br><span class="line"><span class="keyword">make</span> &amp;&amp; <span class="keyword">make</span> install</span><br><span class="line"><span class="keyword">cp</span> ./src/proxychains.<span class="keyword">conf</span> /etc/proxychians.<span class="keyword">conf</span></span><br><span class="line"><span class="keyword">cd</span> .. &amp;&amp; rm -rf proxychains-ng</span><br></pre></td></tr></table></figure>
+        <h3 id="1-proxychains安装">1.proxychains安装</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/rofl0r/proxychains-ng.git</span><br><span class="line"><span class="keyword">cd</span> proxychains-ng</span><br><span class="line">./configure</span><br><span class="line"><span class="keyword">make</span> &amp;&amp; <span class="keyword">make</span> install</span><br><span class="line"><span class="keyword">cp</span> ./src/proxychains.<span class="keyword">conf</span> /etc/proxychains.<span class="keyword">conf</span></span><br><span class="line"><span class="keyword">cd</span> .. &amp;&amp; rm -rf proxychains-ng</span><br></pre></td></tr></table></figure>
 <p>也可以用<code>brew install proxychains-ng</code>安装。<br><a id="more"></a></p>
 <h3 id="2-编辑proxychains配置">2.编辑proxychains配置</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/proxychains.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-将socks4_127-0-0-1_9095改为">3.将<code>socks4 127.0.0.1 9095</code>改为</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">socks5</span> 127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span> 1080</span><br></pre></td></tr></table></figure>
