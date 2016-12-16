@@ -19,7 +19,7 @@ supervisorctl : 启动superv">
 这个工具主要就两个命令：
 supervisord : supervisor的服务器端部分，启动supervisor就是运行这个命令
 supervisorctl : 启动superv">
-<meta property="og:updated_time" content="2016-12-16T05:44:21.000Z">
+<meta property="og:updated_time" content="2016-12-16T05:46:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Supervisor的安装与使用入门">
 <meta name="twitter:description" content="Supervisor是一个进程管理工具，官方的说法
@@ -260,6 +260,7 @@ var _hmt = _hmt || [];
 <p>supervisorctl : 启动supervisor的命令行窗口。</p>
 <a id="more"></a>
 <p><strong>常见的命令如下：</strong></p>
+<hr>
 <table><br><thead><tr><br><th align="left">命令</th><br><th align="left">说明</th><br></tr></thead><br><tbody><br><tr><br><td align="left">supervisord</td><br><td align="left">初始启动Supervisord，启动、管理配置中设置的进程</td><br></tr><br><tr><br><td align="left">supervisorctl stop programxxx</td><br><td align="left">停止某一个进程(programxxx)，programxxx为[program:chatdemon]里配置的值，这个示例就是chatdemon</td><br></tr><br><tr><br><td align="left">supervisorctl start programxxx</td><br><td align="left">启动某个进程</td><br></tr><br><tr><br><td align="left">supervisorctl restart programxxx</td><br><td align="left">重启某个进程</td><br></tr><br><tr><br><td align="left">supervisorctl stop groupworker</td><br><td align="left">重启所有属于名为groupworker这个分组的进程(start,restart同理)</td><br></tr><br><tr><br><td align="left">supervisorctl stop all</td><br><td align="left">停止全部进程，注：start、restart、stop都不会载入最新的配置文件</td><br></tr><br><tr><br><td align="left">supervisorctl reload</td><br><td align="left">载入最新的配置文件，停止原有进程并按新的配置启动、管理所有进程</td><br></tr><br><tr><br><td align="left">supervisorctl update</td><br><td align="left">根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启。注意：显示用stop停止掉的进程，用reload或者update都不会自动重启</td><br></tr><br></tbody><br></table>
 
 <h4 id="安装（Centos）：">安装（Centos）：</h4><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># yum install python-setuptools</span></span><br><span class="line"><span class="preprocessor"># easy_install supervisor</span></span><br><span class="line"></span><br><span class="line">如果easy_install不好使就从官方下载：</span><br><span class="line">然后通过python安装：</span><br><span class="line"><span class="preprocessor"># wget --no-check-certificate https://pypi.python.org/packages/80/37/964c0d53cbd328796b1aeb7abea4c0f7b0e8c7197ea9b0b9967b7d004def/supervisor-3.3.1.tar.gz</span></span><br><span class="line"><span class="preprocessor"># tar zxf supervisor-3.3.1.tar.gz</span></span><br><span class="line"><span class="preprocessor"># cd supervisor-3.3.1</span></span><br><span class="line"><span class="preprocessor"># python setup.py install</span></span><br><span class="line"></span><br><span class="line">还可以直接用pip安装</span><br><span class="line">pip install supervisor</span><br></pre></td></tr></table></figure>
