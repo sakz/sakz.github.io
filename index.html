@@ -234,6 +234,37 @@ var _hmt = _hmt || [];
 <p>这个工具主要就两个命令：</p>
 <p>supervisord : supervisor的服务器端部分，启动supervisor就是运行这个命令</p>
 <p>supervisorctl : 启动supervisor的命令行窗口。</p>
+<p><strong>常见的命令如下：</strong></p>
+<hr>
+<p><table></p>
+<p><thead><tr></p>
+<p><th align="left">命令</th></p>
+<p><th align="left">说明</th><br></tr></thead></p>
+<p><tbody></p>
+<p><tr></p>
+<p><td align="left">supervisord</td></p>
+<p><td align="left">初始启动Supervisord，启动、管理配置中设置的进程</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl stop programxxx</td></p>
+<p><td align="left">停止某一个进程(programxxx)，programxxx为[program:chatdemon]里配置的值，这个示例就是chatdemon</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl start programxxx</td></p>
+<p><td align="left">启动某个进程</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl restart programxxx</td></p>
+<p><td align="left">重启某个进程</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl stop groupworker</td></p>
+<p><td align="left">重启所有属于名为groupworker这个分组的进程(start,restart同理)</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl stop all</td></p>
+<p><td align="left">停止全部进程，注：start、restart、stop都不会载入最新的配置文件</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl reload</td></p>
+<p><td align="left">载入最新的配置文件，停止原有进程并按新的配置启动、管理所有进程</td><br></tr></p>
+<p><tr></p>
+<p><td align="left">supervisorctl update</td></p>
+<p><td align="left">根据最新的配置文件，启动新配置或有改动的进程，配置没有改动的进程不会受影响而重启。注意：显示用stop停止掉的进程，用reload或者update都不会自动重启</td><br></tr><br></tbody><br></table><br>
       
     </div>
     
