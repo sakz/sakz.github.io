@@ -229,26 +229,11 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-      <!-- Table of Contents -->
-
-        <h3 id="七牛开发者开发者工具有个qshell_命令行工具，可以很方便从Windows,Mac,Linux系统上传文件到七牛云，具体文档点击这里。这里简单说下怎么利用七牛云备份vps的数据到七牛云。">七牛开发者开发者工具有个qshell 命令行工具，可以很方便从Windows,Mac,Linux系统上传文件到七牛云，具体文档点击<a href="http://developer.qiniu.com/code/v6/tool/qshell.html" target="_blank" rel="external">这里</a>。这里简单说下怎么利用七牛云备份vps的数据到七牛云。</h3><h4 id="1-下载和配置qshell_命令行工具">1.下载和配置qshell 命令行工具</h4><p>首先下载</p>
+        <h3 id="七牛开发者开发者工具有个qshell_命令行工具，可以很方便从Windows,Mac,Linux系统上传文件到七牛云，具体文档点击这里。这里简单说下怎么利用七牛云备份vps的数据到七牛云。">七牛开发者开发者工具有个qshell 命令行工具，可以很方便从Windows,Mac,Linux系统上传文件到七牛云，具体文档点击<a href="http://developer.qiniu.com/code/v6/tool/qshell.html">这里</a>。这里简单说下怎么利用七牛云备份vps的数据到七牛云。</h3><h4 id="1-下载和配置qshell_命令行工具">1.下载和配置qshell 命令行工具</h4><p>首先下载</p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="string">http:</span><span class="comment">//devtools.qiniu.com/qshell-v1.8.1.zip</span></span><br></pre></td></tr></table></figure>
 <p>解压后找到对应你系统版本的可执行文件，因为我是Linux64位版本的系统，对应<code>qshell_darwin_amd64</code>这个文件，重命名为<code>qshell</code>后。<br>配置 <code>AccessKey</code> 和 <code>SecretKey</code>,配置命令：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./qshell account AccessKey SecretKey</span><br></pre></td></tr></table></figure>
-<p>以分片上传方式上传文件，<a href="https://github.com/qiniu/qshell/wiki/rput" target="_blank" rel="external">具体文档</a>。文档说的很清楚，就不赘述了。</p>
-<h5 id="2-创建自己的备份脚本">2.创建自己的备份脚本</h5><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> backup.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
-<p>输入下面内容，根据自己信息修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line">SCRIPT_DIR=<span class="string">"/root"</span> <span class="comment">#这个改成你存放刚刚下载下来的qshell的文件夹位置</span></span><br><span class="line">BACKUP_SRC=<span class="string">"/home/wwwroot /usr/local/nginx/conf"</span> <span class="comment">#这个是你想要备份的本地VPS上的文件，不同的目录用空格分开</span></span><br><span class="line">BACKUP_DST=<span class="string">"/tmp"</span> <span class="comment">#这个是你暂时存放备份压缩文件的地方，一般用/tmp即可</span></span><br><span class="line">BUCKET=<span class="string">"backup"</span> <span class="comment">#这个是你七牛空间名称，可以为公开空间或私有空间</span></span><br><span class="line">MYSQL_SERVER=<span class="string">"localhost"</span> <span class="comment">#这个是你mysql服务器的地址，一般填这个本地地址即可</span></span><br><span class="line">MYSQL_USER=<span class="string">"mysqluser"</span> <span class="comment">#这个是你mysql的用户名名称，比如root或admin之类的</span></span><br><span class="line">MYSQL_PASS=<span class="string">"password"</span> <span class="comment">#这个是你mysql用户的密码</span></span><br><span class="line"><span class="comment"># 下面的一般不用改了</span></span><br><span class="line">NOW=$(date +<span class="string">"%Y.%m.%d"</span>)</span><br><span class="line">DESTFILE=<span class="string">"<span class="variable">$BACKUP_DST</span>/<span class="variable">$NOW</span>.tar.gz"</span></span><br><span class="line"><span class="comment"># 备份mysql数据库并和其它备份文件一起压缩成一个文件</span></span><br><span class="line">mysqldump -u <span class="variable">$MYSQL_USER</span> -h <span class="variable">$MYSQL_SERVER</span> -p<span class="variable">$MYSQL_PASS</span> --all-databases &gt; <span class="string">"<span class="variable">$NOW</span>-Databases.sql"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"数据库备份完成，打包网站数据中..."</span></span><br><span class="line">tar cfzP <span class="string">"<span class="variable">$DESTFILE</span>"</span> <span class="variable">$BACKUP_SRC</span> <span class="string">"<span class="variable">$NOW</span>-Databases.sql"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"所有数据打包完成，准备上传..."</span></span><br><span class="line"><span class="comment"># 用脚本上传到七牛云</span></span><br><span class="line"><span class="variable">$SCRIPT_DIR</span>/qshell rput <span class="string">"<span class="variable">$BUCKET</span>"</span> <span class="string">"<span class="variable">$NOW</span>.tar.gz"</span>  <span class="string">"<span class="variable">$DESTFILE</span>"</span></span><br><span class="line"><span class="keyword">if</span> [ $? <span class="operator">-eq</span> <span class="number">0</span> ];<span class="keyword">then</span></span><br><span class="line">     <span class="built_in">echo</span> <span class="string">"上传完成"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">     <span class="built_in">echo</span> <span class="string">"上传失败，重新尝试"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="comment"># 删除本地的临时文件</span></span><br><span class="line">rm <span class="operator">-f</span> <span class="string">"<span class="variable">$NOW</span>-Databases.sql"</span> <span class="string">"<span class="variable">$DESTFILE</span>"</span></span><br></pre></td></tr></table></figure>
-<p>然后改为可执行文件：</p>
-<p><code>chmod +x backup.sh #赋予权限</code></p>
-<p>运行的时候就输入下面的代码即可：</p>
-<p><code>./backup.sh</code></p>
-<p>然后通过 cron 来设置定时运行脚本：</p>
-<p><code>crontab -e</code></p>
-<p>加入以下代码，<code>:wq</code> 保存</p>
-<p><code>0 5 * * * /bin/bash /root/backup.sh</code></p>
-<p>国内vps的备份到七牛云比较块，如果是国外vps可以备份到dropbox,具体看<a href="http://blog.fazero.me/2016/09/10/backup-vps-to-dropbox/" target="_blank" rel="external">这里</a>。</p>
-
+<p>以分片上传方式上传文件，<a href="https://github.com/qiniu/qshell/wiki/rput">具体文档</a>。文档说的很清楚，就不赘述了。</p>
       
     </div>
     
@@ -261,6 +246,10 @@ var _hmt = _hmt || [];
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/12/17/backup-vps-to-qiniu/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
