@@ -203,6 +203,65 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-利用proxychains在终端使用socks5代理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/31/利用proxychains在终端使用socks5代理/" class="article-date">
+  	<time datetime="2015-08-31T04:35:10.000Z" itemprop="datePublished">2015-08-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/31/利用proxychains在终端使用socks5代理/">利用proxychains在终端使用socks5代理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-proxychains安装">1.proxychains安装</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/rofl0r/proxychains-ng.git</span><br><span class="line"><span class="keyword">cd</span> proxychains-ng</span><br><span class="line">./configure</span><br><span class="line"><span class="keyword">make</span> &amp;&amp; <span class="keyword">make</span> install</span><br><span class="line"><span class="keyword">cp</span> ./src/proxychains.<span class="keyword">conf</span> /etc/proxychains.<span class="keyword">conf</span></span><br><span class="line"><span class="keyword">cd</span> .. &amp;&amp; rm -rf proxychains-ng</span><br></pre></td></tr></table></figure>
+<p>也可以用<code>brew install proxychains-ng</code>安装。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/terminal/">terminal</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/08/31/利用proxychains在终端使用socks5代理/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-ubuntu-reset-passwd" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -728,68 +787,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2015/07/25/WebStorm更换主题和修改字体样式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-CSS布局-圣杯布局vs双飞翼布局" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/" class="article-date">
-  	<time datetime="2015-07-24T17:37:56.000Z" itemprop="datePublished">2015-07-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/">CSS布局-圣杯布局vs双飞翼布局</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>圣杯布局和双飞翼布局解决的问题是一样的，就是两边顶宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。</p>
-<p>圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
-<p>不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：<br>圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。</p>
-<p>双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。<br>多了1个div，少用大致4个css属性（圣杯布局中间divpadding-left和padding-right这2个属性，加上左右两个div用相对布局position: relative及对应的right和left共4个属性，一共6个；而双飞翼布局子div里用margin-left和margin-right共2个属性，6-2=4），个人感觉比圣杯布局思路更直接和简洁一点。</p>
-<p>简单说起来就是”双飞翼布局比圣杯布局多创建了一个div，但不用相对布局了。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/07/25/CSS布局-圣杯布局vs双飞翼布局/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

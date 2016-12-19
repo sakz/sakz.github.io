@@ -203,6 +203,67 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-iptables-simple-usage" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/19/iptables-simple-usage/" class="article-date">
+  	<time datetime="2016-12-19T10:12:56.000Z" itemprop="datePublished">2016-12-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/19/iptables-simple-usage/">iptables的一些简单使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>清空所有iptables规则</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">iptables</span> -F</span><br></pre></td></tr></table></figure>
+<p>开放80，22，10-21端口访问</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">80</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">22</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">10</span>:<span class="number">21</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/12/19/iptables-simple-usage/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-backup-vps-to-qiniu" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -750,68 +811,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/04/30/webstorm-config/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js-get-bing-photo" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/14/js-get-bing-photo/" class="article-date">
-  	<time datetime="2016-04-14T12:13:15.000Z" itemprop="datePublished">2016-04-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/14/js-get-bing-photo/">JS获取必应每日图片的URL</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>必应搜索的背景图片每天都会更新一次，能不能用js获取它图片的url呢</p>
-<p>Google一番找到它的API，以下两个都一样的。</p>
-<p><code>http://cn.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1</code></p>
-<p><code>http://www.bing.com/HPImageArchive.aspx?format=js&amp;idx=0&amp;n=1&amp;mkt=zh-CN</code></p>
-<p>直接在浏览器打开是如下的json,要拿到的就是<code>url</code>，直接在一个页面用js获取存在跨域问题，可以用代理工具<code>https://jsonp.afeld.me/</code>  我用的是第二个方法,把上面的api输入，<br><img src="http://ww3.sinaimg.cn/large/8b953c4agw1f2wi22ie9hj20jj085jsw.jpg" alt=""></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/14/js-get-bing-photo/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
