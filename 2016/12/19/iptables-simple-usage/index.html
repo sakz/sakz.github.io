@@ -7,43 +7,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="查看现有的iptables规则  --line-numbers是查看行号
 1iptables -nL --line-numbers
-查看iptables配置文件
- 1vim /etc/sysconfig/iptables
-删除iptables中INPUT表的第12条规则
-1iptables -D INPUT 12
-清空所有iptables规则
-1iptables -F
-开放80，22，10-21端">
+可以使用 iptables 服务保存规则
+12service iptables save   #规则将被保存至  /etc/sysconfig/iptables
+使用 iptables-save 和 iptables-restore 来保存规则和还原规则
+12ipta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iptables的一些简单使用">
 <meta property="og:url" content="http://blog.fazero.cc/2016/12/19/iptables-simple-usage/index.html">
 <meta property="og:site_name" content="fazero">
 <meta property="og:description" content="查看现有的iptables规则  --line-numbers是查看行号
 1iptables -nL --line-numbers
-查看iptables配置文件
- 1vim /etc/sysconfig/iptables
-删除iptables中INPUT表的第12条规则
-1iptables -D INPUT 12
-清空所有iptables规则
-1iptables -F
-开放80，22，10-21端">
+可以使用 iptables 服务保存规则
+12service iptables save   #规则将被保存至  /etc/sysconfig/iptables
+使用 iptables-save 和 iptables-restore 来保存规则和还原规则
+12ipta">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawefafqyrj20tw0ajjsf.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawed1uidij20w40ca75q.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawedou35lj20qf0h6tbd.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg">
-<meta property="og:updated_time" content="2016-12-19T13:26:50.000Z">
+<meta property="og:updated_time" content="2016-12-19T13:32:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables的一些简单使用">
 <meta name="twitter:description" content="查看现有的iptables规则  --line-numbers是查看行号
 1iptables -nL --line-numbers
-查看iptables配置文件
- 1vim /etc/sysconfig/iptables
-删除iptables中INPUT表的第12条规则
-1iptables -D INPUT 12
-清空所有iptables规则
-1iptables -F
-开放80，22，10-21端">
+可以使用 iptables 服务保存规则
+12service iptables save   #规则将被保存至  /etc/sysconfig/iptables
+使用 iptables-save 和 iptables-restore 来保存规则和还原规则
+12ipta">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -272,8 +263,10 @@ var _hmt = _hmt || [];
 
         <p>查看现有的iptables规则  <code>--line-numbers</code>是查看行号</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">nL</span> --<span class="keyword">line</span>-numbers</span><br></pre></td></tr></table></figure>
-<p>查看iptables配置文件</p>
- <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>sysconfig<span class="regexp">/iptables</span></span><br></pre></td></tr></table></figure>
+<p>可以使用 iptables 服务保存规则</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">service</span> iptables save   </span><br><span class="line"><span class="comment">#规则将被保存至  /etc/sysconfig/iptables</span></span><br></pre></td></tr></table></figure>
+<p>使用 iptables-save 和 iptables-restore 来保存规则和还原规则</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables-save &gt; /etc/sysconfig/iptables.<span class="number">20150520</span></span><br><span class="line">iptables-restore &lt; /etc/sysconfig/iptables.<span class="number">20150520</span></span><br></pre></td></tr></table></figure>
 <p>删除iptables中INPUT表的第12条规则</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">D</span> <span class="keyword">INPUT</span> 12</span><br></pre></td></tr></table></figure>
 <p>清空所有iptables规则</p>
@@ -287,8 +280,6 @@ var _hmt = _hmt || [];
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -<span class="tag">p</span> icmp -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>默认禁止其他访问</p>
 <figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="literal">A</span> INPUT -j REJECT</span><br></pre></td></tr></table></figure>
-<p>保存iptables规则</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables <span class="keyword">save</span></span><br></pre></td></tr></table></figure>
 <p>上面配置存在的问题</p>
 <ul>
 <li>1.本机无法访问本机  <code>telnet 127.0.0.1 22</code>  有问题</li>
