@@ -5,27 +5,45 @@
   
   <title>iptables的一些简单使用 | fazero</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清空所有iptables规则
+  <meta name="description" content="查看现有的iptables规则  --line-numbers是查看行号
+1iptables -nL --line-numbers
+查看iptables配置文件
+ 1vim /etc/sysconfig/iptables
+删除iptables中INPUT表的第12条规则
+1iptables -D INPUT 12
+清空所有iptables规则
 1iptables -F
-开放80，22，10-21端口访问
-123iptables -I INPUT -p tcp --dport 80 -j ACCEPTiptables -I INPUT -p tcp --dport 22 -j ACCEPTiptables -I INPUT -p tcp --dport 10:21 -j ACCEPT">
+开放80，22，10-21端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iptables的一些简单使用">
 <meta property="og:url" content="http://blog.fazero.cc/2016/12/19/iptables-simple-usage/index.html">
 <meta property="og:site_name" content="fazero">
-<meta property="og:description" content="清空所有iptables规则
+<meta property="og:description" content="查看现有的iptables规则  --line-numbers是查看行号
+1iptables -nL --line-numbers
+查看iptables配置文件
+ 1vim /etc/sysconfig/iptables
+删除iptables中INPUT表的第12条规则
+1iptables -D INPUT 12
+清空所有iptables规则
 1iptables -F
-开放80，22，10-21端口访问
-123iptables -I INPUT -p tcp --dport 80 -j ACCEPTiptables -I INPUT -p tcp --dport 22 -j ACCEPTiptables -I INPUT -p tcp --dport 10:21 -j ACCEPT">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg">
+开放80，22，10-21端">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawefafqyrj20tw0ajjsf.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawed1uidij20w40ca75q.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawedou35lj20qf0h6tbd.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg">
-<meta property="og:updated_time" content="2016-12-19T12:09:49.000Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg">
+<meta property="og:updated_time" content="2016-12-19T13:04:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables的一些简单使用">
-<meta name="twitter:description" content="清空所有iptables规则
+<meta name="twitter:description" content="查看现有的iptables规则  --line-numbers是查看行号
+1iptables -nL --line-numbers
+查看iptables配置文件
+ 1vim /etc/sysconfig/iptables
+删除iptables中INPUT表的第12条规则
+1iptables -D INPUT 12
+清空所有iptables规则
 1iptables -F
-开放80，22，10-21端口访问
-123iptables -I INPUT -p tcp --dport 80 -j ACCEPTiptables -I INPUT -p tcp --dport 22 -j ACCEPTiptables -I INPUT -p tcp --dport 10:21 -j ACCEPT">
+开放80，22，10-21端">
   
     <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
   
@@ -252,10 +270,18 @@ var _hmt = _hmt || [];
       
       <!-- Table of Contents -->
 
-        <p>清空所有iptables规则</p>
+        <p>查看现有的iptables规则  <code>--line-numbers</code>是查看行号</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">nL</span> --<span class="keyword">line</span>-numbers</span><br></pre></td></tr></table></figure>
+<p>查看iptables配置文件</p>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>sysconfig<span class="regexp">/iptables</span></span><br></pre></td></tr></table></figure>
+<p>删除iptables中INPUT表的第12条规则</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">D</span> <span class="keyword">INPUT</span> 12</span><br></pre></td></tr></table></figure>
+<p>清空所有iptables规则</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">iptables</span> -F</span><br></pre></td></tr></table></figure>
 <p>开放80，22，10-21端口访问</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">80</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">22</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">10</span>:<span class="number">21</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>删除禁止80端口访问这条规则</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">D</span> <span class="keyword">INPUT</span> -p tcp --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>开放icmp协议</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -<span class="tag">p</span> icmp -j ACCEPT</span><br></pre></td></tr></table></figure>
@@ -272,14 +298,23 @@ var _hmt = _hmt || [];
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iptables</span> <span class="tag">-I</span> <span class="tag">INPUT</span> <span class="tag">-i</span> <span class="tag">lo</span> <span class="tag">-j</span> <span class="tag">ACCEPT</span></span><br><span class="line"><span class="tag">telnet</span> 127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span> 22  没问题了</span><br></pre></td></tr></table></figure>
 <p>如果主动访问外网 允许连接状态的数据回来</p>
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -m <span class="keyword">state</span> --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">curl -I  http://www.baidu.com/   没问题了</span><br></pre></td></tr></table></figure>
-<p>只允许10.10.188.233访问80端口</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -D INPUT -<span class="tag">p</span> tcp --dport <span class="number">80</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp -s <span class="number">10.10</span>.<span class="number">188.233</span> --dport <span class="number">80</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+<h5 id="一些其他例子">一些其他例子</h5><p>只允许10.10.188.233访问80端口</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iptables</span> <span class="tag">-I</span> <span class="tag">INPUT</span> <span class="tag">-p</span> <span class="tag">tcp</span> <span class="tag">-s</span> 10<span class="class">.10</span><span class="class">.188</span><span class="class">.233</span> <span class="tag">--dport</span> 80 <span class="tag">-j</span> <span class="tag">ACCEPT</span></span><br></pre></td></tr></table></figure>
 <p>屏蔽10.10.188.233的所有连接</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iptables</span> <span class="tag">-A</span> <span class="tag">INPUT</span> <span class="tag">-s</span> 10<span class="class">.10</span><span class="class">.188</span><span class="class">.233</span> <span class="tag">-j</span> <span class="tag">DROP</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg" alt=""></p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 创建规则 (开放端口)</span></span><br><span class="line"><span class="preprocessor">#允许本机访问</span></span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-s <span class="number">127.0</span>.0.1 -d <span class="number">127.0</span>.0.1 -j ACCEPT</span><br><span class="line"><span class="preprocessor"># 允许已建立的或相关连的通行</span></span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"><span class="preprocessor"># 允许从22端口进入的包返回</span></span><br><span class="line">iptables -A<span class="constant"> OUTPUT </span>-p tcp --sport <span class="number">22</span> -m state --state<span class="constant"> ESTABLISHED </span>-j ACCEPT</span><br><span class="line"><span class="preprocessor">#允许所有本机向外的访问</span></span><br><span class="line">iptables -A<span class="constant"> OUTPUT </span>-j ACCEPT</span><br><span class="line"><span class="preprocessor"># 允许访问22端口</span></span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-p tcp --dport <span class="number">22</span> -j ACCEPT</span><br><span class="line"><span class="preprocessor">#允许访问80端口</span></span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-p tcp --dport <span class="number">80</span> -j ACCEPT</span><br><span class="line"><span class="preprocessor">#允许FTP服务的21和20端口</span></span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-p tcp --dport <span class="number">21</span> -j ACCEPT</span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-p tcp --dport <span class="number">20</span> -j ACCEPT</span><br><span class="line"><span class="preprocessor">#如果有其他端口的话，规则也类似，稍微修改上述语句就行</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#禁止其他未允许的规则访问</span></span><br><span class="line">iptables -A<span class="constant"> INPUT </span>-j REJECT</span><br><span class="line">iptables -A<span class="constant"> FORWARD </span>-j REJECT</span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># 屏蔽ip</span></span><br><span class="line"><span class="preprocessor"># 若需屏蔽整个ip段（123.0.0.1到123.255.255.254）则换为123.0.0.0/8</span></span><br><span class="line"><span class="preprocessor"># 若需屏蔽ip段123.123.0.1到123.123.255.254，则换为124.123.0.0/16</span></span><br><span class="line"><span class="preprocessor"># 若需屏蔽ip段123.123.123.1到123.123.123.254则换为123.123.123.0/24</span></span><br><span class="line"><span class="preprocessor"># 屏蔽123.123.123.123的所有连接</span></span><br><span class="line">iptables -I<span class="constant"> INPUT </span>-s <span class="number">123.123</span>.123.123 -j DROP</span><br></pre></td></tr></table></figure>
+<h4 id="链的基本操作">链的基本操作</h4><ol><br><li>清除所有的规则。<br><ol><br><li>清除预设表filter中所有规则链中的规则。<br><br># iptables -F</li><br><li>清除预设表filter中使用者自定链中的规则。<br><br>#iptables -X<br><br>#iptables -Z</li><br></ol><br></li><br><li>设置链的默认策略。一般有两种方法。<br><ol><br><li>首先允许所有的包，然后再禁止有危险的包通过放火墙。<br><br>#iptables -P INPUT ACCEPT<br><br>#iptables -P OUTPUT ACCEPT<br><br>#iptables -P FORWARD ACCEPT</li><br><li>首先禁止所有的包，然后根据需要的服务允许特定的包通过防火墙。<br><br>#iptables -P INPUT DROP<br><br>#iptables -P OUTPUT DROP<br><br>#iptables -P FORWARD DROP</li><br><li>列出表/链中的所有规则。默认只列出filter表。<br><br>#iptables -L</li><br><li>向链中添加规则。下面的语句用于开放网络接口：<br><br>#iptables -A INPUT -i lo -j ACCEPT<br><br>#iptables -A OUTPUT -o lo -j ACCEPT<br><br>#iptables -A INPUT -i eth0 -j ACEPT<br><br>#iptables -A OUTPUT -o eth1 -j ACCEPT<br><br>#iptables -A FORWARD -i eth1 -j ACCEPT<br><br>#iptables -A FORWARD -0 eth1 -j ACCEPT<br><br>注意:由于本地进程不会经过FORWARD链，因此回环接口lo只在INPUT和OUTPUT两个链上作用。</li><br><li>使用者自定义链。<br><br>#iptables -N custom<br><br>#iptables -A custom -s 0/0 -d 0/0 -p icmp -j DROP<br><br>#iptables -A INPUT -s 0/0 -d 0/0 -j DROP</li><br></ol><br></li><br></ol><br>####设置基本的规则匹配<br><ol><br><li>指定协议匹配。<br><ol><br><li>匹配指定协议。<br><br>#iptables -A INPUT -p tcp</li><br><li>匹配指定协议之外的所有协议。<br><br>#iptables -A INPUT -p !tcp</li><br></ol><br></li><br><li>指定地址匹配。<br><ol><br><li>指定匹配的主机。<br><br>#iptables -A INPUT -s 192.168.0.18</li><br><li>指定匹配的网络。<br><br>#iptables -A INPUT -s 192.168.2.0/24</li><br><li>匹配指定主机之外的地址。<br><br>#iptables -A FORWARD -s !192.168.0.19</li><br><li>匹配指定网络之外的网络。<br><br>#iptables -A FORWARD -s ! 192.168.3.0/24</li><br></ol><br></li><br><li>指定网络接口匹配。<br><ol><br><li>指定单一的网络接口匹配。<br><br>#iptables -A INPUT -i eth0<br><br>#iptables -A FORWARD -o eth0</li><br><li>指定同类型的网络接口匹配。<br><br>#iptables -A FORWARD -o ppp+</li><br></ol><br></li><br><li>指定端口匹配。<br><ol><br><li>指定单一端口匹配。<br><br>#iptables -A INPUT -p tcp —sport www<br><br>#iptables -A INPUT -p udp –dport 53</li><br><li>匹配指定端口之外的端口。<br><br>#iptables -A INPUT -p tcp –dport !22</li><br><li>匹配端口范围。<br><br>#iptables -A INPUT -p tcp –sport 22:80</li><br><li>匹配ICMP端口和ICMP类型。<br><br>#iptables -A INOUT -p icmp –icimp-type 8</li><br><li>指定ip碎片。<br><ul><br><li>每个网络接口都有一个MTU（最大传输单元），这个参数定义了可以通过的数据包的最大尺寸。如果一个数据包大于这个参数值时，系统会将其划分成更小的数据包（称为ip碎片）来传输，而接受方则对这些ip碎片再进行重组以还原整个包。这样会导致一个问题：当系统将大数据包划分成ip碎片传输时，第一个碎片含有完整的包头信息（IP+TCP、UDP和ICMP），但是后续的碎片只有包头的部分信息（如源地址、目的地）。因此，检查后面的ip碎片的头部（象有TCP、UDP和ICMP一样）是不可能的。假如有这样的一条规则：<br><br>#iptables -A FORWARD -p tcp -s 192.168.1.0/24 -d 192.168.2.100 –dport 80 -j ACCEPT<br><br>并且这时的FORWARD的policy为DROP时，系统只会让第一个ip碎片通过，而余下的碎片因为包头信息不完整而无法通过。可以通过—fragment/-f 选项来指定第二个及以后的ip碎片解决上述问题。<br><br>#iptables -A FORWARD -f -s 192.168.1.0/24 -d 192.168.2.100 -j ACCEPT<br><br>注意现在有许多进行ip碎片攻击的实例，如DoS攻击，因此允许ip碎片通过是有安全隐患的，对于这一点可以采用iptables的匹配扩展来进行限制。</li><br></ul><br></li><br></ol><br></li><br></ol>
+
 <hr>
-<p><img src="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg" alt="iptables规则组成"></p>
-<p>参考：<br><a href="http://www.imooc.com/learn/389" target="_blank" rel="external">http://www.imooc.com/learn/389</a><br><a href="https://www.91yun.org/archives/1690" target="_blank" rel="external">https://www.91yun.org/archives/1690</a><br><a href="http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html" target="_blank" rel="external">http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html</a><br><a href="http://jpstone.bokee.com/3630237.html" target="_blank" rel="external">http://jpstone.bokee.com/3630237.html</a><br><a href="http://man.linuxde.net/iptables" target="_blank" rel="external">http://man.linuxde.net/iptables</a></p>
+<h4 id="使用_iptables_进行包过滤">使用 iptables 进行包过滤</h4><p>iptables 策略是由一组有序的规则建立的，它告诉内核应该如何处理某些类别的数据包。每一个 iptables 规则应用于一个表中的一个链。一个 iptables 链就是一个规则集，这些规则按序与包含某种特征的数据包进行比较匹配。</p>
+<h4 id="表">表</h4><p>iptables 根据功能分类，iptables 的内建有多个表，如包过滤（filter）或者网络地址转换（NAT）。iptables 中共有 4 个表：filter，nat，mangle 和 raw。filter 表主要实现过滤功能，nat 表实现 NAT 功能，mangle 表用于修改分组数据，raw 表用于修改俩节追踪的功能。</p>
+<h4 id="链">链</h4><p>每个表都有一组内置链，用户还可以添加自定义的链。最重要的内置链是 filter 表中的 INPUT、OUTPUT 和 FORWARD 链。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INPUT</span> 链：发往本机的报文</span><br><span class="line"><span class="keyword">OUTPUT</span> 链：由本机发出的报文</span><br><span class="line">FORWARD 链：经由本机转发的报文</span><br><span class="line">PREROUTING 链：报文到达本机，进行路由决策之前</span><br><span class="line">POSTROUTING 链：报文由本机发出，进行路由决策之后</span><br></pre></td></tr></table></figure>
+<p>下图展现了一个数据包是如何通过内核中的 net 和 filter 表的：<br><img src="https://ws4.sinaimg.cn/large/8b953c4agw1fawefafqyrj20tw0ajjsf.jpg" alt=""></p>
+<hr>
+<h3 id="下面的图来自慕课网视频截图">下面的图来自慕课网视频截图</h3><p><img src="https://ws4.sinaimg.cn/large/8b953c4agw1fawed1uidij20w40ca75q.jpg" alt="1"><br><img src="https://ws2.sinaimg.cn/large/8b953c4agw1fawedou35lj20qf0h6tbd.jpg" alt="2"><br><img src="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg" alt="iptables规则组成"><br><img src="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg" alt="4"></p>
+<hr>
+<p>参考：<br><a href="http://www.imooc.com/learn/389" target="_blank" rel="external">http://www.imooc.com/learn/389</a><br><a href="https://www.91yun.org/archives/1690" target="_blank" rel="external">https://www.91yun.org/archives/1690</a><br><a href="http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html" target="_blank" rel="external">http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html</a><br><a href="http://jpstone.bokee.com/3630237.html" target="_blank" rel="external">http://jpstone.bokee.com/3630237.html</a><br><a href="http://man.linuxde.net/iptables" target="_blank" rel="external">http://man.linuxde.net/iptables</a><br><a href="https://jalena.bcsytv.com/archives/1608" target="_blank" rel="external">https://jalena.bcsytv.com/archives/1608</a><br><a href="http://liaoph.com/iptables/" target="_blank" rel="external">http://liaoph.com/iptables/</a></p>
 
       
     </div>

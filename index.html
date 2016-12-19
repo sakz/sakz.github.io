@@ -229,10 +229,18 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>清空所有iptables规则</p>
+        <p>查看现有的iptables规则  <code>--line-numbers</code>是查看行号</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">nL</span> --<span class="keyword">line</span>-numbers</span><br></pre></td></tr></table></figure>
+<p>查看iptables配置文件</p>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>sysconfig<span class="regexp">/iptables</span></span><br></pre></td></tr></table></figure>
+<p>删除iptables中INPUT表的第12条规则</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">D</span> <span class="keyword">INPUT</span> 12</span><br></pre></td></tr></table></figure>
+<p>清空所有iptables规则</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">iptables</span> -F</span><br></pre></td></tr></table></figure>
 <p>开放80，22，10-21端口访问</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">80</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">22</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp --dport <span class="number">10</span>:<span class="number">21</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+<p>删除禁止80端口访问这条规则</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -<span class="keyword">D</span> <span class="keyword">INPUT</span> -p tcp --dport 80 -j ACCEPT</span><br></pre></td></tr></table></figure>
       
     </div>
     
