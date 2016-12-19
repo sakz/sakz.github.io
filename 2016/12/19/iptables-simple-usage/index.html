@@ -17,7 +17,9 @@
 1iptables -F
 开放80，22，10-21端口访问
 123iptables -I INPUT -p tcp --dport 80 -j ACCEPTiptables -I INPUT -p tcp --dport 22 -j ACCEPTiptables -I INPUT -p tcp --dport 10:21 -j ACCEPT">
-<meta property="og:updated_time" content="2016-12-19T10:17:15.000Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg">
+<meta property="og:updated_time" content="2016-12-19T12:09:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables的一些简单使用">
 <meta name="twitter:description" content="清空所有iptables规则
@@ -274,6 +276,9 @@ var _hmt = _hmt || [];
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -D INPUT -<span class="tag">p</span> tcp --dport <span class="number">80</span> -j ACCEPT</span><br><span class="line">iptables -I INPUT -<span class="tag">p</span> tcp -s <span class="number">10.10</span>.<span class="number">188.233</span> --dport <span class="number">80</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>屏蔽10.10.188.233的所有连接</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iptables</span> <span class="tag">-A</span> <span class="tag">INPUT</span> <span class="tag">-s</span> 10<span class="class">.10</span><span class="class">.188</span><span class="class">.233</span> <span class="tag">-j</span> <span class="tag">DROP</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg" alt=""></p>
+<hr>
+<p><img src="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg" alt="iptables规则组成"></p>
 <p>参考：<br><a href="http://www.imooc.com/learn/389" target="_blank" rel="external">http://www.imooc.com/learn/389</a><br><a href="https://www.91yun.org/archives/1690" target="_blank" rel="external">https://www.91yun.org/archives/1690</a><br><a href="http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html" target="_blank" rel="external">http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html</a><br><a href="http://jpstone.bokee.com/3630237.html" target="_blank" rel="external">http://jpstone.bokee.com/3630237.html</a><br><a href="http://man.linuxde.net/iptables" target="_blank" rel="external">http://man.linuxde.net/iptables</a></p>
 
       
