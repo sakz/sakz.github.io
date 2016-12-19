@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawedou35lj20qf0h6tbd.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/8b953c4agw1fawcwyxxcpj20vi0g7acp.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/8b953c4agw1fawcxjpo72j20sz0hxtbv.jpg">
-<meta property="og:updated_time" content="2016-12-19T13:32:49.000Z">
+<meta property="og:updated_time" content="2016-12-19T13:35:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables的一些简单使用">
 <meta name="twitter:description" content="查看现有的iptables规则  --line-numbers是查看行号
@@ -287,7 +287,7 @@ var _hmt = _hmt || [];
 </ul>
 <p>允许本机访问本机</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iptables</span> <span class="tag">-I</span> <span class="tag">INPUT</span> <span class="tag">-i</span> <span class="tag">lo</span> <span class="tag">-j</span> <span class="tag">ACCEPT</span></span><br><span class="line"><span class="tag">telnet</span> 127<span class="class">.0</span><span class="class">.0</span><span class="class">.1</span> 22  没问题了</span><br></pre></td></tr></table></figure>
-<p>如果主动访问外网 允许连接状态的数据回来</p>
+<p>如果主动访问外网 允许连接状态的数据回来<br>(允许任何 RELATED 和 ESTABLISHED 的报文访问本机)</p>
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -m <span class="keyword">state</span> --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">curl -I  http://www.baidu.com/   没问题了</span><br></pre></td></tr></table></figure>
 <h5 id="一些其他例子">一些其他例子</h5><p>只允许10.10.188.233访问80端口</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">iptables</span> <span class="tag">-I</span> <span class="tag">INPUT</span> <span class="tag">-p</span> <span class="tag">tcp</span> <span class="tag">-s</span> 10<span class="class">.10</span><span class="class">.188</span><span class="class">.233</span> <span class="tag">--dport</span> 80 <span class="tag">-j</span> <span class="tag">ACCEPT</span></span><br></pre></td></tr></table></figure>
