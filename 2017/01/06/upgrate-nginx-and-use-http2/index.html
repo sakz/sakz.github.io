@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>升级Nginx开启HTTP/2 | fazero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="HTTP 2.0即超文本传输协议 2.0，是下一代HTTP协议。是由互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自1999年http1.1发布后的首个更新。HTTP/2 协议是从 SPDY 演变而来，SPDY 已经完成了使命并很快就会退出历史舞台（例如 Chrome 将在「2016 年初结束对 SPDY 的支持">
+<meta property="og:type" content="article">
+<meta property="og:title" content="升级Nginx开启HTTP/2">
+<meta property="og:url" content="http://blog.fazero.cc/2017/01/06/upgrate-nginx-and-use-http2/index.html">
+<meta property="og:site_name" content="fazero">
+<meta property="og:description" content="HTTP 2.0即超文本传输协议 2.0，是下一代HTTP协议。是由互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自1999年http1.1发布后的首个更新。HTTP/2 协议是从 SPDY 演变而来，SPDY 已经完成了使命并很快就会退出历史舞台（例如 Chrome 将在「2016 年初结束对 SPDY 的支持">
+<meta property="og:updated_time" content="2017-01-06T12:31:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="升级Nginx开启HTTP/2">
+<meta name="twitter:description" content="HTTP 2.0即超文本传输协议 2.0，是下一代HTTP协议。是由互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自1999年http1.1发布后的首个更新。HTTP/2 协议是从 SPDY 演变而来，SPDY 已经完成了使命并很快就会退出历史舞台（例如 Chrome 将在「2016 年初结束对 SPDY 的支持">
+  
+    <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+      var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?b9979dc27059d5c44833062fbecbb36f";
+          var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+
+ })();
+</script>
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://ws1.sinaimg.cn/large/8b953c4agw1fbdhdma49jj20b50aiwen.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">fazero</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/67728245/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Mac/" style="font-size: 16.67px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 11.67px;">blog</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 11.67px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/proxy/" style="font-size: 15px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsocks/" style="font-size: 13.33px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 18.33px;">sublime</a> <a href="/tags/terminal/" style="font-size: 13.33px;">terminal</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vps/" style="font-size: 13.33px;">vps</a> <a href="/tags/webstorm/" style="font-size: 13.33px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 15px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://erona.me">Erona的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fazero.cc/">fazero的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://andrewliu.in/">Andrew Liu</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://e12e.com/">Coande</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">关于博主 爱生活、爱折腾、爱电影、爱音乐 手拿kpw2的非文艺青年、东饭、知乎重度用户，网易云音乐重度用户  学习 记录 技术 分享 倡导开放、共享、自由的互联网 准程序员，Linuxer</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">fazero</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://ws1.sinaimg.cn/large/8b953c4agw1fbdhdma49jj20b50aiwen.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">fazero</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/67728245/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-upgrate-nginx-and-use-http2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/06/upgrate-nginx-and-use-http2/" class="article-date">
+  	<time datetime="2017-01-06T08:32:19.000Z" itemprop="datePublished">2017-01-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      升级Nginx开启HTTP/2
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <!-- Table of Contents -->
+
+        <blockquote>
+<p>HTTP 2.0即超文本传输协议 2.0，是下一代HTTP协议。是由互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis (httpbis)工作小组进行开发。是自1999年http1.1发布后的首个更新。<br>HTTP/2 协议是从 SPDY 演变而来，SPDY 已经完成了使命并很快就会退出历史舞台（例如 Chrome 将在「2016 年初结束对 SPDY 的支持」；Nginx、Apache 也已经全面支持 HTTP/2 ，并也不再支持 SPDY）。一般的大家把 HTTP2 简称为 h2，尽管有些朋友可能不怎么愿意，但是这个简称已经默认化了，特别是体现在浏览器对 HTTP2 都是这个简写的。普通的 HTTPS 网站浏览会比 HTTP 网站稍微慢一些，因为需要处理加密任务，而配置了 h2 的 HTTPS，在低延时的情况下速度会比 HTTP 更快更稳定！</p>
+</blockquote>
+<h3 id="准备工作：">准备工作：</h3><ul>
+<li>1.要开启HTTP/2需要nginx版本在1.10.0以上且需要openssl版本在1.0.2以上编译。</li>
+<li>2.http2.0只支持开启了https的网站</li>
+</ul>
+<a id="more"></a>
+<h4 id="1-安装openssl-1-1-0c">1.安装openssl-1.1.0c</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">cd /root</span><br><span class="line"></span><br><span class="line">wget <span class="string">https:</span><span class="comment">//www.openssl.org/source/openssl-1.1.0c.tar.gz</span></span><br><span class="line"></span><br><span class="line">tar -zxf openssl-<span class="number">1.1</span>.0c.tar.gz</span><br><span class="line"></span><br><span class="line">cd openssl-<span class="number">1.1</span>.0c</span><br><span class="line"></span><br><span class="line">./config</span><br><span class="line"></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#把旧版本的openssl重命名</span><br><span class="line">mv <span class="regexp">/usr/</span>bin<span class="regexp">/openssl /</span>usr<span class="regexp">/bin/</span>openssl.bak</span><br><span class="line">mv <span class="regexp">/usr/</span>include<span class="regexp">/openssl /</span>usr<span class="regexp">/include/</span>openssl.bak</span><br><span class="line"></span><br><span class="line">#设置软连接指向刚编译好的新版本的openssl-<span class="number">1.1</span>.0c</span><br><span class="line">ln -s <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>openssl <span class="regexp">/usr/</span>bin/openssl</span><br><span class="line">ln -s <span class="regexp">/usr/</span>local<span class="regexp">/include/</span>openssl <span class="regexp">/usr/</span>include/openssl</span><br><span class="line">#如果是<span class="number">1.0</span>.2h版本 生成的文件的位置在<span class="regexp">/usr/</span>local/ssl</span><br><span class="line"></span><br><span class="line">#添加libssl.so.1.1的软链接</span><br><span class="line">ln -s <span class="regexp">/usr/</span>local<span class="regexp">/lib64/</span>libssl.so.1.1 <span class="regexp">/usr/</span>lib64/libssl.so.1.1</span><br><span class="line">ln -s <span class="regexp">/usr/</span>local<span class="regexp">/lib64/</span>libcrypto.so.1.1 <span class="regexp">/usr/</span>lib64/libcrypto.so.1.1</span><br><span class="line"></span><br><span class="line">#查看openssl版本</span><br><span class="line">openssl version</span><br></pre></td></tr></table></figure>
+<h4 id="2-平滑升级nginx到最新的稳定版">2.平滑升级nginx到最新的稳定版</h4><p>查看现在的nginx版本和编译参数</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@sf3 ~]<span class="comment"># nginx -V</span></span><br><span class="line">nginx version: nginx/<span class="number">1.10</span>.<span class="number">0</span></span><br><span class="line">built by gcc <span class="number">4.4</span>.<span class="number">7</span> <span class="number">20120313</span> (Red Hat <span class="number">4.4</span>.<span class="number">7</span>-<span class="number">17</span>) (GCC)</span><br><span class="line">built <span class="keyword">with</span> OpenSSL <span class="number">1.0</span>.<span class="number">1</span>e-fips <span class="number">11</span> Feb <span class="number">2013</span></span><br><span class="line">TLS SNI support enabled</span><br><span class="line">configure arguments: <span class="variable">--user=</span>www <span class="variable">--group=</span>www <span class="variable">--prefix=</span>/usr/local/nginx --<span class="keyword">with</span>-http_stub_status_module --<span class="keyword">with</span>-http_ssl_module --<span class="keyword">with</span>-http_v2_module --<span class="keyword">with</span>-http_gzip_static_module --<span class="keyword">with</span>-ipv6 --<span class="keyword">with</span>-http_sub_module</span><br></pre></td></tr></table></figure>
+<p>最新稳定版本是1.10.2,官网地址：<a href="http://nginx.org" target="_blank" rel="external">http://nginx.org</a></p>
+<p>升级步骤</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载nginx最新版</span></span><br><span class="line">cd /root</span><br><span class="line">wget http://nginx.org/download/nginx-<span class="number">1.10</span>.<span class="number">2</span>.tar.gz</span><br><span class="line"><span class="comment">#解压源码</span></span><br><span class="line">tar zxvf nginx-<span class="number">1.10</span>.<span class="number">2</span>.tar.gz</span><br><span class="line"><span class="comment">#进入源码目录</span></span><br><span class="line">cd nginx-<span class="number">1.10</span>.<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#加上所需参数开始编译</span></span><br><span class="line">./configure <span class="variable">--user=</span>www <span class="variable">--group=</span>www <span class="variable">--prefix=</span>/usr/local/nginx --<span class="keyword">with</span>-http_stub_status_module --<span class="keyword">with</span>-http_ssl_module --<span class="keyword">with</span>-http_v2_module --<span class="keyword">with</span>-http_gzip_static_module --<span class="keyword">with</span>-ipv6 --<span class="keyword">with</span>-http_sub_module <span class="variable">--with-openssl=</span>/root/openssl-<span class="number">1.1</span>.<span class="number">0</span>c <span class="comment">#对应openssl源码解压后的路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#执行make编译，但是不要执行make install</span></span><br><span class="line"></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment">#重命名nginx旧版本二进制文件，即sbin目录下的nginx（期间nginx并不会停止服务）</span></span><br><span class="line">mv /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.old</span><br><span class="line"></span><br><span class="line"><span class="comment">#然后拷贝一份新编译的二进制文件</span></span><br><span class="line">cp objs/nginx /usr/local/nginx/sbin/</span><br><span class="line"><span class="comment">#在源码目录执行make upgrade开始升级</span></span><br><span class="line">make upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment">#完成后查看下版本</span></span><br><span class="line">nginx -V</span><br></pre></td></tr></table></figure>
+<h4 id="3-配置http2-0">3.配置http2.0</h4><p>配置Nginx开启http 2.0特别简单，只要在Nginx配置文件中找到你要开启http2.0的域名server模块，然后将 listen 443 ssl;改成 listen 443 ssl http2; 即可。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">	listen <span class="number">443</span> ssl http2;</span><br><span class="line">	server_name domain.com;</span><br><span class="line"></span><br><span class="line">	ssl_certificate /path/to/public.crt;</span><br><span class="line">	ssl_certificate_key /path/to/private.key;</span><br><span class="line">	</span><br><span class="line">	ssl_protocols <span class="constant">TLSv1</span> <span class="constant">TLSv1</span>.<span class="number">1</span> <span class="constant">TLSv1</span>.<span class="number">2</span>; <span class="comment">#允许的协议 </span></span><br><span class="line">	ssl_ciphers <span class="constant">EECDH</span>+<span class="constant">CHACHA20</span><span class="symbol">:EECDH+AES128</span><span class="symbol">:RSA+AES128</span><span class="symbol">:EECDH+AES256</span><span class="symbol">:RSA+AES256</span><span class="symbol">:EECDH+</span><span class="number">3</span><span class="constant">DES:</span><span class="constant">RSA</span>+<span class="number">3</span><span class="constant">DES:</span>!<span class="constant">MD5</span>; <span class="comment">#加密算法(CloudFlare 推荐的加密套件组) </span></span><br><span class="line">	ssl_prefer_server_ciphers on; <span class="comment">#优化 SSL 加密套件 </span></span><br><span class="line">	ssl_session_timeout <span class="number">10</span>m; <span class="comment">#客户端会话缓存时间 </span></span><br><span class="line">	ssl_session_cache <span class="symbol">builtin:</span><span class="number">1000</span> <span class="symbol">shared:</span><span class="constant">SSL</span><span class="symbol">:</span><span class="number">10</span>m; <span class="comment">#SSL 会话缓存类型和大小 </span></span><br><span class="line">	ssl_buffer_size <span class="number">1400</span>; <span class="comment"># 1400 bytes to fit in one MTU</span></span><br></pre></td></tr></table></figure>
+<p>保存配置文件之后，重启或重载Nginx即可生效：<code>/usr/local/nginx/sbin/nginx -s reload</code> </p>
+<p>要验证http2是否生效可以安装个chrome插件<code>HTTP/2 and SPDY indicator</code>，如果开启了h2，那么会有一道蓝色的闪电。</p>
+<p>我的这个博客<code>https://fazero.me</code>就开启了http2。</p>
+<p>参考链接：<br><a href="https://zhangge.net/4856.html" target="_blank" rel="external">https://zhangge.net/4856.html</a><br><a href="http://www.cnblogs.com/songqingbo/p/5464620.html" target="_blank" rel="external">http://www.cnblogs.com/songqingbo/p/5464620.html</a><br><a href="http://www.cnblogs.com/xyb930826/p/6077348.html" target="_blank" rel="external">http://www.cnblogs.com/xyb930826/p/6077348.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/19/iptables-simple-usage/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iptables的一些简单使用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<!--
+<div class="share">
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="/js/jia.js" charset="utf-8"></script>
+</div>
+-->
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="upgrate-nginx-and-use-http2" data-title="升级Nginx开启HTTP/2" data-url="http://blog.fazero.cc/2017/01/06/upgrate-nginx-and-use-http2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fazeroblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 fazero
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="//cdn.bootcss.com/require.js/2.1.16/require.min.js" type="text/javascript"></script>
+<script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

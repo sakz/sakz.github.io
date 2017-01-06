@@ -127,7 +127,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Mac/" style="font-size: 16.67px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 11.67px;">blog</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 11.67px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/proxy/" style="font-size: 15px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsocks/" style="font-size: 13.33px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 18.33px;">sublime</a> <a href="/tags/terminal/" style="font-size: 13.33px;">terminal</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vps/" style="font-size: 13.33px;">vps</a> <a href="/tags/webstorm/" style="font-size: 13.33px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 15px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+						<a href="/tags/Mac/" style="font-size: 16.67px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 11.67px;">blog</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 11.67px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/proxy/" style="font-size: 15px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsocks/" style="font-size: 13.33px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 18.33px;">sublime</a> <a href="/tags/terminal/" style="font-size: 13.33px;">terminal</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vps/" style="font-size: 13.33px;">vps</a> <a href="/tags/webstorm/" style="font-size: 13.33px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 15px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
 					</div>
 				</section>
 				
@@ -202,6 +202,66 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-webstorm-config" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/30/webstorm-config/" class="article-date">
+  	<time datetime="2016-04-30T05:27:03.000Z" itemprop="datePublished">2016-04-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/30/webstorm-config/">Webstorm配置问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="环境：Mac系统">环境：Mac系统</h4><h4 id="1-完全卸载webstorm">1.完全卸载webstorm</h4><p>只是单纯的卸载webstorm的话，下次重装webstorm还会用原来的配置，找了好久才知道它的所有配置路径，删掉就可以了</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> -rf <span class="label">$HOME</span>/Library/Preferences/webstorm</span><br><span class="line"><span class="keyword">rm</span> -rf <span class="label">$HOME</span>/Library/Caches/webstorm</span><br><span class="line"><span class="keyword">rm</span> -rf <span class="label">$HOME</span>/Library/Application Support/webstorm</span><br><span class="line"><span class="keyword">rm</span> -rf <span class="label">$HOME</span>/Library/Logs/webstorm</span><br></pre></td></tr></table></figure>
+<h4 id="2-预览浏览器问题">2.预览浏览器问题</h4><p>因为安装了parallel虚拟机，点击chrome预览的时候，启动了虚拟机里的chrome<br>解决方法：把预览浏览器的路径设置一下就可以了<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webstorm/">webstorm</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/30/webstorm-config/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-js-get-bing-photo" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -739,65 +799,6 @@ v2ex<span class="class">.com</span>
       
         <p class="article-more-link">
           <a  href="/2015/09/04/Mac-iTerm2--chinese/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-Ubuntu下安装BitTorrent-Sync实现多端同步文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/31/Ubuntu下安装BitTorrent-Sync实现多端同步文件/" class="article-date">
-  	<time datetime="2015-08-31T14:35:41.000Z" itemprop="datePublished">2015-08-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/31/Ubuntu下安装BitTorrent-Sync实现多端同步文件/">Ubuntu下安装BitTorrent Sync实现多端同步文件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、执行以下命令">1、执行以下命令</h4><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:tuxpoldo/btsync</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install btsync-user</span><br><span class="line"></span><br><span class="line">sudo apt-get install btsync</span><br></pre></td></tr></table></figure>
-<p>安装过程会出现选择项，一路回车即可<br>到最后一条命令有交互式的配置，认真看说明去配置就行了。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vps/">vps</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/08/31/Ubuntu下安装BitTorrent-Sync实现多端同步文件/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
