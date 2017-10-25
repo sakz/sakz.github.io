@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mysql数据库设置主从同步 | fazero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql数据库设置主从同步">
+<meta property="og:url" content="http://blog.fazero.cc/2017/09/15/mysql-master-slave/index.html">
+<meta property="og:site_name" content="fazero">
+<meta property="og:description">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/8b953c4agy1fjkc8z3wyxj20go08dq3l.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/8b953c4agy1fjkcna5pmoj20vm08w404.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/8b953c4agy1fjkd376nkgj20v4158gyv.jpg">
+<meta property="og:updated_time" content="2017-09-16T06:51:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql数据库设置主从同步">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="fazero" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+      var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?b9979dc27059d5c44833062fbecbb36f";
+          var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+
+ })();
+</script>
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://ws1.sinaimg.cn/large/8b953c4agw1fbdhdma49jj20b50aiwen.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">fazero</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/67728245/" title="douban">douban</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Mac/" style="font-size: 16.67px;">Mac</a> <a href="/tags/autojump/" style="font-size: 10px;">autojump</a> <a href="/tags/aws/" style="font-size: 10px;">aws</a> <a href="/tags/blog/" style="font-size: 11.67px;">blog</a> <a href="/tags/css/" style="font-size: 11.67px;">css</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 11.67px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/iftop/" style="font-size: 10px;">iftop</a> <a href="/tags/java/" style="font-size: 11.67px;">java</a> <a href="/tags/learn/" style="font-size: 10px;">learn</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 11.67px;">markdown</a> <a href="/tags/mysql/" style="font-size: 11.67px;">mysql</a> <a href="/tags/nginx/" style="font-size: 11.67px;">nginx</a> <a href="/tags/proxy/" style="font-size: 15px;">proxy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsocks/" style="font-size: 11.67px;">shadowsocks</a> <a href="/tags/sublime/" style="font-size: 18.33px;">sublime</a> <a href="/tags/terminal/" style="font-size: 13.33px;">terminal</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/vps/" style="font-size: 13.33px;">vps</a> <a href="/tags/webstorm/" style="font-size: 13.33px;">webstorm</a> <a href="/tags/web前端/" style="font-size: 15px;">web前端</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://erona.me">Erona的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://fazero.cc/">fazero的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://andrewliu.in/">Andrew Liu</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://e12e.com/">Coande</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">关于博主 爱生活、爱折腾、爱电影、爱音乐 手拿kpw2的非文艺青年、东饭、知乎重度用户，网易云音乐重度用户  学习 记录 技术 分享 倡导开放、共享、自由的互联网 准程序员，Linuxer</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">fazero</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://ws1.sinaimg.cn/large/8b953c4agw1fbdhdma49jj20b50aiwen.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">fazero</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sakz" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/fayecy" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/yiban-15" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/67728245/" title="douban">douban</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-mysql-master-slave" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/15/mysql-master-slave/" class="article-date">
+  	<time datetime="2017-09-15T08:32:07.000Z" itemprop="datePublished">2017-09-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql数据库设置主从同步
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <!-- Table of Contents -->
+
+        <p><img src="https://ww1.sinaimg.cn/large/8b953c4agy1fjkc8z3wyxj20go08dq3l.jpg" alt=""><br><a id="more"></a></p>
+<h4 id="主从复制的原理">主从复制的原理</h4><blockquote>
+<p>分为同步复制和异步复制，实际复制架构中大部分为异步复制。 复制的基本过程如下：<br>1).Slave上面的IO进程连接上Master，并请求从指定日志文件的指定位置（或者从最开始的日志）之后的日志内容；<br>2).Master接收到来自Slave的IO进程的请求后，通过负责复制的IO进程根据请求信息读取制定日志指定位置之后的日志信息，返回给Slave<br>的IO进程。返回信息中除了日志所包含的信息之外，还包括本次返回的信息已经到Master端的bin-log文件的名称以及bin-log的位置；<br>3).Slave的IO进程接收到信息后，将接收到的日志内容依次添加到Slave端的relay-log文件的最末端，并将读取到的Master端的<br>bin-log的文件名和位置记录到master-info文件中，以便在下一次读取的时候能够清楚的告诉Master“我需要从某个bin-log的哪个位置开始往后的日志内容，请发给我”；<br>4).Slave的Sql进程检测到relay-log中新增加了内容后，会马上解析relay-log的内容成为在Master端真实执行时候的那些可执行的内容，并在自身执行。</p>
+</blockquote>
+<h4 id="环境描述">环境描述</h4><ul>
+<li>OS：Centos6</li>
+<li>主服务器master：192.168.11.120</li>
+<li>从服务器slave：192.168.11.139</li>
+</ul>
+<h4 id="mysql主从配置">mysql主从配置</h4><h5 id="mysql主服务器配置(master)">mysql主服务器配置(master)</h5><p>master服务器配置:<br>vim /etc/my.cnf</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#先看下原来的配置有没以下设置，有的话修改下就行了</span></span><br><span class="line">[mysqld]</span><br><span class="line">server-id=<span class="number">120</span></span><br><span class="line">log-bin=<span class="regexp">/var/lib</span><span class="regexp">/mysql/mysql</span>-bin <span class="comment"># 启用二进制日志</span></span><br><span class="line">binlog-<span class="keyword">do</span>-db=sakzss <span class="comment">#指定数据库，如果不指定就是全部数据库</span></span><br><span class="line"><span class="comment">#binlog-ignore-db = mysql,information_schema #忽略写入binlog的库</span></span><br></pre></td></tr></table></figure>
+<p>重启服务器：</p>
+<p><code>service mysqld  restart  # centos6重启mysql</code></p>
+<p>在主服务器上建立帐户并授权slave：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#也可以在phpmyadmin直接添加用户</span></span><br><span class="line"><span class="preprocessor">#创建slave帐号，密码123456</span></span><br><span class="line">mysql&gt;<span class="constant"> GRANT </span>REPLICATION<span class="constant"> SLAVE </span>ON *.* to <span class="string">'slave'</span>@<span class="string">'192.168.11.139'</span> identified by <span class="string">'123456'</span><span class="constant"> WITH </span>GRANT OPTION; </span><br><span class="line"><span class="preprocessor">#更新数据库权限</span></span><br><span class="line">mysql&gt;flush privileges;</span><br></pre></td></tr></table></figure>
+<p>锁定所有表（防止数据库状态值变化，锁定后，这时候只能读，不能写，写请求会在解锁后执行）</p>
+<p><code>mysql&gt;  FLUSH  TABLES  WITH  READ  LOCK; </code></p>
+<p>此时可以查看主服务器binlog日志position值 </p>
+<p><code>mysql&gt; show  master  status;</code></p>
+<p>显示结果：<br><img src="https://ws1.sinaimg.cn/large/8b953c4agy1fjkcna5pmoj20vm08w404.jpg" alt=""></p>
+<p>备份数据库（我这里指定了sakzss这个数据库）：<br><code>mysqldump  -uroot  -p  --databases sakzss  &gt; sakzss.sql</code></p>
+<p>解锁<br><code>mysql&gt;  UNLOCK  TABLES;</code></p>
+<p>把刚备份完的数据库导入从库，就不多说了。</p>
+<h5 id="mysql从服务器配置(slave)">mysql从服务器配置(slave)</h5><p>slave服务器配置:<br>vim /etc/my.cnf</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">server-id=<span class="number">139</span></span><br><span class="line">log-bin=<span class="regexp">/var/lib</span><span class="regexp">/mysql/mysql</span>-bin <span class="comment"># 启用二进制日志</span></span><br><span class="line">binlog-<span class="keyword">do</span>-db=sakzss <span class="comment">#指定数据库，如果不指定就是全部数据库</span></span><br></pre></td></tr></table></figure>
+<p>重启服务器：</p>
+<p><code>service mysqld  restart  # centos6重启mysql</code></p>
+<p>设置同步源：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;</span><br><span class="line">    CHANGE MASTER TO <span class="variable">MASTER_HOST=</span>'<span class="number">192.168</span>.<span class="number">11.120</span>', <span class="comment">#主服务器master的ip</span></span><br><span class="line">    <span class="variable">MASTER_USER=</span>'slave',</span><br><span class="line">    <span class="variable">MASTER_PASSWORD=</span>'<span class="number">123456</span>',</span><br><span class="line">    <span class="variable">MASTER_LOG_FILE=</span>'mysql-bin.<span class="number">000064</span>',  <span class="comment">#对应show master status中File</span></span><br><span class="line">    <span class="variable">MASTER_LOG_POS=</span><span class="number">22927</span>; <span class="comment">#对应show master status中Position</span></span><br></pre></td></tr></table></figure>
+<p>启用同步：</p>
+<p><code>mysql&gt; start slave;</code></p>
+<p>停止同步</p>
+<p><code>mysql&gt; stop slave;</code></p>
+<p>检查从服务器状态：</p>
+<p><code>mysql&gt; SHOW SLAVE STATUS\G;</code></p>
+<p>由于我这个是设置好同步了有段时间的，所以log_file比较新<br><img src="https://ws1.sinaimg.cn/mw690/8b953c4agy1fjkd376nkgj20v4158gyv.jpg" alt=""></p>
+<p>注意：Slave_IO_Running及Slave_SQL_Running进程必须正常运行，即YES状态，否则说明同步失败。</p>
+<p>下面介绍几个比较关键的参数，全面的说明可阅读<a href="https://dev.mysql.com/doc/refman/5.5/en/show-slave-status.html" target="_blank" rel="external">参考手册</a>。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">Slave_IO_Running:</span> IO线程是否正常运行</span><br><span class="line"><span class="label">Slave_SQL_Running:</span> SQL线程是否正常运行</span><br><span class="line"><span class="label">Master_Log_File:</span> IO线程正在读取的主服务器日志文件</span><br><span class="line"><span class="label">Read_Master_Log_Pos:</span> IO线程正在读取的主服务器日志文件的位置</span><br><span class="line"><span class="label">Relay_Log_File:</span> SQL线程正在读取和执行的本地日志文件</span><br><span class="line"><span class="label">Relay_Log_Pos:</span> SQL线程正在读取和执行的本地日志文件的位置</span><br><span class="line"><span class="label">Relay_Master_Log_File:</span> SQL线程正在重演的事件所在的主服务器日志文件</span><br><span class="line"><span class="label">Exec_Master_Log_Pos:</span> SQL线程正在重演的事件在主服务器日志文件中的位置</span><br><span class="line"><span class="label">Seconds_Behind_Master:</span>如果网络没有明显的延迟，该参数标志着SQL线程的事件重演速度。如果该值较大且不断递增，调整innodb_flush_log_at_trx_commit会有比较明显的效果，但是可能会在MySQL进程崩溃时丢失数据。</span><br><span class="line">mysql数据库同步验证</span><br></pre></td></tr></table></figure>
+<p>主从数据库设置工作已经完成，可以在master新建数据库和表，插入和修改数据，查看slave是否获得同步，测试一下是否成功。</p>
+<p>一般不成功有以下几个原因：<br>1.server-id  设置了一样，默认都是1，要设置不一样<br>2.主数据库防火墙没设置允许远程访问3306端口<br>3.没锁表再记录<code>MASTER_LOG_FILE</code>、<code>MASTER_LOG_POS</code>的值，导致从复制的起点错误。</p>
+<p>参考资料：<br><a href="https://jasonhzy.github.io/2016/02/05/master-slave/" target="_blank" rel="external">https://jasonhzy.github.io/2016/02/05/master-slave/</a><br><a href="http://www.cnblogs.com/zper/archive/2013/04/20/3033148.html" target="_blank" rel="external">http://www.cnblogs.com/zper/archive/2013/04/20/3033148.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/16/letencrypt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          免费多域名SSL证书Let&#39;s Encrypt使用教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/26/git-server-hook/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">搭建git服务器以及web自动化部署</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<!--
+<div class="share">
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="/js/jia.js" charset="utf-8"></script>
+</div>
+-->
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="mysql-master-slave" data-title="Mysql数据库设置主从同步" data-url="http://blog.fazero.cc/2017/09/15/mysql-master-slave/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"fazeroblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 fazero
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="//cdn.bootcss.com/require.js/2.1.16/require.min.js" type="text/javascript"></script>
+<script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
